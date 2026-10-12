@@ -209,82 +209,72 @@ $resultado = $conexao->query("SELECT * FROM produtos");
         <h2>Ofertas Imperdíveis</h2>
         <p>Garanta os perfumes mais desejados com descontos especiais por tempo limitado.</p>
     </div>
-
-    <!-- CONTAINER GRID DOS CARDS -->
-    <div class="produtos">
-
-        <!-- PRODUTO 1 (LANÇAMENTO FEMININO) -->
-        <article class="card-produto" id="femininos">
-            <div class="imagem-produto imagem-escura">
-                <span class="selo-vitrine selo-novidade">✨ LANÇAMENTO</span>
-                <!-- SUBSTITUA PELO CAMINHO DA SUA IMAGEM LOCAL -->
-                <img src="imagens/coco-noir.jpg" alt="Perfume Feminino Novo" loading="lazy">
-            </div>
-
-            <div class="informacoes-produto">
-                <span class="categoria-produto">PERFUMARIA FEMININA</span>
-                <h3>Perfume Coco Noir Chanel</h3>
-                <p>A nova definição de luxo e sofisticação marcante.</p>
-                <div class="preco">Consulte o preço</div>
-                <a href="#contato" class="botao-produto btn-novidade">Tenho interesse</a>
-            </div>
-        </article>
-
-        <!-- PRODUTO 2 (LANÇAMENTO MASCULINO) -->
-        <article class="card-produto" id="masculinos">
-            <div class="imagem-produto imagem-bege">
-                <span class="selo-vitrine selo-novidade">✨ LANÇAMENTO</span>
-                <!-- SUBSTITUA PELO CAMINHO DA SUA IMAGEM LOCAL -->
-                <img src="imagens/bleu-chanel.jpg" alt="Frasco de fragrância sofisticada" loading="lazy">
-            </div>
-
-            <div class="informacoes-produto">
-                <span class="categoria-produto">PERFUMARIA MASCULINA</span>
-                <h3>Bleu de Chanel Masculino</h3>
-                <p>Presença inesquecível com notas frescas e marcantes.</p>
-                <div class="preco">Consulte o preço</div>
-                <a href="#contato" class="botao-produto btn-novidade">Tenho interesse</a>
-            </div>
-        </article>
-
-        <!-- PRODUTO 3 (DESCONTO ÁRABE/FRANCÊS) -->
-        <article class="card-produto" id="arabes">
-            <div class="imagem-produto imagem-dourada">
-                <span class="selo-vitrine selo-desconto">🔥 30% OFF</span>
-                <!-- SUBSTITUA PELO CAMINHO DA SUA IMAGEM LOCAL -->
-                <img src="imagens/perfume-frances.jpg" alt="Fragrância para coleção de perfumes" loading="lazy">
-            </div>
-
-            <div class="informacoes-produto">
-                <span class="categoria-produto">PERFUMARIA FRANCESA</span>
-                <h3>Perfume Francês Especial</h3>
-                <p>Intensidade e exclusividade com preço promocional.</p>
-                <div class="preco">Consulte o preço</div>
-                <a href="#contato" class="botao-produto btn-desconto">Aproveitar Oferta</a>
-            </div>
-        </article>
-
-        <!-- PRODUTO 4 (DESCONTO COSMÉTICOS) -->
-        <article class="card-produto" id="cosmeticos">
-            <div class="imagem-produto imagem-clara">
-                <!-- Texto corrigido e pronto para o ajuste do CSS -->
-                <span class="selo-vitrine selo-desconto-longo">🔥 LEVE 2 COM DESCONTO ESPECIAL 🤑</span>
-                <!-- SUBSTITUA PELO CAMINHO DA SUA IMAGEM LOCAL -->
-                <img src="imagens/cosmeticos.jpg" alt="Produtos de beleza e cuidados pessoais" loading="lazy">
-            </div>
-
-            <div class="informacoes-produto">
-                <span class="categoria-produto">BELEZA E CUIDADOS</span>
-                <h3>Kit de Cosméticos Premium</h3>
-                <p>Seu momento de autocuidado diário em super oferta.</p>
-                <div class="preco">Consulte o preço</div>
-                <a href="#contato" class="botao-produto btn-desconto">Aproveitar Oferta</a>
-            </div>
-        </article>
-
-    </div> <!-- Fecha a div.produtos corretamente -->
 </section>
 
+<!-- PRODUTO 1 (LANÇAMENTO FEMININO) -->
+<article class="card-produto" id="femininos">
+    <div class="imagem-produto imagem-escura">
+        <span class="selo-vitrine selo-novidade">✨ LANÇAMENTO</span>
+        <!-- Pasta corrigida para o seu padrão real -->
+        <img src="IMG-Bellafagundes/coco-noir.jpg" alt="Perfume Coco Noir Chanel" loading="lazy">
+    </div>
+
+    <div class="informacoes-produto">
+        <span class="categoria-produto">PERFUMARIA FEMININA</span>
+        <h3>Perfume Coco Noir Chanel</h3>
+        <p>A nova definição de luxo e sofisticação marcante.</p>
+        <div class="preco">Consulte o preço</div>
+        <a href="#contato" class="botao-produto btn-novidade">Tenho interesse</a>
+    </div>
+</article>
+
+<!-- PRODUTO 2 (LANÇAMENTO MASCULINO) -->
+<article class="card-produto" id="masculinos">
+    <div class="imagem-produto imagem-bege">
+        <span class="selo-vitrine selo-novidade">✨ LANÇAMENTO</span>
+        <img src="IMG-Bellafagundes/bleu-chanel.jpg" alt="Bleu de Chanel Masculino" loading="lazy">
+    </div>
+
+    <div class="informacoes-produto">
+        <span class="categoria-produto">PERFUMARIA MASCULINA</span>
+        <h3>Bleu de Chanel Masculino</h3>
+        <p>Presença inesquecível com notas frescas e marcantes.</p>
+        <div class="preco">Consulte o preço</div>
+        <a href="#contato" class="botao-produto btn-novidade">Tenho interesse</a>
+    </div>
+</article>
+
+<!-- PRODUTO 3 (DESCONTO ÁRABE/FRANCÊS) -->
+<article class="card-produto" id="arabes">
+    <div class="imagem-produto imagem-dourada">
+        <span class="selo-vitrine selo-desconto">🔥 30% OFF</span>
+        <img src="IMG-Bellafagundes/perfume-frances.jpg" alt="Perfume Francês Especial" loading="lazy">
+    </div>
+
+    <div class="informacoes-produto">
+        <span class="categoria-produto">PERFUMARIA FRANCESA</span>
+        <h3>Perfume Francês Especial</h3>
+        <p>Intensidade e exclusividade com preço promocional.</p>
+        <div class="preco">Consulte o preço</div>
+        <a href="#contato" class="botao-produto btn-desconto">Aproveitar Oferta</a>
+    </div>
+</article>
+
+<!-- PRODUTO 4 (DESCONTO COSMÉTICOS) -->
+<article class="card-produto" id="cosmeticos">
+    <div class="imagem-produto imagem-clara">
+        <span class="selo-vitrine selo-desconto-longo">🔥 LEVE 2 COM DESCONTO ESPECIAL 🤑</span>
+        <img src="IMG-Bellafagundes/cosmeticos.jpg" alt="Kit de Cosméticos Premium" loading="lazy">
+    </div>
+
+    <div class="informacoes-produto">
+        <span class="categoria-produto">BELEZA E CUIDADOS</span>
+        <h3>Kit de Cosméticos Premium</h3>
+        <p>Seu momento de autocuidado diário em super oferta.</p>
+        <div class="preco">Consulte o preço</div>
+        <a href="#contato" class="botao-produto btn-desconto">Aproveitar Oferta</a>
+    </div>
+</article>
 
 
 

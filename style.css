@@ -749,15 +749,20 @@ a {
 
 /* --- ARREMATAR DE VEZ A LOGO DO RODAPÉ --- */
 .logo-rodape-link {
-    display: inline-block !important;
-    margin-bottom: 20px !important;
-    border-radius: 15px !important;
-    overflow: hidden !important;
+
+
 }
 
 .logo-rodape-img {
     border-radius: 15px !important;
     overflow: hidden !important;
+
+    display: inline-block !important;
+    margin-bottom: 20px !important;
+    border-radius: 100px !important;
+    overflow: hidden !important;
+
+    
 }
 
 
@@ -1008,18 +1013,13 @@ main, section, .container, .categorias, .produtos {
 
 
 .img-logo {
-    width: 275x !important;           
-    height: 275px !important;               
+    width: 275px !important;
+    height: 275px !important;
+    border-radius: 50% !important;
+    object-fit: cover !important;
     display: block !important;
-    margin: 0 auto 15px auto !important;   
-    border-radius: 50% !important;    /* Garante o círculo perfeito */
-    
-    /* CORREÇÃO AQUI: Preenche o círculo sem achatar ou distorcer o nome Bella Fagundes */
-    object-fit: cover !important;       
-    
-    overflow: hidden !important;       
+    margin: 0 auto 15px auto !important;
 }
-
 
 /* Força a caixa da imagem e o frasco a se enquadrarem perfeitamente */
 
@@ -1080,14 +1080,11 @@ img.produto-foto {
 
 
 
-
-
-
 /* Centraliza o topo da nova seção */
 .topo-ofertas {
     text-align: center;
     margin-bottom: 30px;
-    padding: 10%;
+    padding-top: 20px;
 }
 
 .badge-topo {
@@ -1109,7 +1106,7 @@ img.produto-foto {
 }
 
 .topo-ofertas p {
-    font-size: 15px !important;
+    font-size: 20px !important;
     color: #666666;
 }
 
@@ -1387,3 +1384,4 @@ img.produto-foto {
         padding: 30px 20px !important;
     }
 }
+
