@@ -1,0 +1,1389 @@
+
+/* ==========================
+   CONFIGURAÇÕES GERAIS
+========================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: #40343a;
+    line-height: 1.6;
+    background-image: url('img-bellafagundes/luxo.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+/* ==========================
+   BARRA PROMOCIONAL
+========================== */
+
+.barra-promocional {
+    background-color: #b77b8e;
+    color: #ffffff;
+    text-align: center;
+    padding: 9px 15px;
+    font-size: 17px;
+    letter-spacing: 1px;
+}
+
+
+/* ==========================
+   CABEÇALHO
+========================== */
+
+.cabecalho {
+    width: 100%;
+  
+    min-height: 100px;
+    padding: 20px 6%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    background-color: #f5e2e2;
+    border-bottom: 1px solid #f0e3e3;
+}
+
+
+
+.Logo {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Playfair Display', serif;
+    font-size: 25px;
+    font-weight: 600;
+    line-height: 1.2;
+    color: #9c596f;
+    white-space: nowrap;
+}
+
+.Logo span {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    letter-spacing: 5px;
+    text-align: center;
+    color: #b69a66;
+    margin-top: 5px;
+}
+
+
+.menu {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 22px;
+    font-size: 20px;
+    /* Defina aqui o tamanho final que você deseja (ex: 20px) */
+
+
+    border: none;
+    height: 4px;
+
+
+
+}
+
+
+.menu a:hover {
+    color: #bd7b91;
+}
+
+.botao-cabecalho {
+    display: inline-block;
+    background-color: #b77b8e;
+    color: #ffffff;
+    padding: 15px 28px;                     /* Aumentou o preenchimento (cima/baixo e lados) */
+    border-radius: 10px;                     /* Arredondou os cantos um pouquinho mais para ficar moderno */
+    font-size: 13px;                        /* Letra um pouco maior e mais visível */
+    font-weight: 600;
+    white-space: nowrap;
+    transition: background-color 0.3s ease;
+}
+
+.botao-cabecalho:hover {
+    background-color: #92566b;
+}
+
+
+/* ==========================
+   BANNER PRINCIPAL
+========================== */
+
+.banner {
+    min-height: 520px;
+    padding: 70px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    background:
+        linear-gradient(90deg,
+            rgba(255, 245, 246, 0.97),
+            rgba(255, 245, 246, 0.82),
+            rgba(255, 245, 246, 0.25)),
+        url(https://maisonalhambra.co/wp-content/uploads/2026/04/luxurious-arabic-and-french-perfume-bottles-showcasing-cultural-richness-and-sophistication-bf6b67fc-35af-4ecc-b573-cc766005fbc7-1024x576.jpg);
+
+    background-size: cover;
+    background-position: center;
+}
+
+.banner-conteudo {
+    max-width: 600px;
+}
+
+.etiqueta {
+    display: inline-block;
+    color: #a46c7f;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+.banner h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(42px, 5vw, 68px);
+    font-weight: 500;
+    line-height: 1.15;
+    color: #49343d;
+    margin-bottom: 22px;
+}
+
+.banner h1 span {
+    display: block;
+    color: #b77b8e;
+    font-style: italic;
+}
+
+.banner-conteudo>p:not(.etiqueta) {
+    max-width: 470px;
+    color: #66555c;
+    font-size: 14px;
+    line-height: 1.9;
+    margin-bottom: 30px;
+}
+
+.botao-principal {
+    display: inline-block;
+    padding: 15px 28px;
+    background-color: #b77b8e;
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    border: 1px solid #b77b8e;
+    transition: all 0.3s ease;
+    border-radius: 6px;
+}
+
+.botao-principal:hover {
+    background-color: #ffffff;
+    color: #a7657c;
+}
+
+.banner-decoracao {
+    width: 210px;
+    height: 210px;
+    flex-shrink: 0;
+    border: 1px solid rgba(183, 123, 142, 0.6);
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #a7657c;
+    background-color: rgba(255, 255, 255, 0.45);
+}
+
+.banner-decoracao span {
+    font-family: 'Playfair Display', serif;
+    font-size: 65px;
+}
+
+.banner-decoracao p {
+    font-family: 'Playfair Display', serif;
+    font-size: 15px;
+    font-style: italic;
+}
+
+
+/* ==========================
+   TÍTULOS DAS SEÇÕES
+========================== */
+
+.titulo-secao {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.titulo-secao>span {
+    display: block;
+    color: #b77b8e;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+}
+
+.titulo-secao h2 {
+    font-family: 'Playfair Display', serif;
+    color: #49343d;
+    font-size: clamp(28px, 3vw, 40px);
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.titulo-secao p {
+    font-size: 13px;
+    color: #827078;
+}
+
+
+/* ==========================
+   CATEGORIAS
+========================== */
+
+.secao-categorias {
+    padding: 85px 7%;
+}
+
+.categorias {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.categoria {
+    min-height: 190px;
+    padding: 30px 15px;
+    display: flex;
+    border-radius: 15px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border: 1px solid #f0e1e4;
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.categoria:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 12px 28px rgba(112, 72, 87, 0.10);
+}
+
+.categoria-feminina {
+    background-color: #fff0f3;
+}
+
+.categoria-masculina {
+    background-color: #f1eeee;
+}
+
+.categoria-arabe {
+    background-color: #f8f0df;
+}
+
+.categoria-cosmeticos {
+    background-color: #f8e9e5;
+}
+
+.icone-categoria {
+    font-size: 30px;
+    margin-bottom: 12px;
+}
+
+.categoria h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: #49343d;
+    margin-bottom: 5px;
+}
+
+.categoria p {
+    font-size: 11px;
+    color: #806b73;
+}
+
+
+/* ==========================
+   VITRINE DE PRODUTOS
+========================== */
+
+.secao-produtos {
+    padding: 75px 7%;
+    background-color: #ffffff;
+}
+
+.produtos {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.card-produto {
+    min-width: 0;
+    background-color: #ffffff;
+    border: 1px solid #f0e7e7;
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+/* ... os códigos de cima continuam normais ... */
+
+.card-produto:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 28px rgba(77, 48, 59, 0.10);
+}
+
+.imagem-produto {
+    height: 250px;                  
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;                 
+    overflow: hidden;
+}
+
+.card-produto:hover .imagem-produto img {
+    transform: scale(1.06);
+}
+
+.imagem-produto img {
+    max-width: 100% !important;
+    max-height: 100% !important;
+    width: auto !important;          
+    height: auto !important;         
+    object-fit: contain !important;  
+    display: block;
+    margin: 0 auto;
+}
+
+
+
+/* Suas cores continuam normais... */
+.imagem-rosa {
+    background-color: #f7e3e8;
+}
+
+.imagem-bege {
+    background-color: #e9dfd3;
+}
+
+.imagem-dourada {
+    background-color: #eee0bd;
+}
+
+.imagem-clara {
+    background-color: #f5e8e5; 
+}
+
+/* ... as informações de baixo do produto continuam normais ... */
+.selo {
+    position: absolute;}
+
+
+.selo {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    z-index: 1;
+    padding: 6px 10px;
+    background-color: #b77b8e;
+    color: #ffffff;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.informacoes-produto {
+    padding: 22px 18px;
+}
+
+.categoria-produto {
+    display: block;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #b77b8e;
+    margin-bottom: 8px;
+}
+
+.informacoes-produto h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 21px;
+    font-weight: 600;
+    color: #49343d;
+    margin-bottom: 7px;
+}
+
+
+
+
+.informacoes-produto p {
+    font-size: 11px;
+    color: #827078;
+    margin-bottom: 16px;
+}
+
+.preco {
+    font-size: 13px;
+    font-weight: 700;
+    color: #9d6579;
+    margin-bottom: 18px;
+}
+
+.botao-produto {
+    display: block;
+    text-align: center;
+    padding: 12px 10px;
+    border: 1px solid #b77b8e;
+    color: #a7657c;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+}
+
+.botao-produto:hover {
+    background-color: #b77b8e;
+    color: #ffffff;
+}
+
+/* Container que segura todos os produtos lado a lado */
+.produtos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* O card individual de cada perfume */
+.card-produto {
+    background: #ffffff;
+    border: 1px solid #eaeaea;
+    border-radius: 8px;
+    width: 280px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.card-produto:hover {
+    transform: translateY(-5px);
+    /* Efeito lindo de subir levemente ao passar o mouse */
+}
+
+/* Ajuste da foto do perfume */
+.produto-foto {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Caixa de informações do texto */
+.produto-info {
+    padding: 15px;
+}
+
+.produto-categoria {
+    font-size: 11px;
+    text-transform: uppercase;
+    color: #b69a66;
+    /* Tom dourado luxo da sua marca */
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.produto-nome {
+    font-size: 16px;
+    margin: 0 0 10px 0;
+    color: #333333;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.produto-desc {
+    font-size: 13px;
+    color: #777777;
+    margin: 0 0 15px 0;
+    line-height: 1.4;
+    height: 36px;
+    /* Mantém as descrições com tamanhos alinhados */
+    overflow: hidden;
+}
+
+/* Alinhamento de Preço e Estoque */
+.produto-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.produto-preco {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333333;
+}
+
+.produto-estoque {
+    font-size: 12px;
+    background: #eeeeee;
+    padding: 2px 8px;
+    border-radius: 4px;
+    color: #666666;
+}
+
+/* Botão de Compra Elegante */
+.btn-comprar {
+    display: block;
+    text-align: center;
+    background: #b69a66;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 11px;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 14px;
+    transition: background 0.3s ease;
+}
+
+.btn-comprar:hover {
+    background: #967e52;
+    /* Escurece o dourado de leve ao passar o mouse */
+}
+
+
+
+
+/* ==========================
+   BANNER SECUNDÁRIO
+========================== */
+
+.banner-secundario {
+    margin: 75px 7%;
+    padding: 65px 8%;
+
+    /* ESSAS DUAS LINHAS ADICIONAM O ARREDONDAMENTO SEM ESTRAGAR NADA */
+    border-radius: 15px !important;
+    overflow: hidden !important;
+
+    background:
+        linear-gradient(90deg,
+            rgba(72, 49, 57, 0.88),
+            rgba(72, 49, 57, 0.60)),
+        url("https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=1600&q=85");
+
+    background-size: cover;
+    background-position: center;
+    color: #ffffff;
+}
+
+.banner-secundario>div {
+    max-width: 600px;
+}
+
+.banner-secundario span {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: #e8c9b4;
+}
+
+.banner-secundario h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(30px, 4vw, 46px);
+    line-height: 1.2;
+    font-weight: 500;
+    margin: 15px 0;
+}
+
+.banner-secundario p {
+    font-size: 13px;
+    line-height: 1.8;
+    margin-bottom: 25px;
+    color: #f4e9ec;
+}
+
+
+/* ==========================
+   DIFERENCIAIS
+========================== */
+.diferenciais {
+    padding: 30px 7% 80px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 35px;
+}
+
+/* 2. CONFIGURAÇÃO GERAL DOS QUADRADINHOS: Define bordas, transição e subida individual */
+.diferenciais>div,
+.diferenciais>a {
+    padding: 30px 15px;
+    text-align: center;
+    border: 1px solid #f0e1e4;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* Faz a subidinha e a sombra aparecerem de forma suave */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 3. HOVER INDIVIDUAL: Apenas o quadradinho selecionado sobe */
+.diferenciais>div:hover,
+.diferenciais>a:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 28px rgba(112, 72, 87, 0.08);
+}
+
+/* 4. CORES FIXAS IGUAIS AS DE CIMA (Rosa, Cinza Claro e Bege) */
+.diferenciais>div:nth-child(1),
+.diferenciais>a:nth-child(1) {
+    background-color: #fff0f3;
+    /* Rosa igual ao de Perfumes Femininos */
+}
+
+.diferenciais>div:nth-child(2),
+.diferenciais>a:nth-child(2) {
+    background-color: #f1eeee;
+    /* Cinza claro igual ao de Perfumes Masculinos */
+}
+
+.diferenciais>div:nth-child(3),
+.diferenciais>a:nth-child(3) {
+    background-color: #f8f0df;
+    /* Bege igual ao de Perfumes Árabes */
+}
+
+.diferencial {
+    text-align: center;
+    padding: 25px 15px;
+
+}
+
+.diferencial span {
+    display: block;
+    font-size: 30px;
+    margin-bottom: 12px;
+}
+
+.diferencial h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    color: #49343d;
+    margin-bottom: 8px;
+}
+
+.diferencial p {
+    max-width: 280px;
+    margin: 0 auto;
+    color: #827078;
+    font-size: 12px;
+}
+
+
+/* ==========================
+   RODAPÉ
+========================== */
+
+.rodape {
+    background-color: #49343d;
+    color: #ffffff;
+    padding: 60px 7% 0;
+}
+
+.rodape-conteudo {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr 1.2fr;
+    gap: 50px;
+    padding-bottom: 45px;
+}
+/* Mantém o tamanho original da foto e aplica apenas as bordas arredondadas */
+.logo-rodape {
+    display: inline-block !important;
+    margin-bottom: 20px !important;
+    border-radius: 15px !important;
+    overflow: hidden !important; /* Corta os cantos retos da imagem */
+}
+
+
+/* --- ARREMATAR DE VEZ A LOGO DO RODAPÉ --- */
+.logo-rodape-link {
+    display: inline-block !important;
+    margin-bottom: 20px !important;
+    border-radius: 15px !important;
+    overflow: hidden !important;
+}
+
+.logo-rodape-img {
+    border-radius: 15px !important;
+    overflow: hidden !important;
+}
+
+
+.logo-rodape span {
+    color: #e1c08a;
+}
+
+.rodape-marca p,
+.rodape-links p {
+    color: #e2d3d8;
+    font-size: 12px;
+    line-height: 1.9;
+}
+
+.rodape-links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.rodape-links h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 19px;
+    margin-bottom: 8px;
+    color: #f3d7df;
+}
+
+.rodape-links a {
+    font-size: 12px;
+    color: #e2d3d8;
+    transition: color 0.3s ease;
+}
+
+.rodape-links a:hover {
+    color: #e1c08a;
+}
+
+.rodape-final {
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 22px 0;
+    text-align: center;
+}
+
+.rodape-final p {
+    color: #e2d3d8;
+    font-size: 11px;
+}
+
+
+/* ==========================
+   RESPONSIVIDADE
+========================== */
+
+@media (max-width: 1100px) {
+
+    .cabecalho {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .menu {
+        order: 3;
+        width: 100%;
+    }
+
+    .categorias,
+    .produtos {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .banner-decoracao {
+        width: 160px;
+        height: 160px;
+    }
+
+    .banner-decoracao span {
+        font-size: 50px;
+    }
+}
+
+
+@media (max-width: 650px) {
+
+    .barra-promocional {
+        font-size: 10px;
+    }
+
+    .cabecalho {
+        padding: 20px 5%;
+        gap: 20px;
+    }
+
+    .logo {
+        font-size: 23px;
+    }
+
+    .menu {
+        gap: 12px 18px;
+    }
+
+    .menu a {
+        font-size: 11px;
+    }
+
+    .botao-cabecalho {
+        padding: 10px 15px;
+    }
+
+    .banner {
+        min-height: 470px;
+        padding: 60px 7%;
+        background-position: center;
+    }
+
+    .banner h1 {
+        font-size: 43px;
+    }
+
+    .banner-conteudo>p:not(.etiqueta) {
+        font-size: 13px;
+    }
+
+    .banner-decoracao {
+        display: none;
+    }
+
+    .secao-categorias,
+    .secao-produtos {
+        padding: 60px 5%;
+    }
+
+    .categorias {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .categoria {
+        min-height: 165px;
+        padding: 20px 8px;
+    }
+
+    .categoria h3 {
+        font-size: 15px;
+    }
+
+    .categoria p {
+        font-size: 10px;
+    }
+
+    .produtos {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .imagem-produto {
+        height: 180px;
+    }
+
+    .informacoes-produto {
+        padding: 15px 10px;
+    }
+
+    .informacoes-produto h3 {
+        font-size: 17px;
+    }
+
+    .categoria-produto {
+        font-size: 8px;
+        letter-spacing: 0.5px;
+    }
+
+    .informacoes-produto p {
+        font-size: 10px;
+    }
+
+    .botao-produto {
+        font-size: 9px;
+    }
+
+    .banner-secundario {
+        margin: 30px 5% 50px;
+        padding: 45px 7%;
+    }
+
+    .banner-secundario h2 {
+        font-size: 32px;
+    }
+
+    .diferenciais {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        padding: 20px 7% 55px;
+    }
+
+    .rodape {
+        padding: 45px 7% 0;
+    }
+
+    .rodape-conteudo {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+}
+
+/* --- CORREÇÃO COMPLETA DA VITRINE DE PRODUTOS --- */
+.produtos {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)) !important;
+    gap: 20px !important;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding: 20px !important;
+}
+
+.card-produto {
+    background: #ffffff !important;
+    border: 1px solid #eaeaea !important;
+    border-radius: 8px !important;
+    overflow: hidden !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05) !important;
+    transition: transform 0.3s ease !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    width: auto !important;
+    /* Remove o tamanho fixo antigo */
+}
+
+/* Remove o fundo branco das seções principais para revelar a imagem de luxo */
+main, section, .container, .categorias, .produtos {
+    background-color: transparent !important;
+}
+
+/* Deixa os cards de texto levemente transparentes e elegantes (opcional) */
+.card, .categoria-item, .produto-item {
+    background-color: rgba(255, 255, 255, 0.85) !important;
+    backdrop-filter: blur(5px); /* Efeito de vidro fosco chique */
+}
+
+/* Ajusta as imagens de banner/destaque do meio do site */
+.banner img, .destaque img, section img {
+    width: 100%;                  /* Faz a imagem ocupar a largura total do bloco */
+    height: 350px !important;     /* Define uma altura fixa profissional e menor */
+    object-fit: cover !important; /* Corta as sobras e mantém a proporção perfeita da foto */
+    border-radius: 8px;           /* Arredonda levemente as bordas (combina com o estilo de luxo) */
+}
+
+
+.img-logo {
+    width: 275x !important;           
+    height: 275px !important;               
+    display: block !important;
+    margin: 0 auto 15px auto !important;   
+    border-radius: 50% !important;    /* Garante o círculo perfeito */
+    
+    /* CORREÇÃO AQUI: Preenche o círculo sem achatar ou distorcer o nome Bella Fagundes */
+    object-fit: cover !important;       
+    
+    overflow: hidden !important;       
+}
+
+
+/* Força a caixa da imagem e o frasco a se enquadrarem perfeitamente */
+
+
+.imagem-produto {
+    width: 100% !important;
+    height: 250px !important;    /* Cria um espaço fixo perfeito para o quadrado da foto */
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    overflow: hidden !important;
+    background-color: #ffffff !important; /* Deixa o fundo do quadradinho limpo */
+}
+
+.imagem-produto img {
+    width: 100% !important;      /* Força a imagem a ocupar toda a largura interna */
+    height: 100% !important;     /* Força a imagem a respeitar os 250px de altura */
+    object-fit: contain !important; /* Obriga o perfume inteiro a caber na tela sem cortes */
+}
+
+
+
+/* Força o container da imagem a ter um tamanho fixo perfeito no celular */
+.produto-imagem-wrapper {
+    width: 100% !important;
+    height: 250px !important;    /* Limita a altura para o card não ficar gigante */
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    overflow: hidden !important;
+    background-color: #ffffff !important;
+    
+}
+
+/* Força o frasco do perfume a se adaptar e aparecer INTEIRO sem zoom bizarro */
+img.produto-foto {
+    width: 100% !important;
+    height: 100% !important;
+    max-height: 100% !important;
+    object-fit: contain !important; /* impede o zoom e mostra o perfume completo */
+}
+
+
+
+
+/* Força a imagem do Good Girl a descer e aparecer o nome completo */
+.produtos .card-produto:nth-child(2),
+.card-produto:nth-child(2) {
+    margin-top: 40px !important;   /* Empurra a foto para baixo na marra */
+    transform: scale(0.9) !important; /* Encolhe a foto 10% para o salto não cortar embaixo */
+}
+
+
+
+/* ==========================================
+   ESTILOS DA SEÇÃO DE OFERTAS IMPERDÍVEIS
+========================================== */
+
+
+
+
+
+
+/* Centraliza o topo da nova seção */
+.topo-ofertas {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 10%;
+}
+
+.badge-topo {
+    background-color: #ff4757 !important;
+    color: #fbefef !important;
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    padding: 6px 14px;
+    border-radius: 50px;
+    letter-spacing: 1px;
+    display: inline-block;
+    margin-bottom: 12px;
+}
+
+.topo-ofertas h2 {
+    font-size: 32px !important;
+    color: #333333; /* Use #ffffff se o fundo dessa seção for escuro */
+    margin-bottom: 8px;
+}
+
+.topo-ofertas p {
+    font-size: 15px !important;
+    color: #666666;
+}
+
+/* Força as fotos de todos os produtos a exibirem o tamanho correto */
+.imagem-produto {
+    position: relative !important;
+    width: 100% !important;
+    height: 250px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    overflow: hidden !important;
+}
+
+.imagem-produto img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+}
+
+/* Selos Padrão (Lançamento e 30% OFF) */
+.selo-vitrine {
+    position: absolute !important;
+    top: 12px !important;
+    left: 12px !important;
+    z-index: 10 !important;
+    font-size: 10px !important;
+    font-weight: 700 !important;
+    padding: 5px 10px !important;
+    border-radius: 4px !important;
+    text-transform: uppercase;
+    white-space: nowrap !important;
+}
+
+.selo-novidade {
+    background-color: #d4af37 !important;
+    color: #000000 !important;
+}
+
+.selo-desconto {
+    background-color: #ff4757 !important;
+    color: #ffffff !important;
+}
+
+/* Selo Especial do Produto 4 (Ajuste para textos compridos não estourarem) */
+.selo-desconto-longo {
+    position: absolute !important;
+    top: 12px !important;
+    left: 12px !important;
+    right: 12px !important; /* Faz o selo se esticar horizontalmente se precisar */
+    z-index: 10 !important;
+    font-size: 9px !important; /* Diminui levemente a fonte para caber tudo */
+    font-weight: 700 !important;
+    padding: 6px 8px !important;
+    border-radius: 4px !important;
+    background-color: #ff4757 !important;
+    color: #ffffff !important;
+    text-align: center;
+    line-height: 1.2;
+}
+
+
+/* ===================================================
+   RESET DO CARD DO GOOD GIRL E ALINHAMENTO DO GRID
+=================================================== */
+
+/* 1. Remove qualquer encolhimento ou escala que estava deixando o segundo card menor */
+.produtos .card-produto:nth-child(2),
+.card-produto:nth-child(2),
+#femininos, #masculinos, #arabes, #cosmeticos {
+    transform: none !important;
+    scale: 1 !important;
+    margin-top: 0 !important;
+}
+
+/* 2. Força o container pai (o grid) a dar a mesma altura idêntica para todos os filhos */
+.produtos {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important; /* Força 3 colunas perfeitas no PC */
+    align-items: stretch !important; /* MÁGICA: obriga todos os cards a esticarem e ficarem com o mesmo tamanho */
+    gap: 24px !important;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+}
+
+/* 3. Garante que as caixas das fotos fiquem perfeitas e idênticas */
+.produto-imagem-wrapper,
+.imagem-produto,
+[class*="imagem-"] {
+    width: 100% !important;
+    height: 250px !important;    
+    max-height: 250px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    overflow: hidden !important;
+    position: relative !important;
+    background-color: #ffffff !important; 
+    border-radius: 8px 8px 0 0 !important;
+}
+
+/* 4. Padroniza as imagens dentro dos quadrados sem cortar o salto agulha */
+.produto-imagem-wrapper img,
+.imagem-produto img,
+.card-produto img,
+img.produto-foto {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
+    object-fit: contain !important; 
+    object-position: center !important;
+    transform: none !important;
+    margin: 0 !important;
+
+     /* ISSO AQUI AUMENTA O PERFUME SÓ UM POUQUINHO SEM DISTORCER: */
+  transform: scale(1.38) translateY(20px) !important; 
+
+
+}
+
+/* 5. Organiza a estrutura interna do card branco para empurrar o botão para o rodapé */
+.card-produto {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    background-color: #ffffff !important;
+    border-radius: 8px !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05) !important;
+    height: 100% !important;
+}
+
+.informacoes-produto {
+    display: flex !important;
+    flex-direction: column !important;
+    flex-grow: 1 !important; 
+    justify-content: space-between !important;
+    padding: 20px !important;
+}
+
+.botao-produto {
+    margin-top: auto !important;
+    width: 100% !important;
+    text-align: center !important;
+}
+
+
+/* Força o botão de oferta a arredondar os cantos corretamente */
+.banner-coco .botao-oferta,
+.botao-principal.botao-oferta {
+    border-radius: 6px !important; /* CORREÇÃO: Adicionado 'px' e '!important' para funcionar na marra */
+}
+
+/* Força o segundo banner a respeitar as bordas arredondadas sem deixar a foto vazar */
+.banner-coco, 
+.banner-secundario {
+    border-radius: 12px !important;   /* Garante o arredondamento dos cantos */
+    overflow: hidden !important;      /* MÁGICA: Corta as pontas quadradas da foto que estavam vazando */
+}
+
+
+/* ==========================================
+   ESTILIZAÇÃO DO POP-UP DE BOAS-VINDAS
+========================================== */
+
+/* Fundo escuro que cobre o site inteiro */
+.popup-wrapper {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    background-color: rgba(0, 0, 0, 0.6) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    z-index: 9999 !important; /* Fica por cima de tudo */
+}
+
+/* Caixa branca do conteúdo */
+.popup-conteudo {
+    background-color: #ffffff !important;
+    width: 90% !important;
+    max-width: 750px !important;
+    display: flex !important;
+    position: relative !important;
+    border-radius: 8px !important;
+    overflow: hidden !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Botão de fechar (X) */
+.popup-fechar {
+    position: absolute !important;
+    top: 10px !important;
+    right: 15px !important;
+    background: none !important;
+    border: none !important;
+    font-size: 28px !important;
+    cursor: pointer !important;
+    color: #333333 !important;
+    z-index: 20 !important;
+}
+
+/* Lado Esquerdo (Imagem) */
+.popup-esquerda {
+    flex: 1 !important;
+    display: block !important;
+}
+
+.popup-esquerda img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+}
+
+/* Lado Direito (Formulário) */
+.popup-direita {
+    flex: 1 !important;
+    padding: 40px 30px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+}
+
+.popup-direita h2 {
+    font-size: 24px !important;
+    color: #b77b8e !important; /* Rosa da loja */
+    margin-bottom: 10px !important;
+}
+
+.popup-direita p {
+    font-size: 14px !important;
+    color: #666666 !important;
+    margin-bottom: 20px !important;
+    line-height: 1.4 !important;
+}
+
+/* Campos de entrada de texto */
+.popup-direita input {
+    width: 100% !important;
+    padding: 12px !important;
+    margin-bottom: 12px !important;
+    border: 1px solid #ddd !important;
+    border-radius: 4px !important;
+    font-size: 14px !important;
+}
+
+/* Botão de se inscrever */
+.btn-inscrever {
+    width: 100% !important;
+    background-color: #b77b8e !important;
+    color: #ffffff !important;
+    padding: 12px !important;
+    border: none !important;
+    border-radius: 4px !important;
+    font-weight: 600 !important;
+    cursor: pointer !important;
+    transition: background 0.3s !important;
+}
+
+.btn-inscrever:hover {
+    background-color: #92566b !important;
+}
+
+/* Responsividade para o Celular */
+@media (max-width: 650px) {
+    .popup-conteudo {
+        flex-direction: column !important;
+    }
+    .popup-esquerda {
+        display: none !important; /* Esconde a imagem no celular para caber o texto */
+    }
+    .popup-direita {
+        padding: 30px 20px !important;
+    }
+}
