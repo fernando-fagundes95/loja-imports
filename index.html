@@ -1,10 +1,4 @@
-<?php
-// Inclui o arquivo de conexão que criamos
-include("conexao.php");
 
-// Busca todos os produtos cadastrados no banco de dados
-$resultado = $conexao->query("SELECT * FROM produtos");
-?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -38,7 +32,7 @@ $resultado = $conexao->query("SELECT * FROM produtos");
 
         <div class="logo-container">
             <!-- Caminho corrigido apontando direto para a pasta certa que renomeamos -->
-            <img src="img-bellafagundes/logo.jpg" alt="Bella Fagundes Imports" class="img-logo">
+           <img src="IMG-Bellafagundes/logo.jpg" alt="Bella Fagundes Imports" class="img-logo">
         </div>
 
         <nav class="menu">
@@ -89,6 +83,194 @@ $resultado = $conexao->query("SELECT * FROM produtos");
 
         </section>
 
+
+
+<!-- SEÇÃO DE LANÇAMENTOS (VITRINE PRINCIPAL COM 6 PERFUMES) -->
+<section class="secao-produtos" id="produtos">
+    <div class="topo-ofertas">
+        <span class="badge-topo">✨ NOVIDADES</span>
+        <h2>Lançamentos Exclusivos</h2>
+        <p>Explore as fragrâncias mais desejadas do momento na Bella Fagundes Imports.</p>
+    </div>
+
+    <!-- DIV QUE ALINHA OS CARDS LADO A LADO -->
+    <div class="produtos-conteudo">
+
+        <!-- PRODUTO 1: Coco Noir -->
+        <article class="card-produto" id="femininos">
+            <div class="imagem-produto">
+                <span class="selo-vitrine selo-novidade">✨ LANÇAMENTO</span>
+                <img src="IMG-Bellafagundes/coco-noir.jpg" alt="Perfume Coco Noir Chanel" loading="lazy">
+            </div>
+            <div class="informacoes-produto">
+                <span class="categoria-produto">PERFUMARIA FEMININA</span>
+                <h3>Perfume Coco Noir Chanel</h3>
+                <p>A nova definição de luxo e sofisticação marcante.</p>
+                <div class="preco">Consulte o preço</div>
+                <a href="#contato" class="botao-produto btn-novidade">Tenho interesse</a>
+            </div>
+        </article>
+
+        <!-- PRODUTO 2: Bleu de Chanel -->
+        <article class="card-produto" id="masculinos">
+            <div class="imagem-produto">
+                <span class="selo-vitrine selo-novidade">✨ LANÇAMENTO</span>
+                <img src="IMG-Bellafagundes/bleu-chanel.jpg" alt="Bleu de Chanel Masculino" loading="lazy">
+            </div>
+            <div class="informacoes-produto">
+                <span class="categoria-produto">PERFUMARIA MASCULINA</span>
+                <h3>Bleu de Chanel Masculino</h3>
+                <p>Presença inesquecível com notas frescas e marcantes.</p>
+                <div class="preco">Consulte o preço</div>
+                <a href="#contato" class="botao-produto btn-novidade">Tenho interesse</a>
+            </div>
+        </article>
+
+        <!-- PRODUTO 3: Good Girl -->
+        <article class="card-produto" id="femininos-2">
+            <div class="imagem-produto">
+                <span class="selo-vitrine selo-novidade">✨ POPULAR</span>
+                <img src="IMG-Bellafagundes/good-girl.jpg" alt="Perfume Good Girl Carolina Herrera" loading="lazy">
+            </div>
+            <div class="informacoes-produto">
+                <span class="categoria-produto">PERFUMARIA FEMININA</span>
+                <h3>Good Girl Carolina Herrera</h3>
+                <p>Audacioso e poderoso, perfeito para noites inesquecíveis.</p>
+                <div class="preco">Consulte o preço</div>
+                <a href="#contato" class="botao-produto btn-novidade">Tenho interesse</a>
+            </div>
+        </article>
+
+        <!-- PRODUTO 4: Asad -->
+        <article class="card-produto" id="arabes">
+            <div class="imagem-produto">
+                <span class="selo-vitrine selo-novidade">✨ ÁRABE</span>
+                <img src="IMG-Bellafagundes/asad.jpg" alt="Perfume Lattafa Asad" loading="lazy">
+            </div>
+            <div class="informacoes-produto">
+                <span class="categoria-produto">PERFUMARIA ÁRABE</span>
+                <h3>Lattafa Asad Masculino</h3>
+                <p>Fragrância marcante com notas de especiarias e baunilha.</p>
+                <div class="preco">Consulte o preço</div>
+                <a href="#contato" class="botao-produto btn-novidade">Tenho interesse</a>
+            </div>
+        </article>
+
+        <!-- PRODUTO 5: Perfume Francês -->
+        <article class="card-produto" id="franceses">
+            <div class="imagem-produto">
+                <span class="selo-vitrine selo-novidade">✨ EXCLUSIVO</span>
+                <img src="IMG-Bellafagundes/perfume-frances.jpg" alt="Perfume Francês Especial" loading="lazy">
+            </div>
+            <div class="informacoes-produto">
+                <span class="categoria-produto">PERFUMARIA FRANCESA</span>
+                <h3>Perfume Francês Especial</h3>
+                <p>Intensidade e exclusividade com notas nobres selecionadas.</p>
+                <div class="preco">Consulte o preço</div>
+                <a href="#contato" class="botao-produto btn-novidade">Tenho interesse</a>
+            </div>
+        </article>
+
+        <!-- PRODUTO 6: Kit Cosméticos -->
+        <article class="card-produto" id="cosmeticos">
+            <div class="imagem-produto">
+                <span class="selo-vitrine selo-novidade">✨ PREMIUM</span>
+                <img src="IMG-Bellafagundes/cosmeticos.jpg" alt="Kit de Cosméticos Premium" loading="lazy">
+            </div>
+            <div class="informacoes-produto">
+                <span class="categoria-produto">BELEZA E CUIDADOS</span>
+                <h3>Kit de Cosméticos Premium</h3>
+                <p>Seu momento de autocuidado diário com alta tecnologia.</p>
+                <div class="preco">Consulte o preço</div>
+                <a href="#contato" class="botao-produto btn-novidade">Tenho interesse</a>
+            </div>
+        </article>
+
+    </div> <!-- Fecha a div.produtos-conteudo -->
+</section>
+
+
+
+<!-- SEÇÃO DE PRODUTOS (VITRINE) -->
+<section class="secao-produtos" id="produtos">
+    
+    <div class="topo-ofertas">
+        <span class="badge-topo">🔥 OPORTUNIDADE ÚNICA</span>
+        <h2>Ofertas Imperdíveis</h2>
+        <p>Garanta os perfumes mais desejados com descontos especiais por tempo limitado.</p>
+    </div>
+
+    <!-- DIV QUE ALINHA OS CARDS LADO A LADO -->
+    <div class="produtos-conteudo">
+
+        <!-- PRODUTO 1 (LANÇAMENTO FEMININO) -->
+        <article class="card-produto" id="femininos">
+            <div class="imagem-produto">
+                <span class="selo-vitrine selo-novidade">✨ LANÇAMENTO</span>
+                <img src="IMG-Bellafagundes/coco-noir.jpg" alt="Perfume Coco Noir Chanel" loading="lazy">
+            </div>
+
+            <div class="informacoes-produto">
+                <span class="categoria-produto">PERFUMARIA FEMININA</span>
+                <h3>Perfume Coco Noir Chanel</h3>
+                <p>A nova definição de luxo e sofisticação marcante.</p>
+                <div class="preco">Consulte o preço</div>
+                <a href="#contato" class="botao-produto btn-novidade">Tenho interesse</a>
+            </div>
+        </article>
+
+        <!-- PRODUTO 2 (LANÇAMENTO MASCULINO) -->
+        <article class="card-produto" id="masculinos">
+            <div class="imagem-produto">
+                <span class="selo-vitrine selo-novidade">✨ LANÇAMENTO</span>
+                <img src="IMG-Bellafagundes/bleu-chanel.jpg" alt="Bleu de Chanel Masculino" loading="lazy">
+            </div>
+
+            <div class="informacoes-produto">
+                <span class="categoria-produto">PERFUMARIA MASCULINA</span>
+                <h3>Bleu de Chanel Masculino</h3>
+                <p>Presença inesquecível com notas frescas e marcantes.</p>
+                <div class="preco">Consulte o preço</div>
+                <a href="#contato" class="botao-produto btn-novidade">Tenho interesse</a>
+            </div>
+        </article>
+
+        <!-- PRODUTO 3 (DESCONTO ÁRABE) -->
+        <article class="card-produto" id="arabes">
+            <div class="imagem-produto">
+                <span class="selo-vitrine selo-desconto">🔥 30% OFF</span>
+                <img src="IMG-Bellafagundes/perfume-frances.jpg" alt="Perfume Francês Especial" loading="lazy">
+            </div>
+
+            <div class="informacoes-produto">
+                <span class="categoria-produto">PERFUMARIA FRANCESA</span>
+                <h3>Perfume Francês Especial</h3>
+                <p>Intensidade e exclusividade com preço promocional.</p>
+                <div class="preco">Consulte o preço</div>
+                <a href="#contato" class="botao-produto btn-desconto">Aproveitar Oferta</a>
+            </div>
+        </article>
+
+        <!-- PRODUTO 4 (DESCONTO COSMÉTICOS) -->
+        <article class="card-produto" id="cosmeticos">
+            <div class="imagem-produto">
+                <span class="selo-vitrine selo-desconto-longo">🔥 LEVE 2 COM DESCONTO ESPECIAL 🤑</span>
+                <img src="IMG-Bellafagundes/cosmeticos.jpg" alt="Kit de Cosméticos Premium" loading="lazy">
+            </div>
+
+            <div class="informacoes-produto">
+                <span class="categoria-produto">BELEZA E CUIDADOS</span>
+                <h3>Kit de Cosméticos Premium</h3>
+                <p>Seu momento de autocuidado diário em super oferta.</p>
+                <div class="preco">Consulte o preço</div>
+                <a href="#contato" class="botao-produto btn-desconto">Aproveitar Oferta</a>
+            </div>
+        </article>
+
+    </div> <!-- Fecha a div.produtos-conteudo -->
+</section> <!-- Fecha a section principal -->
+
+
         <!-- CATEGORIAS -->
         <section class="secao-categorias">
 
@@ -129,56 +311,6 @@ $resultado = $conexao->query("SELECT * FROM produtos");
 
 
         </section>
-
-
-
-        <!-- PRODUTOS EM DESTAQUE -->
-        <section class="secao-produtos" id="produtos">
-
-
-
-
-            <div class="titulo-secao">
-                <span>SELEÇÃO ESPECIAL</span>
-                <h2>Nossos destaques</h2>
-                <p>Encontre produtos para presentear ou se presentear.</p>
-            </div>
-            <div class="produtos">
-                <?php while ($produto = $resultado->fetch_assoc()): ?>
-                    <article class="card-produto">
-                        <div class="produto-imagem-wrapper">
-                            <img src="img-bellafagundes/<?php echo $produto['imagem']; ?>" alt="<?php echo $produto['nome']; ?>" class="produto-foto">
-                        </div>
-
-                        <div class="produto-info">
-                            <span class="produto-categoria">
-                                <?php echo $produto['marca']; ?> | <?php echo $produto['categoria']; ?>
-                            </span>
-
-                            <h4 class="produto-nome">
-                                <?php echo $produto['nome']; ?> (<?php echo $produto['ml']; ?>)
-                            </h4>
-
-                            <p class="produto-desc">
-                                <?php echo $produto['descricao']; ?>
-                            </p>
-
-                            <div class="produto-meta">
-                                <span class="produto-preco">
-                                    R$ <?php echo number_format($produto['preco'], 2, ',', '.'); ?>
-                                </span>
-                                <span class="produto-estoque">
-                                    Qtd: <?php echo $produto['quantidade']; ?>
-                                </span>
-                            </div>
-
-                            <a href="https://wa.me<?php echo urlencode($produto['nome']); ?>" target="_blank" class="btn-comprar">
-                                Tenho Interesse
-                            </a>
-                        </div>
-                    </article>
-                <?php endwhile; ?>
-            </div>
 
               <!-- SEÇÃO DE OFERTAS COM BANNER DO COCO PERFUME -->
         <section class="banner-secundario banner-coco">
