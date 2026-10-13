@@ -1196,13 +1196,13 @@ img.produto-foto {
     margin: 0 auto !important;
 }
 
-/* 3. Garante que as caixas das fotos fiquem perfeitas e idênticas */
+/* 3. Garante que as caixas das fotos fiquem perfeitas, idênticas e mais compactas */
 .produto-imagem-wrapper,
 .imagem-produto,
 [class*="imagem-"] {
     width: 100% !important;
-    height: 250px !important;    
-    max-height: 250px !important;
+    height: 200px !important;       /* 📐 Reduzido de 250px para 200px para ficar menor */
+    max-height: 200px !important;   /* 📐 Reduzido de 250px para 200px */
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
@@ -1210,6 +1210,7 @@ img.produto-foto {
     position: relative !important;
     background-color: #ffffff !important; 
     border-radius: 8px 8px 0 0 !important;
+    padding: 10px !important;       /* Dá um espacinho interno para o frasco não colar nas bordas */
 }
 
 /* 4. Padroniza as imagens dentro dos quadrados sem distorcer */
