@@ -1182,8 +1182,12 @@ img.produto-foto {
     margin-top: 0 !important;
 }
 
+/* ==========================================
+   CONFIGURAÇÃO DA VITRINE DE PRODUTOS
+========================================== */
+
 /* 2. Força o container pai (o grid) a dar a mesma altura idêntica para todos os filhos */
-.produtos {
+.produtos-conteudo {
     display: grid !important;
     grid-template-columns: repeat(3, minmax(0, 1fr)) !important; /* Força 3 colunas perfeitas no PC */
     align-items: stretch !important; /* MÁGICA: obriga todos os cards a esticarem e ficarem com o mesmo tamanho */
@@ -1208,7 +1212,7 @@ img.produto-foto {
     border-radius: 8px 8px 0 0 !important;
 }
 
-/* 4. Padroniza as imagens dentro dos quadrados sem cortar o salto agulha */
+/* 4. Padroniza as imagens dentro dos quadrados sem distorcer */
 .produto-imagem-wrapper img,
 .imagem-produto img,
 .card-produto img,
@@ -1219,13 +1223,9 @@ img.produto-foto {
     max-height: 100% !important;
     object-fit: contain !important; 
     object-position: center !important;
-    transform: none !important;
     margin: 0 !important;
-
-     /* ISSO AQUI AUMENTA O PERFUME SÓ UM POUQUINHO SEM DISTORCER: */
-  transform: scale(1.38) translateY(20px) !important; 
-
-
+    /* AUMENTA O PERFUME SÓ UM POUQUINHO SEM DISTORCER: */
+    transform: scale(1.38) translateY(20px) !important; 
 }
 
 /* 5. Organiza a estrutura interna do card branco para empurrar o botão para o rodapé */
@@ -1253,135 +1253,133 @@ img.produto-foto {
     text-align: center !important;
 }
 
-
 /* Força o botão de oferta a arredondar os cantos corretamente */
 .banner-coco .botao-oferta,
 .botao-principal.botao-oferta {
-    border-radius: 6px !important; /* CORREÇÃO: Adicionado 'px' e '!important' para funcionar na marra */
+    border-radius: 6px !important; 
 }
 
 /* Força o segundo banner a respeitar as bordas arredondadas sem deixar a foto vazar */
 .banner-coco, 
 .banner-secundario {
     border-radius: 12px !important;   /* Garante o arredondamento dos cantos */
-    overflow: hidden !important;      /* MÁGICA: Corta as pontas quadradas da foto que estavam vazando */
+    overflow: hidden !important;      /* MÁGICA: Corta as pontas quadradas da foto */
 }
-
 
 /* ==========================================
    ESTILIZAÇÃO DO POP-UP DE BOAS-VINDAS
 ========================================== */
 
-/* Fundo escuro que cobre o site inteiro */
+/* Fundo escuro que cobre o site inteiro - COMEÇA OCULTO (none) */
 .popup-wrapper {
-    position: fixed !important;
-    top: 0 !important;
-    left: 0 !important;
-    width: 100% !important;
-    height: 100% !important;
-    background-color: rgba(0, 0, 0, 0.6) !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    z-index: 9999 !important; /* Fica por cima de tudo */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: none; /* JavaScript vai mudar para 'flex' quando o site carregar */
+    align-items: center;
+    justify-content: center;
+    z-index: 9999; /* Fica por cima de tudo */
 }
 
 /* Caixa branca do conteúdo */
 .popup-conteudo {
-    background-color: #ffffff !important;
-    width: 90% !important;
-    max-width: 750px !important;
-    display: flex !important;
-    position: relative !important;
-    border-radius: 8px !important;
-    overflow: hidden !important;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3) !important;
+    background-color: #ffffff;
+    width: 90%;
+    max-width: 750px;
+    display: flex;
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 /* Botão de fechar (X) */
 .popup-fechar {
-    position: absolute !important;
-    top: 10px !important;
-    right: 15px !important;
-    background: none !important;
-    border: none !important;
-    font-size: 28px !important;
-    cursor: pointer !important;
-    color: #333333 !important;
-    z-index: 20 !important;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: #333333;
+    z-index: 20;
 }
 
 /* Lado Esquerdo (Imagem) */
 .popup-esquerda {
-    flex: 1 !important;
-    display: block !important;
+    flex: 1;
+    display: block;
 }
 
 .popup-esquerda img {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: cover !important;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 /* Lado Direito (Formulário) */
 .popup-direita {
-    flex: 1 !important;
-    padding: 40px 30px !important;
-    display: flex !important;
-    flex-direction: column !important;
-    justify-content: center !important;
+    flex: 1;
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .popup-direita h2 {
-    font-size: 24px !important;
-    color: #b77b8e !important; /* Rosa da loja */
-    margin-bottom: 10px !important;
+    font-size: 24px;
+    color: #b77b8e; /* Rosa elegante da loja */
+    margin-bottom: 10px;
 }
 
 .popup-direita p {
-    font-size: 14px !important;
-    color: #666666 !important;
-    margin-bottom: 20px !important;
-    line-height: 1.4 !important;
+    font-size: 14px;
+    color: #666666;
+    margin-bottom: 20px;
+    line-height: 1.4;
 }
 
 /* Campos de entrada de texto */
 .popup-direita input {
-    width: 100% !important;
-    padding: 12px !important;
-    margin-bottom: 12px !important;
-    border: 1px solid #ddd !important;
-    border-radius: 4px !important;
-    font-size: 14px !important;
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    box-sizing: border-box; /* Garante que o input não passe da borda */
 }
 
 /* Botão de se inscrever */
 .btn-inscrever {
-    width: 100% !important;
-    background-color: #b77b8e !important;
-    color: #ffffff !important;
-    padding: 12px !important;
-    border: none !important;
-    border-radius: 4px !important;
-    font-weight: 600 !important;
-    cursor: pointer !important;
-    transition: background 0.3s !important;
+    width: 100%;
+    background-color: #b77b8e;
+    color: #ffffff;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s;
 }
 
 .btn-inscrever:hover {
-    background-color: #92566b !important;
+    background-color: #92566b;
 }
 
 /* Responsividade para o Celular */
 @media (max-width: 650px) {
     .popup-conteudo {
-        flex-direction: column !important;
+        flex-direction: column;
     }
     .popup-esquerda {
-        display: none !important; /* Esconde a imagem no celular para caber o texto */
+        display: none; /* Esconde a imagem no celular para caber o formulário perfeitamente */
     }
     .popup-direita {
-        padding: 30px 20px !important;
+        padding: 30px 20px;
     }
 }
-
