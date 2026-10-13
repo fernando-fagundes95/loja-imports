@@ -88,8 +88,8 @@ a {
 }
 
 .logo-container img {
-    width: 125% !important;
-    height: 125% !important;
+    width: 300% !important;
+    height: 300% !important;
     object-fit: contain !important; /* Faz a foto se ajustar inteira dentro do círculo */
 }
 
