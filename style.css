@@ -1052,14 +1052,21 @@ main, section, .container, .categorias, .produtos {
     
 }
 
-/* Força o frasco do perfume a se adaptar e aparecer INTEIRO sem zoom bizarro */
+/* 4. Padroniza as imagens dentro dos quadrados sem cortar ou distorcer */
+.produto-imagem-wrapper img,
+.imagem-produto img,
+.card-produto img,
 img.produto-foto {
     width: 100% !important;
     height: 100% !important;
+    max-width: 100% !important;
     max-height: 100% !important;
-    object-fit: contain !important; /* impede o zoom e mostra o perfume completo */
+    object-fit: contain !important;
+    object-position: center !important;
+    margin: 0 !important;
+    
+    transform: scale(1.0) !important; /* <-- VOCÊ VAI MUDAR APENAS ESTA LINHA! */
 }
-
 
 
 
