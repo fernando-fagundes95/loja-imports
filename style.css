@@ -75,24 +75,22 @@ a {
 
 
 
-.Logo {
-    display: flex;
-    flex-direction: column;
-    font-family: 'Playfair Display', serif;
-    font-size: 25px;
-    font-weight: 600;
-    line-height: 1.2;
-    color: #9c596f;
-    white-space: nowrap;
+.logo-container {
+    width: 120px !important;       /* Tamanho ideal para o cabeçalho */
+    height: 120px !important;      /* Mantém a altura igual à largura */
+    background-color: #ffffff !important; /* Fundo branco para destacar no rosa */
+    border-radius: 50% !important;  /* Transforma o quadrado em círculo */
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    overflow: hidden !important;   /* Corta os cantos da imagem que sobrarem */
+    padding: 10px !important;      /* Espaço para o nome não colar na borda */
 }
 
-.Logo span {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 10px;
-    letter-spacing: 5px;
-    text-align: center;
-    color: #b69a66;
-    margin-top: 5px;
+.logo-container img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important; /* Faz a foto se ajustar inteira dentro do círculo */
 }
 
 
