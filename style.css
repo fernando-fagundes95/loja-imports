@@ -369,12 +369,12 @@ a {
 }
 
 .imagem-produto {
-    height: 375px;                  
+    height: 320px; /* Ajustamos a altura da caixa */
     background-color: #ffffff;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 15px;                 
+    padding: 5px; /* Reduzimos o padding para a imagem poder crescer */
     overflow: hidden;
     border-radius: 25px;
 }
@@ -382,16 +382,13 @@ a {
 .card-produto:hover .imagem-produto img {
     transform: scale(1.06);
 }
-
 .imagem-produto img {
-    max-width: 100% !important;
-    max-height: 100% !important;
-    width: auto !important;          
-    height: auto !important;         
-    object-fit: contain !important;  
-    display: block;
-    margin: 0 auto;
+    width: 90% !important; /* Faz a foto ocupar quase toda a largura da caixa */
+    height: 90% !important; /* Faz a foto ocupar quase toda a altura da caixa */
+    object-fit: contain !important; /* Mantém a proporção perfeita do perfume */
+    transition: transform 0.3s ease;
 }
+
 
 
 
