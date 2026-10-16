@@ -376,6 +376,7 @@ a {
     justify-content: center;
     padding: 15px;                 
     overflow: hidden;
+    border-radius: 25px;
 }
 
 .card-produto:hover .imagem-produto img {
