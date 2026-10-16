@@ -76,20 +76,20 @@ a {
 
 
 .logo-container {
-    width: 200px !important;       /* Tamanho ideal para o cabeçalho */
-    height: 200px !important;      /* Mantém a altura igual à largura */
+    width: 120px !important;       /* Tamanho ideal para o cabeçalho */
+    height: 120px !important;      /* Mantém a altura igual à largura */
     background-color: #ffffff !important; /* Fundo branco para destacar no rosa */
     border-radius: 50% !important;  /* Transforma o quadrado em círculo */
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
     overflow: hidden !important;   /* Corta os cantos da imagem que sobrarem */
-    padding: 13px !important;      /* Espaço para o nome não colar na borda */
+    padding: 10px !important;      /* Espaço para o nome não colar na borda */
 }
 
 .logo-container img {
-    width: 100% !important;
-    height: 100% !important;
+    width: 300% !important;
+    height: 300% !important;
     object-fit: contain !important; /* Faz a foto se ajustar inteira dentro do círculo */
 }
 
