@@ -369,7 +369,7 @@ a {
 }
 
 .imagem-produto {
-    height: 320px; /* Ajustamos a altura da caixa */
+    height: 400px; /* Ajustamos a altura da caixa */
     background-color: #ffffff;
     display: flex;
     align-items: center;
