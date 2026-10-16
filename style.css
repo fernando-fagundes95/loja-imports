@@ -76,8 +76,8 @@ a {
 
 
 .logo-container {
-    width: 120px !important;       /* Tamanho ideal para o cabeçalho */
-    height: 120px !important;      /* Mantém a altura igual à largura */
+    width: 160px !important;       /* Tamanho ideal para o cabeçalho */
+    height: 160px !important;      /* Mantém a altura igual à largura */
     background-color: #ffffff !important; /* Fundo branco para destacar no rosa */
     border-radius: 50% !important;  /* Transforma o quadrado em círculo */
     display: flex !important;
