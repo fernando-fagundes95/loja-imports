@@ -1389,3 +1389,11 @@ img.produto-foto {
         padding: 30px 20px;
     }
 }
+
+
+.imagem-produto img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* 👈 Isso faz a foto inteira caber no espaço sem cortar! */
+    background-color: #fff; /* Opcional: deixa o fundo branco caso sobre espaço nas laterais */
+}
