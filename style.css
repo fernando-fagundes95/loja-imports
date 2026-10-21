@@ -369,27 +369,28 @@ a {
 }
 
 .imagem-produto {
-    height: 400px; /* Ajustamos a altura da caixa */
+    height: 250px; /* Reduzimos a altura fixa para dar mais espaço aos textos embaixo */
     background-color: #ffffff;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 5px; /* Reduzimos o padding para a imagem poder crescer */
+    padding: 20px; 
     overflow: hidden;
-    border-radius: 25px;
+    position: relative;
 }
+
 
 .card-produto:hover .imagem-produto img {
     transform: scale(1.06);
 }
+
+
 .imagem-produto img {
-    width: 90% !important; /* Faz a foto ocupar quase toda a largura da caixa */
-    height: 90% !important; /* Faz a foto ocupar quase toda a altura da caixa */
-    object-fit: contain !important; /* Mantém a proporção perfeita do perfume */
+    max-width: 90% !important;  /* Usa max-width em vez de width para não esticar */
+    max-height: 90% !important; /* Usa max-height em vez de height para não achatar */
+    object-fit: contain !important; /* Garante a proporção perfeita do perfume */
     transition: transform 0.3s ease;
 }
-
-
 
 
 /* Suas cores continuam normais... */
@@ -482,24 +483,28 @@ a {
 }
 
 /* Container que segura todos os produtos lado a lado */
+
 .produtos {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr)); /* Muda de 4 para 3 colunas */
+    gap: 25px;
+    max-width: 900px; /* Limita a largura máxima para os 3 cards ficarem bem centralizados */
+    margin: 0 auto;   /* Centraliza o bloco inteiro dos produtos na página */
 }
+
 
 /* O card individual de cada perfume */
 .card-produto {
     background: #ffffff;
     border: 1px solid #eaeaea;
     border-radius: 8px;
-    width: 280px;
+    width: 100%; /* MUDE DE 280px PARA 100% */
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
     transition: transform 0.3s ease;
 }
+
+
 
 .card-produto:hover {
     transform: translateY(-5px);
