@@ -369,11 +369,7 @@ a {
 }
 
 .imagem-produto {
-<<<<<<< HEAD
     height: 250px; /* Reduzimos a altura fixa para dar mais espaço aos textos embaixo */
-=======
-    height: 320px; /* Ajustamos a altura da caixa */
->>>>>>> parent of 07edd13 (Update style.css)
     background-color: #ffffff;
     display: flex;
     align-items: center;
@@ -751,12 +747,6 @@ a {
     overflow: hidden !important; /* Corta os cantos retos da imagem */
 }
 
-
-/* --- ARREMATAR DE VEZ A LOGO DO RODAPÉ --- */
-.logo-rodape-link {
-
-
-}
 
 .logo-rodape-img {
     border-radius: 15px !important;

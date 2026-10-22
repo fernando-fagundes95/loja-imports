@@ -144,7 +144,7 @@ $resultado = $conexao->query("SELECT * FROM produtos");
                 <p>Encontre produtos para presentear ou se presentear.</p>
             </div>
             <div class="produtos">
-                <?php while ($produto = $resultado->fetch_assoc()): ?>
+                    <?php while ($produto = $resultado->fetch_assoc()): ?>
                     <article class="card-produto">
                         <div class="produto-imagem-wrapper">
 
