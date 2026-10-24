@@ -144,7 +144,7 @@ $resultado = $conexao->query("SELECT * FROM produtos");
                 <p>Encontre produtos para presentear ou se presentear.</p>
             </div>
             <div class="produtos">
-                    <?php while ($produto = $resultado->fetch_assoc()): ?>
+                <?php while ($produto = $resultado->fetch_assoc()): ?>
                     <article class="card-produto">
                         <div class="produto-imagem-wrapper">
 
@@ -173,7 +173,7 @@ $resultado = $conexao->query("SELECT * FROM produtos");
                                 </span>
                             </div>
 
-                            <a href="https://wa.me<?php echo urlencode($produto['nome']); ?>" target="_blank" class="btn-comprar">
+                            <a href="https://wa.me//5543984381586?text=<?php echo urlencode($produto['nome']); ?>" target="_blank" class="btn-comprar">
                                 Tenho Interesse
                             </a>
                         </div>
