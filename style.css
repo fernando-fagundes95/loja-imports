@@ -809,6 +809,143 @@ a {
 
 
 
+
+/* ==================== ESTILOS DO CARRINHO LATERAL ==================== */
+.carrinho-icone {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+
+.carrinho-icone:hover {
+    background-color: rgba(219, 144, 155, 0.15);
+}
+
+#carrinho-contador {
+    background-color: #db909b;
+    color: white;
+    font-size: 0.75rem;
+    font-weight: bold;
+    padding: 2px 6px;
+    border-radius: 50%;
+}
+
+/* Painel Lateral */
+.carrinho-lateral {
+    position: fixed;
+    top: 0;
+    right: -400px; /* Começa escondido para fora da tela */
+    width: 380px;
+    height: 100%;
+    background-color: #fff;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    transition: right 0.4s ease; /* Efeito suave ao deslizar */
+}
+
+/* Classe que o JavaScript vai adicionar para abrir a sacola */
+.carrinho-lateral.aberto {
+    right: 0;
+}
+
+.carrinho-cabecalho {
+    padding: 20px;
+    background-color: #db909b;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.carrinho-cabecalho h2 {
+    margin: 0;
+    font-size: 1.4rem;
+}
+
+.btn-fechar {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    line-height: 1;
+}
+
+/* Área dos Itens */
+.carrinho-itens {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto; /* Adiciona rolagem se tiver muitos perfumes */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.carrinho-vazio {
+    text-align: center;
+    color: #888;
+    margin-top: 40px;
+    font-style: italic;
+}
+
+/* Rodapé e Botão Finalizar */
+.carrinho-rodape {
+    padding: 20px;
+    border-top: 1px solid #eee;
+    background-color: #fafafa;
+}
+
+.carrinho-total {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.btn-finalizar-compra {
+    display: block;
+    background-color: #db909b;
+    color: white;
+    text-align: center;
+    padding: 12px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.btn-finalizar-compra:hover {
+    background-color: #c47f89;
+}
+
+/* Fundo Escuro de Foco (Overlay) */
+.carrinho-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 9998;
+    display: none; /* Começa escondido */
+}
+
+.carrinho-overlay.visivel {
+    display: block;
+}
+
+
 /* ==========================
    RESPONSIVIDADE
 ========================== */

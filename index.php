@@ -47,6 +47,9 @@ $resultado = $conexao->query("SELECT * FROM produtos");
             <a href="#masculinos">Masculinos</a>
             <a href="#arabes">Perfumes Árabes</a>
             <a href="#cosmeticos">Cosméticos</a>
+            <button id="btn-abrir-carrinho" class="carrinho-icone">
+                🛒 <span id="carrinho-contador">0</span>
+            </button>
         </nav>
 
         <a href="#produtos" class="botao-cabecalho">
@@ -353,6 +356,62 @@ $resultado = $conexao->query("SELECT * FROM produtos");
     </footer>
 
 
+<!-- Estrutura do Carrinho Lateral -->
+<div id="carrinho-lateral" class="carrinho-lateral">
+    <div class="carrinho-cabecalho">
+        <h2>Minha Sacola</h2>
+        <button id="btn-fechar-carrinho" class="btn-fechar">&times;</button>
+    </div>
+
+    <!-- O JavaScript vai jogar os perfumes escolhidos aqui dentro -->
+    <div id="carrinho-itens" class="carrinho-itens">
+        <p class="carrinho-vazio">Sua sacola está vazia...</p>
+    </div>
+
+    <div class="carrinho-rodape">
+        <div class="carrinho-total">
+            <span>Total:</span>
+            <span id="carrinho-valor-total">R$ 0,00</span>
+        </div>
+        <!-- Botão final que vai gerar o link com todos os produtos -->
+        <a href="#" id="btn-enviar-whatsapp" target="_blank" class="btn-finalizar-compra">
+            Enviar Pedido para o WhatsApp
+        </a>
+    </div>
+</div>
+
+<!-- Fundo escuro que aparece atrás do carrinho -->
+<div id="carrinho-overlay" class="carrinho-overlay"></div>
+
+
+<!-- Código JavaScript para Abrir e Fechar o Carrinho -->
+<script>
+    const btnAbrir = document.getElementById('btn-abrir-carrinho');
+    const btnFechar = document.getElementById('btn-fechar-carrinho');
+    const carrinho = document.getElementById('carrinho-lateral');
+    const overlay = document.getElementById('carrinho-overlay');
+
+    // Função para abrir a sacola
+    btnAbrir.addEventListener('click', () => {
+        carrinho.classList.add('aberto');
+        overlay.classList.add('visivel');
+    });
+
+    // Função para fechar clicando no X
+    btnFechar.addEventListener('click', () => {
+        carrinho.classList.remove('aberto');
+        overlay.classList.remove('visivel');
+    });
+
+    // Função para fechar se clicar no fundo escuro fora da sacola
+    overlay.addEventListener('click', () => {
+        carrinho.classList.remove('aberto');
+        overlay.classList.remove('visivel');
+    });
+
+
+    
+</script>
 </body>
 
 </html>
