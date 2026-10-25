@@ -357,119 +357,148 @@ $resultado = $conexao->query("SELECT * FROM produtos");
     </footer>
 
 
-  <!-- Estrutura do Carrinho Lateral -->
-<div id="carrinho-lateral" class="carrinho-lateral">
-    <div class="carrinho-cabecalho">
-        <h2>Minha Sacola</h2>
-        <button id="btn-fechar-carrinho" class="btn-fechar">&times;</button>
-    </div>
-
-    <div id="carrinho-itens" class="carrinho-itens">
-        <p class="carrinho-vazio">Sua sacola está vazia...</p>
-    </div>
-
-    <div class="carrinho-rodape">
-        <div class="carrinho-total">
-            <span>Total:</span>
-            <span id="carrinho-valor-total">R$ 0,00</span>
+    <!-- Estrutura do Carrinho Lateral -->
+    <div id="carrinho-lateral" class="carrinho-lateral">
+        <div class="carrinho-cabecalho">
+            <h2>Minha Sacola</h2>
+            <button id="btn-fechar-carrinho" class="btn-fechar">&times;</button>
         </div>
-        <a href="#" id="btn-enviar-whatsapp" target="_blank" class="btn-finalizar-compra">
-            Enviar Pedido para o WhatsApp
-        </a>
+
+        <div id="carrinho-itens" class="carrinho-itens">
+            <p class="carrinho-vazio">Sua sacola está vazia...</p>
+        </div>
+
+        <div class="carrinho-rodape">
+            <div class="carrinho-total">
+                <span>Total:</span>
+                <span id="carrinho-valor-total">R$ 0,00</span>
+            </div>
+            <a href="#" id="btn-enviar-whatsapp" target="_blank" class="btn-finalizar-compra">
+                Enviar Pedido para o WhatsApp
+            </a>
+        </div>
     </div>
-</div>
 
-<div id="carrinho-overlay" class="carrinho-overlay"></div>
+    <div id="carrinho-overlay" class="carrinho-overlay"></div>
 
-<!-- Código do Carrinho Inteligente Blindado -->
-<script>
-    const carrinho = document.getElementById('carrinho-lateral');
-    const overlay = document.getElementById('carrinho-overlay');
-    const btnAbrir = document.getElementById('btn-abrir-carrinho');
-    const btnFechar = document.getElementById('btn-fechar-carrinho');
-    
-    const carrinhoItensContainer = document.getElementById('carrinho-itens');
-    const carrinhoContador = document.getElementById('carrinho-contador');
-    const carrinhoValorTotal = document.getElementById('carrinho-valor-total');
-    const btnEnviarWhatsapp = document.getElementById('btn-enviar-whatsapp');
+    <!-- Código do Carrinho Inteligente Blindado -->
+    <script>
+        const carrinho = document.getElementById('carrinho-lateral');
+        const overlay = document.getElementById('carrinho-overlay');
+        const btnAbrir = document.getElementById('btn-abrir-carrinho');
+        const btnFechar = document.getElementById('btn-fechar-carrinho');
 
-    let itensSacola = [];
+        const carrinhoItensContainer = document.getElementById('carrinho-itens');
+        const carrinhoContador = document.getElementById('carrinho-contador');
+        const carrinhoValorTotal = document.getElementById('carrinho-valor-total');
+        const btnEnviarWhatsapp = document.getElementById('btn-enviar-whatsapp');
 
-    // Funções para abrir e fechar
-    if(btnAbrir) btnAbrir.addEventListener('click', () => { carrinho.classList.add('aberto'); overlay.classList.add('visivel'); });
-    if(btnFechar) btnFechar.addEventListener('click', () => { carrinho.classList.remove('aberto'); overlay.classList.remove('visivel'); });
-    if(overlay) overlay.addEventListener('click', () => { carrinho.classList.remove('aberto'); overlay.classList.remove('visivel'); });
+        let itensSacola = [];
 
-    // Escuta o clique nos botões de "Tenho Interesse" de forma super segura
-    document.addEventListener('click', function(e) {
-        if (e.target && e.target.classList.contains('btn-add-carrinho')) {
-            e.preventDefault();
-            
-            const nome = e.target.getAttribute('data-nome');
-            const preco = parseFloat(e.target.getAttribute('data-preco'));
-
-            if (!nome || isNaN(preco)) return;
-
-            const itemExistente = itensSacola.find(item => item.nome === nome);
-
-            if (itemExistente) {
-                itemExistente.quantidade++;
-            } else {
-                itensSacola.push({ nome: nome, preco: preco, quantidade: 1 });
-            }
-
+        // Função para remover um produto completamente da sacola e descontar o valor
+        function removerDaSacola(nomeProduto) {
+            itensSacola = itensSacola.filter(item => item.nome !== nomeProduto);
             atualizarInterfaceCarrinho();
-            
-            // Força a sacola a abrir na tela
+        }
+
+        // Funções para abrir e fechar a sacola lateral
+        if (btnAbrir) btnAbrir.addEventListener('click', () => {
             carrinho.classList.add('aberto');
             overlay.classList.add('visivel');
-        }
-    });
-
-    function atualizarInterfaceCarrinho() {
-        carrinhoItensContainer.innerHTML = '';
-        
-        if (itensSacola.length === 0) {
-            carrinhoItensContainer.innerHTML = '<p class="carrinho-vazio">Sua sacola está vazia...</p>';
-            if(carrinhoContador) carrinhoContador.innerText = '0';
-            if(carrinhoValorTotal) carrinhoValorTotal.innerText = 'R$ 0,00';
-            if(btnEnviarWhatsapp) btnEnviarWhatsapp.setAttribute('href', '#');
-            return;
-        }
-
-        let totalGeral = 0;
-        let totalItens = 0;
-        let textoMensagemWhats = "Olá! Gostaria de encomendar os seguintes perfumes na Bella Fagundes:\n\n";
-
-        itensSacola.forEach(item => {
-            const subtotal = item.preco * item.quantidade;
-            totalGeral += subtotal;
-            totalItens += item.quantidade;
-
-            const divItem = document.createElement('div');
-            divItem.style.display = 'flex';
-            divItem.style.justifyContent = 'space-between';
-            divItem.style.alignItems = 'center';
-            divItem.style.borderBottom = '1px solid #eee';
-            divItem.style.paddingBottom = '10px';
-            divItem.innerHTML = `
-                <div style="text-align: left;">
-                    <h4 style="margin:0; font-size:1rem; color:#333;">${item.nome}</h4>
-                    <small style="color:#888;">Qtd: ${item.quantidade} x R$ ${item.preco.toFixed(2).replace('.', ',')}</small>
-                </div>
-                <strong style="color:#db909b;">R$ ${subtotal.toFixed(2).replace('.', ',')}</strong>
-            `;
-            carrinhoItensContainer.appendChild(divItem);
-
-            textoMensagemWhats += `- ${item.nome} (Qtd: ${item.quantidade}) - R$ ${subtotal.toFixed(2).replace('.', ',')}\n`;
+        });
+        if (btnFechar) btnFechar.addEventListener('click', () => {
+            carrinho.classList.remove('aberto');
+            overlay.classList.remove('visivel');
+        });
+        if (overlay) overlay.addEventListener('click', () => {
+            carrinho.classList.remove('aberto');
+            overlay.classList.remove('visivel');
         });
 
-        if(carrinhoContador) carrinhoContador.innerText = totalItens;
-        if(carrinhoValorTotal) carrinhoValorTotal.innerText = `R$ ${totalGeral.toFixed(2).replace('.', ',')}`;
+        // Escuta o clique nos botões de "Tenho Interesse"
+        document.addEventListener('click', function(e) {
+            if (e.target && e.target.classList.contains('btn-add-carrinho')) {
+                e.preventDefault();
 
-        textoMensagemWhats += `\n*Total do Pedido:* R$ ${totalGeral.toFixed(2).replace('.', ',')}`;
-        if(btnEnviarWhatsapp) btnEnviarWhatsapp.setAttribute('href', `https://wa.me{encodeURIComponent(textoMensagemWhats)}`);
-    }
-</script>
+                const nome = e.target.getAttribute('data-nome');
+                const preco = parseFloat(e.target.getAttribute('data-preco'));
+
+                if (!nome || isNaN(preco)) return;
+
+                const itemExistente = itensSacola.find(item => item.nome === nome);
+
+                if (itemExistente) {
+                    itemExistente.quantidade++;
+                } else {
+                    itensSacola.push({
+                        nome: nome,
+                        preco: preco,
+                        quantidade: 1
+                    });
+                }
+
+                atualizarInterfaceCarrinho();
+
+                carrinho.classList.add('aberto');
+                overlay.classList.add('visivel');
+            }
+        });
+
+        // Função para renderizar os produtos na tela e gerar o link correto do WhatsApp
+        function atualizarInterfaceCarrinho() {
+            carrinhoItensContainer.innerHTML = '';
+
+            if (itensSacola.length === 0) {
+                carrinhoItensContainer.innerHTML = '<p class="carrinho-vazio">Sua sacola está vazia...</p>';
+                if (carrinhoContador) carrinhoContador.innerText = '0';
+                if (carrinhoValorTotal) carrinhoValorTotal.innerText = 'R$ 0,00';
+                if (btnEnviarWhatsapp) btnEnviarWhatsapp.setAttribute('href', '#');
+                return;
+            }
+
+            let totalGeral = 0;
+            let totalItens = 0;
+            let textoMensagemWhats = "Olá! Gostaria de encomendar os seguintes perfumes na Bella Fagundes Imports:\n\n";
+
+            itensSacola.forEach(item => {
+                const subtotal = item.preco * item.quantidade;
+                totalGeral += subtotal;
+                totalItens += item.quantidade;
+
+                const divItem = document.createElement('div');
+                divItem.style.display = 'flex';
+                divItem.style.justifyContent = 'space-between';
+                divItem.style.alignItems = 'center';
+                divItem.style.borderBottom = '1px solid #eee';
+                divItem.style.paddingBottom = '10px';
+                divItem.style.marginBottom = '15px';
+
+                divItem.innerHTML = `
+                <div style="text-align: left;">
+                    <h4 style="margin:0; font-size:1rem; color:#333; font-family: 'Montserrat', sans-serif;">${item.nome}</h4>
+                    <small style="color:#888;">Qtd: ${item.quantidade} x R$ ${item.preco.toFixed(2).replace('.', ',')}</small>
+                </div>
+                <div style="display: flex; align-items: center; gap: 12px;">
+                    <strong style="color:#db909b;">R$ ${subtotal.toFixed(2).replace('.', ',')}</strong>
+                    <button onclick="removerDaSacola('${item.nome}')" style="background: none; border: none; color: #ff4d4d; font-size: 22px; font-weight: bold; cursor: pointer; padding: 0 5px; line-height: 1;">&times;</button>
+                </div>
+            `;
+
+                carrinhoItensContainer.appendChild(divItem);
+                textoMensagemWhats += `- ${item.nome} (Qtd: ${item.quantidade}) - R$ ${subtotal.toFixed(2).replace('.', ',')}\n`;
+            });
+
+            if (carrinhoContador) carrinhoContador.innerText = totalItens;
+            if (carrinhoValorTotal) carrinhoValorTotal.innerText = `R$ ${totalGeral.toFixed(2).replace('.', ',')}`;
+
+            textoMensagemWhats += `\n*Total do Pedido:* R$ ${totalGeral.toFixed(2).replace('.', ',')}`;
+
+            // Link perfeitamente estruturado e direcionado para o seu WhatsApp comercial
+            if (btnEnviarWhatsapp) {
+                btnEnviarWhatsapp.setAttribute('href', `https://wa.me/5543984381586?text=${encodeURIComponent(textoMensagemWhats)}`);
+            }
+        }
+    </script>
 </body>
+
 </html>
