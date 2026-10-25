@@ -164,6 +164,8 @@ $resultado = $conexao->query("SELECT * FROM produtos");
                                 <?php echo $produto['descricao']; ?>
                             </p>
 
+
+
                             <div class="produto-meta">
                                 <span class="produto-preco">
                                     R$ <?php echo number_format($produto['preco'], 2, ',', '.'); ?>
