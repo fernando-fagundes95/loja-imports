@@ -3,7 +3,7 @@
 include("conexao.php");
 
 // Busca todos os produtos cadastrados no banco de dados
-$resultado = $conexao->query("SELECT * FROM produtos ORDER BY promocao ASC, id DESC");
+$resultado = $conexao->query("SELECT * FROM produtos WHERE promocao = 0 ORDER BY id DESC");
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -207,72 +207,59 @@ $resultado = $conexao->query("SELECT * FROM produtos ORDER BY promocao ASC, id D
 
             </section>
 
-
-
-            <section class="secao-produtos-promocao" id="ofertas-promocao">
-
+            <!-- ==========================================
+         SEÇÃO DE OFERTAS IMPERDÍVEIS AUTOMÁTICA
+         ========================================== -->
+            <section class="secao-produtos-promocao" id="ofertas-promocao" style="background-color: #f9f9f9; padding: 40px 20px; text-align: center; width: 100%; box-sizing: border-box;">
                 <div class="topo-ofertas">
-                    <span class="badge-topo">🔥 OPORTUNIDADE ÚNICA</span>
-                    <h2>Ofertas Imperdíveis</h2>
-                    <p>Garanta os perfumes mais desejados com descontos especiais por tempo limitado.</p>
+                    <span class="badge-top" style="color: #bfa37c; font-weight: bold; letter-spacing: 1px; font-size: 12px; display: block; margin-bottom: 5px;">✨ OPORTUNIDADE ÚNICA</span>
+                    <h2 style="color: #333; font-size: 28px; margin-bottom: 5px; font-weight: bold;">Ofertas Imperdíveis</h2>
+                    <p style="color: #666; font-size: 14px; margin-bottom: 30px;">Garanta os perfumes mais desejados com descontos especiais por tempo limitado.</p>
                 </div>
 
-
-                <!-- O loop do PHP vai rodar aqui dentro puxando do banco de dados -->
-                <div class="produtos-grid" style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; padding: 20px;">
+                <!-- Container que segura os cards perfeitamente alinhados -->
+                <div class="produtos-grid" style="display: flex; flex-wrap: wrap; gap: 25px; justify-content: center; width: 100%; max-width: 1200px; margin: 0 auto;">
                     <?php
-                    // 1. Busca no banco de dados apenas os produtos com promocao = 1
-                    $query_ofertas = "SELECT * FROM produtos WHERE promocao = 1 LIMIT 3";
+                    // Busca os produtos com promocao igual a 1
+                    $query_ofertas = "SELECT * FROM produtos WHERE promocao = 1 ORDER BY id DESC";
                     $result_ofertas = mysqli_query($conexao, $query_ofertas);
 
-                    // 2. O loop "while" vai duplicar essa estrutura para cada produto em promoção
-                    while ($produto = mysqli_fetch_assoc($result_ofertas)) {
+                    while ($produto_promo = mysqli_fetch_assoc($result_ofertas)) {
                     ?>
-                        <article class="card-produto" id="femininos">
-                            <div class="imagem-produto imagem-escura">
-                                <span class="selo-vitrine selo-novidade">✨ LANÇAMENTO</span>
-                                <img src="IMG-Bellafagundes/<?php echo $produto['imagem']; ?>" alt="<?php echo $produto['nome']; ?>" loading="lazy">
+                        <article class="card-produto" style="width: 250px !important; max-width: 250px !important; flex: 1 1 250px !important; background: white; padding: 15px; border-radius: 8px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 4px 6px rgba(0,0,0,0.05); min-height: 440px; text-align: left; box-sizing: border-box;">
+
+                            <!-- Foto do Perfume Tratada -->
+                            <div style="width: 100%; height: 180px; display: flex; align-items: center; justify-content: center; overflow: hidden; margin-bottom: 10px; position: relative; background: #fff;">
+                                <span style="position: absolute; top: 5px; left: 5px; background: #bfa37c; color: white; font-size: 10px; padding: 3px 8px; font-weight: bold; border-radius: 3px; text-transform: uppercase;">PROMOÇÃO</span>
+                                <a href="produto.php?id=<?php echo $produto_promo['id']; ?>">
+                                    <img src="IMG-Bellafagundes/<?php echo $produto_promo['imagem']; ?>" alt="<?php echo $produto_promo['nome']; ?>" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+                                </a>
                             </div>
 
-                            <div class="informacoes-produto">
-                                <span class="categoria-produto"><?php echo strtoupper($produto['categoria']); ?></span>
-                                <h3><?php echo $produto['nome']; ?></h3>
-                                <p><?php echo $produto['descricao']; ?></p>
-                                <div class="preco">R$ <?php echo number_format($produto['preco'], 2, ',', '.'); ?></div>
+                            <!-- Dados do Perfume -->
+                            <div style="flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
+                                <div>
+                                    <span style="font-size: 11px; color: #bfa37c; font-weight: bold; text-transform: uppercase;"><?php echo $produto_promo['marca']; ?></span>
+                                    <h4 style="margin: 5px 0; font-size: 16px; color: #333; font-weight: bold;"><?php echo $produto_promo['nome']; ?> (<?php echo $produto_promo['ml']; ?>ml)</h4>
+                                    <p style="font-size: 12px; color: #777; line-height: 1.4; margin: 5px 0; height: 34px; overflow: hidden; text-overflow: ellipsis;"><?php echo $produto_promo['descricao']; ?></p>
+                                </div>
 
-                                <!-- Botão do WhatsApp dinâmico com o nome do perfume -->
-                                <button class="botao-produto btn-novidade btn-add-carrinho"
-                                    data-nome="<?php echo $produto['nome']; ?>"
-                                    data-preco="<?php echo $produto['preco']; ?>">
-                                    Tenho interesse
-                                </button>
+                                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 15px;">
+                                    <strong style="font-size: 18px; color: #333;">R$ <?php echo number_format($produto_promo['preco'], 2, ',', '.'); ?></strong>
+                                    <span style="font-size: 11px; color: #666; background: #f5f5f5; padding: 2px 6px; border-radius: 4px;">Qtd: <?php echo $produto_promo['quantidade']; ?></span>
+                                </div>
                             </div>
+
+                            <!-- Botão do WhatsApp sob medida -->
+                            <a href="https://wa.me<?php echo urlencode($produto_promo['nome']); ?>" target="_blank" style="display: block; width: 100%; text-align: center; background: #bfa37c; color: white; padding: 10px 0; margin-top: 15px; text-decoration: none; font-weight: bold; border-radius: 4px; font-size: 14px;">
+                                Tenho Interesse
+                            </a>
                         </article>
                     <?php
                     }
                     ?>
                 </div>
-            </section> <!-- Fecha a seção principal no lugar correto -->
-
-
-
-            <!-- PRODUTO 4 (DESCONTO COSMÉTICOS) -->
-            <article class="card-produto" id="cosmeticos">
-                <div class="imagem-produto imagem-clara">
-                    <span class="selo-vitrine selo-desconto-longo">🔥 LEVE 2 COM DESCONTO ESPECIAL 🤑</span>
-                    <img src="IMG-Bellafagundes/cosmeticos.jpg" alt="Kit de Cosméticos Premium" loading="lazy">
-                </div>
-
-                <div class="informacoes-produto">
-                    <span class="categoria-produto">BELEZA E CUIDADOS</span>
-                    <h3>Kit de Cosméticos Premium</h3>
-                    <p>Seu momento de autocuidado diário em super oferta.</p>
-                    <div class="preco">Consulte o preço</div>
-                    <a href="#contato" class="botao-produto btn-desconto">Aproveitar Oferta</a>
-                </div>
-            </article>
-
-
+            </section>
 
 
             <!-- DIFERENCIAIS -->
