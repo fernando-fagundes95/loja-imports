@@ -26,8 +26,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (move_uploaded_file($imagem_tmp, $pasta_destino)) {
 
         // Se a foto foi movida com sucesso, faz o INSERT no banco de dados
-        $sql = "INSERT INTO produtos (nome, marca, ml, preco, quantidade, categoria, descricao, imagem, promocao) 
-            VALUES ('$nome', '$marca', '$ml', '$preco', '$quantidade', '$categoria', '$descricao', '$imagem_nome', '$promocao')";
+         $sql = "INSERT INTO produtos (nome, marca, ml, preco, quantidade, categoria, descricao, imagem, promocao) 
+                VALUES ('$nome', '$marca', '$ml', '$preco', '$quantidade', '$categoria', '$descricao', '$imagem_nome', '$promocao')";
         if (mysqli_query($conexao, $sql)) {
             // Se deu tudo certo, exibe um aviso e volta para o formulário
             echo "<script>alert('Perfume cadastrado com sucesso!'); window.location.href='admin.php';</script>";

@@ -115,9 +115,9 @@ include("conexao.php");
 
 
             <label>Produto em Promoção?</label>
-            <select name="promocao" required>
-                <option value="Não" selected>Não (Produto Normal)</option>
-                <option value="Sim">Sim (Ir para o final da página)</option>
+            <select name="promocao">
+                <option value="0">Não (Produto Normal)</option>
+                <option value="1">Sim (Ir para o final da página)</option>
             </select>
 
             <label>Descrição do Perfume:</label>
