@@ -148,10 +148,13 @@ $resultado = $conexao->query("SELECT * FROM produtos WHERE promocao = 0 ORDER BY
             </div>
             <div class="produtos">
                 <?php while ($produto = $resultado->fetch_assoc()): ?>
+
                     <article class="card-produto">
                         <div class="produto-imagem-wrapper">
-
-                            <img src="IMG-Bellafagundes/<?php echo $produto['imagem']; ?>">
+                            <!-- CLIQUE NA FOTO: Abre os detalhes do produto de cima -->
+                            <a href="produto.php?id=<?php echo $produto['id']; ?>">
+                                <img src="IMG-Bellafagundes/<?php echo $produto['imagem']; ?>" alt="<?php echo $produto['nome']; ?>">
+                            </a>
                         </div>
 
                         <div class="produto-info">
@@ -159,8 +162,11 @@ $resultado = $conexao->query("SELECT * FROM produtos WHERE promocao = 0 ORDER BY
                                 <?php echo $produto['marca']; ?> | <?php echo $produto['categoria']; ?>
                             </span>
 
-                            <h4 class="produto-nome">
-                                <?php echo $produto['nome']; ?> (<?php echo $produto['ml']; ?>)
+                            <h4 class="produto-name">
+                                <!-- CLIQUE NO NOME: Também abre a página de detalhes se clicar aqui -->
+                                <a href="produto.php?id=<?php echo $produto['id']; ?>" style="text-decoration: none; color: inherit;">
+                                    <?php echo $produto['nome']; ?> (<?php echo $produto['ml']; ?>ml)
+                                </a>
                             </h4>
 
                             <p class="produto-desc">
@@ -251,9 +257,10 @@ $resultado = $conexao->query("SELECT * FROM produtos WHERE promocao = 0 ORDER BY
                             </div>
 
                             <!-- Botão do WhatsApp sob medida -->
-                            <a href="https://wa.me<?php echo urlencode($produto_promo['nome']); ?>" target="_blank" style="display: block; width: 100%; text-align: center; background: #bfa37c; color: white; padding: 10px 0; margin-top: 15px; text-decoration: none; font-weight: bold; border-radius: 4px; font-size: 14px;">
-                                Tenho Interesse
-                            </a>
+                            <!-- Botão Dinâmico que manda o produto em oferta direto para a Sacola Rosa -->
+                            <button onclick="adicionarNaSacola(<?php echo $produto_promo['id']; ?>, '<?php echo addslashes($produto_promo['nome']); ?>', <?php echo $produto_promo['preco']; ?>, 'IMG-Bellafagundes/<?php echo $produto_promo['imagem']; ?>')" class="btn-comprar btn-add-carrinho" data-nome="<?php echo $produto_promo['nome']; ?>" data-preco="<?php echo $produto_promo['preco']; ?>" style="display: block; width: 100%; text-align: center; background: #bfa37c; color: white; padding: 10px 0; margin-top: 15px; border: none; font-weight: bold; border-radius: 4px; font-size: 14px; cursor: pointer;">
+                                Adicionar à Sacola
+                            </button>
                         </article>
                     <?php
                     }
