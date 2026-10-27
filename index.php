@@ -3,7 +3,7 @@
 include("conexao.php");
 
 // Busca todos os produtos cadastrados no banco de dados
-$resultado = $conexao->query("SELECT * FROM produtos");
+$resultado = $conexao->query("SELECT * FROM produtos ORDER BY promocao ASC, id DESC");
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -216,56 +216,45 @@ $resultado = $conexao->query("SELECT * FROM produtos");
                     <h2>Ofertas Imperdíveis</h2>
                     <p>Garanta os perfumes mais desejados com descontos especiais por tempo limitado.</p>
                 </div>
-            </section>
 
-            <!-- PRODUTO 1 (LANÇAMENTO FEMININO) -->
-            <article class="card-produto" id="femininos">
-                <div class="imagem-produto imagem-escura">
-                    <span class="selo-vitrine selo-novidade">✨ LANÇAMENTO</span>
-                    <!-- Pasta corrigida para o seu padrão real -->
-                    <img src="IMG-Bellafagundes/coco-noir.jpg" alt="Perfume Coco Noir Chanel" loading="lazy">
-                </div>
 
-                <div class="informacoes-produto">
-                    <span class="categoria-produto">PERFUMARIA FEMININA</span>
-                    <h3>Perfume Coco Noir Chanel</h3>
-                    <p>A nova definição de luxo e sofisticação marcante.</p>
-                    <div class="preco">Consulte o preço</div>
-                    <a href="#contato" class="botao-produto btn-novidade">Tenho interesse</a>
-                </div>
-            </article>
+                <!-- O loop do PHP vai rodar aqui dentro puxando do banco de dados -->
+                <div class="produtos-grid" style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; padding: 20px;">
+                    <?php
+                    // 1. Busca no banco de dados apenas os produtos com promocao = 1
+                    $query_ofertas = "SELECT * FROM produtos WHERE promocao = 1 LIMIT 3";
+                    $result_ofertas = mysqli_query($conexao, $query_ofertas);
 
-            <!-- PRODUTO 2 (LANÇAMENTO MASCULINO) -->
-            <article class="card-produto" id="masculinos">
-                <div class="imagem-produto imagem-bege">
-                    <span class="selo-vitrine selo-novidade">✨ LANÇAMENTO</span>
-                    <img src="IMG-Bellafagundes/bleu-chanel.jpg" alt="Bleu de Chanel Masculino" loading="lazy">
-                </div>
+                    // 2. O loop "while" vai duplicar essa estrutura para cada produto em promoção
+                    while ($produto = mysqli_fetch_assoc($result_ofertas)) {
+                    ?>
+                        <article class="card-produto" id="femininos">
+                            <div class="imagem-produto imagem-escura">
+                                <span class="selo-vitrine selo-novidade">✨ LANÇAMENTO</span>
+                                <img src="IMG-Bellafagundes/<?php echo $produto['imagem']; ?>" alt="<?php echo $produto['nome']; ?>" loading="lazy">
+                            </div>
 
-                <div class="informacoes-produto">
-                    <span class="categoria-produto">PERFUMARIA MASCULINA</span>
-                    <h3>Bleu de Chanel Masculino</h3>
-                    <p>Presença inesquecível com notas frescas e marcantes.</p>
-                    <div class="preco">Consulte o preço</div>
-                    <a href="#contato" class="botao-produto btn-novidade">Tenho interesse</a>
-                </div>
-            </article>
+                            <div class="informacoes-produto">
+                                <span class="categoria-produto"><?php echo strtoupper($produto['categoria']); ?></span>
+                                <h3><?php echo $produto['nome']; ?></h3>
+                                <p><?php echo $produto['descricao']; ?></p>
+                                <div class="preco">R$ <?php echo number_format($produto['preco'], 2, ',', '.'); ?></div>
 
-            <!-- PRODUTO 3 (DESCONTO ÁRABE/FRANCÊS) -->
-            <article class="card-produto" id="arabes">
-                <div class="imagem-produto imagem-dourada">
-                    <span class="selo-vitrine selo-desconto">🔥 30% OFF</span>
-                    <img src="IMG-Bellafagundes/perfume-frances.jpg" alt="Perfume Francês Especial" loading="lazy">
+                                <!-- Botão do WhatsApp dinâmico com o nome do perfume -->
+                                <button class="botao-produto btn-novidade btn-add-carrinho"
+                                    data-nome="<?php echo $produto['nome']; ?>"
+                                    data-preco="<?php echo $produto['preco']; ?>">
+                                    Tenho interesse
+                                </button>
+                            </div>
+                        </article>
+                    <?php
+                    }
+                    ?>
                 </div>
+            </section> <!-- Fecha a seção principal no lugar correto -->
 
-                <div class="informacoes-produto">
-                    <span class="categoria-produto">PERFUMARIA FRANCESA</span>
-                    <h3>Perfume Francês Especial</h3>
-                    <p>Intensidade e exclusividade com preço promocional.</p>
-                    <div class="preco">Consulte o preço</div>
-                    <a href="#contato" class="botao-produto btn-desconto">Aproveitar Oferta</a>
-                </div>
-            </article>
+
 
             <!-- PRODUTO 4 (DESCONTO COSMÉTICOS) -->
             <article class="card-produto" id="cosmeticos">
