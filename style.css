@@ -1620,77 +1620,76 @@ img.produto-foto {
     margin: 0 auto !important;
 }
 
-/* Deixar o card de produto maior */
-.card-produto {
+
+
+
+
+
+
+
+
+
+/* Bloco Unificado Definido por Você: Tamanho Ideal e Cor Nova */
+.produtos article,
+.produtos .card-produto,
+.card-produto,
+.ofertas article, 
+.secao-ofertas article, 
+.ofertas-imperdiveis article,
+div[class*="oferta"] article {
     width: 350px !important;
+    min-width: 350px !important;
     max-width: 350px !important;
     flex: 0 0 350px !important;
+    height: 540px !important;
     margin: 15px !important;
-}
-
-
-/* Forçar todos os cards a terem exatamente o mesmo tamanho */
-.card-produto {
+    padding: 22px !important;
     display: flex !important;
     flex-direction: column !important;
     justify-content: space-between !important;
-    height: 430px !important;
-    /* Ajuste essa altura se precisar de mais espaço */
+    box-sizing: border-box !important;
+    background: #f5deda !important; /* SUA COR NOVA AQUI! */
+    border-radius: 14px !important;
+    border: 1px solid #ebd2ce !important;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05) !important;
 }
 
-/* Fixar o tamanho da imagem do produto */
-.card-produto img {
-    width: 100% !important;
-    height: 220px !important;
+/* Tamanho de imagem calibrado */
+.produtos article img,
+.card-produto img,
+.ofertas article img,
+.secao-ofertas img, 
+div[class*="oferta"] article img {
+    width:280px!important;
+    height: 280px !important;
     object-fit: cover !important;
+    border-radius: 5px !important;
 }
 
-/* Limitar o tamanho do bloco de texto e descrição */
-.card-produto .info-produto,
-.card-produto div:has(p) {
-    flex-grow: 1 !important;
-    display: flex !important;
-    flex-direction: column !important;
-    justify-content: flex-start !important;
+/* Nome do perfume (22px) */
+.card-produto h3, .card-produto h2, .card-produto .nome-produto {
+    font-size: 30px !important;
+    font-weight: bold !important;
+    margin-top: 12px !important;
+    line-height: 1.3 !important;
+    color: #222 !important;
 }
 
-/* Travar o botão e o preço na parte de baixo do card */
-.card-produto .btn-whats-detalhe,
-.card-produto button,
-.card-produto a {
-    margin-top: auto !important;
+/* Descrição (15px) */
+.card-produto p, .card-produto .descricao, .card-produto div {
+    font-size: 20px !important;
+    line-height: 1.45 !important;
+    color: #444 !important;
 }
 
-
-
-
-
-
-/* Trava o alinhamento no topo para os cards não mexerem os vizinhos no hover */
-.produtos {
-    display: flex !important;
-    flex-wrap: wrap !important;
-    align-items: flex-start !important;
-    /* ISSO TRAVA A LINHA */
-    justify-content: center !important;
-    margin-top: 30px !important;
-    /* ISSO CRIA O ESPAÇO PARA O DALAL SUBIR */
+/* Preço (23px) */
+.card-produto .preco, .card-produto div[class*="preco"], .card-produto strong {
+    font-size: 30px !important;
+    font-weight: bold !important;
+    color: #111 !important;
 }
 
-.card-produto {
-    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out !important;
-}
-
-/* Aplica o efeito de crescimento IGUAL para todos os cards no mouse */
-article.card-produto:hover, 
-.card-produto:hover {
-    transform: scale(1.03) !important; /* Faz o card crescer levemente para frente */
-    box-shadow: 0 10px 25px rgba(0,0,0,0.18) !important; /* Deixa a sombra marcante */
-    z-index: 10 !important; /* Garante que ele fique por cima dos outros ao crescer */
-}
-
-article.card-produto:hover,
-.card-produto:hover {
-    transform: translateY(-10px) !important;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15) !important;
+.card-produto .qtd, .card-produto span[class*="qtd"] {
+    font-size: 18.5px !important;
+    color: #666 !important;
 }
