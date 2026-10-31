@@ -2,8 +2,21 @@
 // Inclui o arquivo de conexão que criamos
 include("conexao.php");
 
-// Busca todos os produtos cadastrados no banco de dados
-$resultado = $conexao->query("SELECT * FROM produtos WHERE promocao = 0 ORDER BY id DESC");
+// Busca os produtos cadastrados filtrando pela pesquisa se o usuário digitou algo
+
+$busca = isset($_GET['busca']) ? $conexao->real_escape_string($_GET['busca']) : '';
+
+if ($busca != '') {
+    // Se o cliente buscou algo, procura por nome, marca ou descrição, mantendo a ordem dos mais novos
+    $sql = "SELECT * FROM produtos WHERE 
+            (nome LIKE '%$busca%' OR marca LIKE '%$busca%' OR descricao LIKE '%$busca%') 
+            ORDER BY id DESC";
+} else {
+    // Se não buscou nada, roda a sua query original que você já tinha deixado configurada
+    $sql = "SELECT * FROM produtos WHERE promocao = 0 ORDER BY id DESC";
+}
+
+$resultado = $conexao->query($sql);
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -137,19 +150,31 @@ $resultado = $conexao->query("SELECT * FROM produtos WHERE promocao = 0 ORDER BY
 
         <!-- PRODUTOS EM DESTAQUE -->
         <section class="secao-produtos" id="produtos">
+            <!-- Barra de Pesquisa com retorno automático -->
+            <div class="container-busca" style="text-align: center; margin: 0 auto 40px auto; width: 100%;">
+                <form action="index.php#produtos" method="GET" style="display: inline-flex; gap: 10px; width: 90%; max-width: 500px; justify-content: center; align-items: center;">
+                    <input type="text" name="busca" id="campo-busca" placeholder="Pesquisar perfume ou marca..."
+                        value="<?php echo isset($_GET['busca']) ? htmlspecialchars($_GET['busca']) : ''; ?>"
+                        oninput="if(this.value === '') { window.location.href='index.php#produtos'; }"
+                        style="flex: 1; padding: 12px 20px; border: 1px solid #f0e1e4; border-radius: 25px; font-family: 'Montserrat', sans-serif; outline: none; font-size: 15px;">
 
-
-
+                    <button type="submit" style="background-color: #b77b8e; color: white; border: none; padding: 12px 25px; border-radius: 25px; cursor: pointer; font-weight: 600; font-family: 'Montserrat', sans-serif; font-size: 15px; white-space: nowrap;">
+                        Buscar
+                    </button>
+                </form>
+            </div>
 
             <div class="titulo-secao">
                 <span>SELEÇÃO ESPECIAL</span>
                 <h2>Nossos destaques</h2>
                 <p>Encontre produtos para presentear ou se presentear.</p>
             </div>
-            <div class="produtos">
+           <div class="produtos" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; align-items: center; width: 100%; max-width: 1200px; margin: 0 auto;">
+
+
                 <?php while ($produto = $resultado->fetch_assoc()): ?>
 
-                    <article class="card-produto">
+                    <article class="card-produto" style="width: 250px !important; max-width: 250px !important; flex: 0 0 250px !important; margin: 10px !important;">
                         <div class="produto-imagem-wrapper">
                             <!-- CLIQUE NA FOTO: Abre os detalhes do produto de cima -->
                             <a href="produto.php?id=<?php echo $produto['id']; ?>">

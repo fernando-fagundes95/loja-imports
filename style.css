@@ -1,4 +1,3 @@
-
 /* ==========================
    CONFIGURAÇÕES GERAIS
 ========================== */
@@ -62,7 +61,7 @@ a {
 
 .cabecalho {
     width: 100%;
-  
+
     min-height: 100px;
     padding: 20px 6%;
     display: flex;
@@ -76,21 +75,28 @@ a {
 
 
 .logo-container {
-    width: 200px !important;       /* Tamanho ideal para o cabeçalho */
-    height: 200px !important;      /* Mantém a altura igual à largura */
-    background-color: #ffffff !important; /* Fundo branco para destacar no rosa */
-    border-radius: 50% !important;  /* Transforma o quadrado em círculo */
+    width: 200px !important;
+    /* Tamanho ideal para o cabeçalho */
+    height: 200px !important;
+    /* Mantém a altura igual à largura */
+    background-color: #ffffff !important;
+    /* Fundo branco para destacar no rosa */
+    border-radius: 50% !important;
+    /* Transforma o quadrado em círculo */
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-    overflow: hidden !important;   /* Corta os cantos da imagem que sobrarem */
-    padding: 10px !important;      /* Espaço para o nome não colar na borda */
+    overflow: hidden !important;
+    /* Corta os cantos da imagem que sobrarem */
+    padding: 10px !important;
+    /* Espaço para o nome não colar na borda */
 }
 
 .logo-container img {
     width: 100% !important;
     height: 100% !important;
-    object-fit: contain !important; /* Faz a foto se ajustar inteira dentro do círculo */
+    object-fit: contain !important;
+    /* Faz a foto se ajustar inteira dentro do círculo */
 }
 
 
@@ -121,9 +127,12 @@ a {
     display: inline-block;
     background-color: #b77b8e;
     color: #ffffff;
-    padding: 15px 28px;                     /* Aumentou o preenchimento (cima/baixo e lados) */
-    border-radius: 10px;                     /* Arredondou os cantos um pouquinho mais para ficar moderno */
-    font-size: 13px;                        /* Letra um pouco maior e mais visível */
+    padding: 15px 28px;
+    /* Aumentou o preenchimento (cima/baixo e lados) */
+    border-radius: 10px;
+    /* Arredondou os cantos um pouquinho mais para ficar moderno */
+    font-size: 13px;
+    /* Letra um pouco maior e mais visível */
     font-weight: 600;
     white-space: nowrap;
     transition: background-color 0.3s ease;
@@ -369,12 +378,13 @@ a {
 }
 
 .imagem-produto {
-    height: 250px; /* Reduzimos a altura fixa para dar mais espaço aos textos embaixo */
+    height: 250px;
+    /* Reduzimos a altura fixa para dar mais espaço aos textos embaixo */
     background-color: #ffffff;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 20px; 
+    padding: 20px;
     overflow: hidden;
     position: relative;
 }
@@ -386,9 +396,12 @@ a {
 
 
 .imagem-produto img {
-    max-width: 90% !important;  /* Usa max-width em vez de width para não esticar */
-    max-height: 90% !important; /* Usa max-height em vez de height para não achatar */
-    object-fit: contain !important; /* Garante a proporção perfeita do perfume */
+    max-width: 90% !important;
+    /* Usa max-width em vez de width para não esticar */
+    max-height: 90% !important;
+    /* Usa max-height em vez de height para não achatar */
+    object-fit: contain !important;
+    /* Garante a proporção perfeita do perfume */
     transition: transform 0.3s ease;
 }
 
@@ -407,12 +420,13 @@ a {
 }
 
 .imagem-clara {
-    background-color: #f5e8e5; 
+    background-color: #f5e8e5;
 }
 
 /* ... as informações de baixo do produto continuam normais ... */
 .selo {
-    position: absolute;}
+    position: absolute;
+}
 
 
 .selo {
@@ -486,10 +500,13 @@ a {
 
 .produtos {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr)); /* Muda de 4 para 3 colunas */
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    /* Muda de 4 para 3 colunas */
     gap: 25px;
-    max-width: 900px; /* Limita a largura máxima para os 3 cards ficarem bem centralizados */
-    margin: 0 auto;   /* Centraliza o bloco inteiro dos produtos na página */
+    max-width: 900px;
+    /* Limita a largura máxima para os 3 cards ficarem bem centralizados */
+    margin: 0 auto;
+    /* Centraliza o bloco inteiro dos produtos na página */
 }
 
 
@@ -498,7 +515,8 @@ a {
     background: #ffffff;
     border: 1px solid #eaeaea;
     border-radius: 8px;
-    width: 100%; /* MUDE DE 280px PARA 100% */
+    width: 100%;
+    /* MUDE DE 280px PARA 100% */
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
     transition: transform 0.3s ease;
@@ -739,12 +757,14 @@ a {
     gap: 50px;
     padding-bottom: 45px;
 }
+
 /* Mantém o tamanho original da foto e aplica apenas as bordas arredondadas */
 .logo-rodape {
     display: inline-block !important;
     margin-bottom: 20px !important;
     border-radius: 15px !important;
-    overflow: hidden !important; /* Corta os cantos retos da imagem */
+    overflow: hidden !important;
+    /* Corta os cantos retos da imagem */
 }
 
 
@@ -757,7 +777,7 @@ a {
     border-radius: 100px !important;
     overflow: hidden !important;
 
-    
+
 }
 
 
@@ -841,7 +861,8 @@ a {
 .carrinho-lateral {
     position: fixed;
     top: 0;
-    right: -400px; /* Começa escondido para fora da tela */
+    right: -400px;
+    /* Começa escondido para fora da tela */
     width: 380px;
     height: 100%;
     background-color: #fff;
@@ -849,7 +870,8 @@ a {
     z-index: 9999;
     display: flex;
     flex-direction: column;
-    transition: right 0.4s ease; /* Efeito suave ao deslizar */
+    transition: right 0.4s ease;
+    /* Efeito suave ao deslizar */
 }
 
 /* Classe que o JavaScript vai adicionar para abrir a sacola */
@@ -884,7 +906,8 @@ a {
 .carrinho-itens {
     flex: 1;
     padding: 20px;
-    overflow-y: auto; /* Adiciona rolagem se tiver muitos perfumes */
+    overflow-y: auto;
+    /* Adiciona rolagem se tiver muitos perfumes */
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -938,7 +961,8 @@ a {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.4);
     z-index: 9998;
-    display: none; /* Começa escondido */
+    display: none;
+    /* Começa escondido */
 }
 
 .carrinho-overlay.visivel {
@@ -1126,22 +1150,35 @@ a {
 }
 
 /* Remove o fundo branco das seções principais para revelar a imagem de luxo */
-main, section, .container, .categorias, .produtos {
+main,
+section,
+.container,
+.categorias,
+.produtos {
     background-color: transparent !important;
 }
 
 /* Deixa os cards de texto levemente transparentes e elegantes (opcional) */
-.card, .categoria-item, .produto-item {
+.card,
+.categoria-item,
+.produto-item {
     background-color: rgba(255, 255, 255, 0.85) !important;
-    backdrop-filter: blur(5px); /* Efeito de vidro fosco chique */
+    backdrop-filter: blur(5px);
+    /* Efeito de vidro fosco chique */
 }
 
 /* Ajusta as imagens de banner/destaque do meio do site */
-.banner img, .destaque img, section img {
-    width: 100%;                  /* Faz a imagem ocupar a largura total do bloco */
-    height: 350px !important;     /* Define uma altura fixa profissional e menor */
-    object-fit: cover !important; /* Corta as sobras e mantém a proporção perfeita da foto */
-    border-radius: 8px;           /* Arredonda levemente as bordas (combina com o estilo de luxo) */
+.banner img,
+.destaque img,
+section img {
+    width: 100%;
+    /* Faz a imagem ocupar a largura total do bloco */
+    height: 350px !important;
+    /* Define uma altura fixa profissional e menor */
+    object-fit: cover !important;
+    /* Corta as sobras e mantém a proporção perfeita da foto */
+    border-radius: 8px;
+    /* Arredonda levemente as bordas (combina com o estilo de luxo) */
 }
 
 
@@ -1159,18 +1196,23 @@ main, section, .container, .categorias, .produtos {
 
 .imagem-produto {
     width: 100% !important;
-    height: 250px !important;    /* Cria um espaço fixo perfeito para o quadrado da foto */
+    height: 250px !important;
+    /* Cria um espaço fixo perfeito para o quadrado da foto */
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
     overflow: hidden !important;
-    background-color: #ffffff !important; /* Deixa o fundo do quadradinho limpo */
+    background-color: #ffffff !important;
+    /* Deixa o fundo do quadradinho limpo */
 }
 
 .imagem-produto img {
-    width: 100% !important;      /* Força a imagem a ocupar toda a largura interna */
-    height: 100% !important;     /* Força a imagem a respeitar os 250px de altura */
-    object-fit: contain !important; /* Obriga o perfume inteiro a caber na tela sem cortes */
+    width: 100% !important;
+    /* Força a imagem a ocupar toda a largura interna */
+    height: 100% !important;
+    /* Força a imagem a respeitar os 250px de altura */
+    object-fit: contain !important;
+    /* Obriga o perfume inteiro a caber na tela sem cortes */
 }
 
 
@@ -1178,13 +1220,14 @@ main, section, .container, .categorias, .produtos {
 /* Força o container da imagem a ter um tamanho fixo perfeito no celular */
 .produto-imagem-wrapper {
     width: 100% !important;
-    height: 250px !important;    /* Limita a altura para o card não ficar gigante */
+    height: 250px !important;
+    /* Limita a altura para o card não ficar gigante */
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
     overflow: hidden !important;
     background-color: #ffffff !important;
-    
+
 }
 
 /* 4. Padroniza as imagens dentro dos quadrados sem cortar ou distorcer */
@@ -1199,8 +1242,9 @@ img.produto-foto {
     object-fit: contain !important;
     object-position: center !important;
     margin: 0 !important;
-    
-    transform: scale(1.0) !important; /* <-- VOCÊ VAI MUDAR APENAS ESTA LINHA! */
+
+    transform: scale(1.0) !important;
+    /* <-- VOCÊ VAI MUDAR APENAS ESTA LINHA! */
 }
 
 
@@ -1208,8 +1252,10 @@ img.produto-foto {
 /* Força a imagem do Good Girl a descer e aparecer o nome completo */
 .produtos .card-produto:nth-child(2),
 .card-produto:nth-child(2) {
-    margin-top: 40px !important;   /* Empurra a foto para baixo na marra */
-    transform: scale(0.9) !important; /* Encolhe a foto 10% para o salto não cortar embaixo */
+    margin-top: 40px !important;
+    /* Empurra a foto para baixo na marra */
+    transform: scale(0.9) !important;
+    /* Encolhe a foto 10% para o salto não cortar embaixo */
 }
 
 
@@ -1241,7 +1287,8 @@ img.produto-foto {
 
 .topo-ofertas h2 {
     font-size: 32px !important;
-    color: #333333; /* Use #ffffff se o fundo dessa seção for escuro */
+    color: #333333;
+    /* Use #ffffff se o fundo dessa seção for escuro */
     margin-bottom: 8px;
 }
 
@@ -1296,9 +1343,11 @@ img.produto-foto {
     position: absolute !important;
     top: 12px !important;
     left: 12px !important;
-    right: 12px !important; /* Faz o selo se esticar horizontalmente se precisar */
+    right: 12px !important;
+    /* Faz o selo se esticar horizontalmente se precisar */
     z-index: 10 !important;
-    font-size: 9px !important; /* Diminui levemente a fonte para caber tudo */
+    font-size: 9px !important;
+    /* Diminui levemente a fonte para caber tudo */
     font-weight: 700 !important;
     padding: 6px 8px !important;
     border-radius: 4px !important;
@@ -1316,7 +1365,10 @@ img.produto-foto {
 /* 1. Remove qualquer encolhimento ou escala que estava deixando o segundo card menor */
 .produtos .card-produto:nth-child(2),
 .card-produto:nth-child(2),
-#femininos, #masculinos, #arabes, #cosmeticos {
+#femininos,
+#masculinos,
+#arabes,
+#cosmeticos {
     transform: none !important;
     scale: 1 !important;
     margin-top: 0 !important;
@@ -1329,8 +1381,10 @@ img.produto-foto {
 /* 2. Força o container pai (o grid) a dar a mesma altura idêntica para todos os filhos */
 .produtos-conteudo {
     display: grid !important;
-    grid-template-columns: repeat(3, minmax(0, 1fr)) !important; /* Força 3 colunas perfeitas no PC */
-    align-items: stretch !important; /* MÁGICA: obriga todos os cards a esticarem e ficarem com o mesmo tamanho */
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    /* Força 3 colunas perfeitas no PC */
+    align-items: stretch !important;
+    /* MÁGICA: obriga todos os cards a esticarem e ficarem com o mesmo tamanho */
     gap: 24px !important;
     max-width: 1200px !important;
     margin: 0 auto !important;
@@ -1341,16 +1395,19 @@ img.produto-foto {
 .imagem-produto,
 [class*="imagem-"] {
     width: 100% !important;
-    height: 200px !important;       /* 📐 Reduzido de 250px para 200px para ficar menor */
-    max-height: 200px !important;   /* 📐 Reduzido de 250px para 200px */
+    height: 200px !important;
+    /* 📐 Reduzido de 250px para 200px para ficar menor */
+    max-height: 200px !important;
+    /* 📐 Reduzido de 250px para 200px */
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
     overflow: hidden !important;
     position: relative !important;
-    background-color: #ffffff !important; 
+    background-color: #ffffff !important;
     border-radius: 8px 8px 0 0 !important;
-    padding: 10px !important;       /* Dá um espacinho interno para o frasco não colar nas bordas */
+    padding: 10px !important;
+    /* Dá um espacinho interno para o frasco não colar nas bordas */
 }
 
 /* 4. Padroniza as imagens dentro dos quadrados sem distorcer */
@@ -1362,11 +1419,11 @@ img.produto-foto {
     height: 100% !important;
     max-width: 100% !important;
     max-height: 100% !important;
-    object-fit: contain !important; 
+    object-fit: contain !important;
     object-position: center !important;
     margin: 0 !important;
     /* AUMENTA O PERFUME SÓ UM POUQUINHO SEM DISTORCER: */
-    transform: scale(1.38) translateY(20px) !important; 
+    transform: scale(1.38) translateY(20px) !important;
 }
 
 /* 5. Organiza a estrutura interna do card branco para empurrar o botão para o rodapé */
@@ -1383,7 +1440,7 @@ img.produto-foto {
 .informacoes-produto {
     display: flex !important;
     flex-direction: column !important;
-    flex-grow: 1 !important; 
+    flex-grow: 1 !important;
     justify-content: space-between !important;
     padding: 20px !important;
 }
@@ -1397,14 +1454,16 @@ img.produto-foto {
 /* Força o botão de oferta a arredondar os cantos corretamente */
 .banner-coco .botao-oferta,
 .botao-principal.botao-oferta {
-    border-radius: 6px !important; 
+    border-radius: 6px !important;
 }
 
 /* Força o segundo banner a respeitar as bordas arredondadas sem deixar a foto vazar */
-.banner-coco, 
+.banner-coco,
 .banner-secundario {
-    border-radius: 12px !important;   /* Garante o arredondamento dos cantos */
-    overflow: hidden !important;      /* MÁGICA: Corta as pontas quadradas da foto */
+    border-radius: 12px !important;
+    /* Garante o arredondamento dos cantos */
+    overflow: hidden !important;
+    /* MÁGICA: Corta as pontas quadradas da foto */
 }
 
 /* ==========================================
@@ -1419,10 +1478,12 @@ img.produto-foto {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.6);
-    display: none; /* JavaScript vai mudar para 'flex' quando o site carregar */
+    display: none;
+    /* JavaScript vai mudar para 'flex' quando o site carregar */
     align-items: center;
     justify-content: center;
-    z-index: 9999; /* Fica por cima de tudo */
+    z-index: 9999;
+    /* Fica por cima de tudo */
 }
 
 /* Caixa branca do conteúdo */
@@ -1473,7 +1534,8 @@ img.produto-foto {
 
 .popup-direita h2 {
     font-size: 24px;
-    color: #b77b8e; /* Rosa elegante da loja */
+    color: #b77b8e;
+    /* Rosa elegante da loja */
     margin-bottom: 10px;
 }
 
@@ -1492,7 +1554,8 @@ img.produto-foto {
     border: 1px solid #ddd;
     border-radius: 4px;
     font-size: 14px;
-    box-sizing: border-box; /* Garante que o input não passe da borda */
+    box-sizing: border-box;
+    /* Garante que o input não passe da borda */
 }
 
 /* Botão de se inscrever */
@@ -1517,9 +1580,12 @@ img.produto-foto {
     .popup-conteudo {
         flex-direction: column;
     }
+
     .popup-esquerda {
-        display: none; /* Esconde a imagem no celular para caber o formulário perfeitamente */
+        display: none;
+        /* Esconde a imagem no celular para caber o formulário perfeitamente */
     }
+
     .popup-direita {
         padding: 30px 20px;
     }
@@ -1529,6 +1595,102 @@ img.produto-foto {
 .imagem-produto img {
     width: 100%;
     height: 100%;
-    object-fit: contain; /* 👈 Isso faz a foto inteira caber no espaço sem cortar! */
-    background-color: #fff; /* Opcional: deixa o fundo branco caso sobre espaço nas laterais */
+    object-fit: contain;
+    /* 👈 Isso faz a foto inteira caber no espaço sem cortar! */
+    background-color: #fff;
+    /* Opcional: deixa o fundo branco caso sobre espaço nas laterais */
+}
+
+/* Forçar a centralização completa da seção de produtos */
+.secao-produtos,
+#produtos {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+}
+
+.produtos {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+}
+
+/* Deixar o card de produto maior */
+.card-produto {
+    width: 350px !important;
+    max-width: 350px !important;
+    flex: 0 0 350px !important;
+    margin: 15px !important;
+}
+
+
+/* Forçar todos os cards a terem exatamente o mesmo tamanho */
+.card-produto {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    height: 430px !important;
+    /* Ajuste essa altura se precisar de mais espaço */
+}
+
+/* Fixar o tamanho da imagem do produto */
+.card-produto img {
+    width: 100% !important;
+    height: 220px !important;
+    object-fit: cover !important;
+}
+
+/* Limitar o tamanho do bloco de texto e descrição */
+.card-produto .info-produto,
+.card-produto div:has(p) {
+    flex-grow: 1 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+}
+
+/* Travar o botão e o preço na parte de baixo do card */
+.card-produto .btn-whats-detalhe,
+.card-produto button,
+.card-produto a {
+    margin-top: auto !important;
+}
+
+
+
+
+
+
+/* Trava o alinhamento no topo para os cards não mexerem os vizinhos no hover */
+.produtos {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    align-items: flex-start !important;
+    /* ISSO TRAVA A LINHA */
+    justify-content: center !important;
+    margin-top: 30px !important;
+    /* ISSO CRIA O ESPAÇO PARA O DALAL SUBIR */
+}
+
+.card-produto {
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out !important;
+}
+
+/* Aplica o efeito de crescimento IGUAL para todos os cards no mouse */
+article.card-produto:hover, 
+.card-produto:hover {
+    transform: scale(1.03) !important; /* Faz o card crescer levemente para frente */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.18) !important; /* Deixa a sombra marcante */
+    z-index: 10 !important; /* Garante que ele fique por cima dos outros ao crescer */
+}
+
+article.card-produto:hover,
+.card-produto:hover {
+    transform: translateY(-10px) !important;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15) !important;
 }
