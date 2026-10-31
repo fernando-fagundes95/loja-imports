@@ -130,6 +130,7 @@ include("conexao.php");
         </form>
 
         <a href="index.php" class="link-voltar">← Voltar para a Loja</a>
+        <a href="listar-produtos.php" class="link-voltar" style="background-color: #f0ad4e; margin-top: 10px; display: inline-block;">⚙️ Gerenciar Perfumes</a>
     </div>
 
 </body>
