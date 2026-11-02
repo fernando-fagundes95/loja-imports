@@ -1684,12 +1684,108 @@ div[class*="oferta"] article img {
 
 /* Preço (23px) */
 .card-produto .preco, .card-produto div[class*="preco"], .card-produto strong {
-    font-size: 30px !important;
+    font-size: 36px !important; /* Mude aqui de 30px para 36px (ou o tamanho que preferir) */
     font-weight: bold !important;
     color: #111 !important;
 }
-
 .card-produto .qtd, .card-produto span[class*="qtd"] {
     font-size: 18.5px !important;
     color: #666 !important;
+}
+
+
+
+/* Reduz drasticamente o tamanho do valor das parcelas (Ex: R$ 32,00) */
+.parcelas-vitrine strong, 
+.card-produto strong,
+.info-pagamento-vitrine strong {
+    font-size: 18px !important; 
+    font-weight: 600 !important;
+    display: inline !important;
+}
+
+/* Reduz o texto que acompanha o parcelamento */
+.parcelas-vitrine {
+    font-size: 15px !important;
+    font-weight: 300 !important;
+}
+
+
+
+
+/* Força o preço principal do produto a ficar maior e destacado */
+.card-produto .preco, 
+.card-produto p[class*="preco"], 
+.card-produto span[class*="preco"],
+.produto-preco {
+    font-size: 22px !important; /* Aumenta o tamanho do preço principal */
+    font-weight: bold !important; /* Deixa ele mais encorpado */
+    color: #111111 !important; /* Deixa a cor bem viva */
+    margin-top: 5px !important;
+}
+
+
+
+
+/* Alvo certeiro para aumentar o preço principal das Ofertas */
+section#ofertas-promocao .preco-principal-loja,
+.secao-produtos-promocao .preco-principal-loja,
+#ofertas-promocao strong {
+    font-size: 22px !important;
+    font-weight: bold !important;
+    color: #333333 !important;
+}
+
+
+
+
+
+
+
+
+/* AJUSTE EXCLUSIVO DO PREÇO DA PARCELA NAS OFERTAS */
+.info-pagamento-vitrine .parcelas-vitrine strong,
+.info-pagamento-vitrine p strong {
+    font-size: 13px !important; /* Força o valor numérico a ficar pequeno igual ao de cima */
+    font-weight: 500 !important; /* Tira aquele negrito muito grosso e pesado */
+    color: #1a1a1a !important;
+    display: inline !important;
+}
+
+
+
+
+
+
+
+
+
+/* FORÇA O TAMANHO E O ESTILO DELICADO DAS PARCELAS IGUAL AO DE CIMA */
+.info-pagamento-vitrine .parcelas-vitrine,
+.card-produto .parcelas-vitrine,
+p.parcelas-vitrine {
+    font-family: 'Segoe UI', Arial, sans-serif !important;
+    font-size: 12px !important; /* Deixa o texto pequeno e limpo */
+    color: #555555 !important;
+    font-weight: 300 !important; /* Letra fina estilo perfumaria de luxo */
+}
+
+/* AJUSTA EXCLUSIVAMENTE O VALOR EM REAIS DA PARCELA (EX: R$ 35,00) */
+.info-pagamento-vitrine .parcelas-vitrine strong,
+.card-produto .parcelas-vitrine strong,
+p.parcelas-vitrine strong {
+    font-size: 13px !important; /* Encolhe o número grande para o tamanho ideal */
+    font-weight: 500 !important; /* Remove aquele negrito muito grosso e pesado */
+    color: #1a1a1a !important;
+    display: inline !important;
+}
+
+/* UNIFICA O TAMANHO E A COR DO TEXTO DO PIX */
+.info-pagamento-vitrine .pix-vitrine,
+.card-produto .pix-vitrine,
+p.pix-vitrine {
+    font-family: 'Segoe UI', Arial, sans-serif !important;
+    font-size: 15px !important;
+    color: #be0979 !important; /* Verde Pix delicado */
+    font-weight: 400 !important;
 }

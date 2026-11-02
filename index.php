@@ -169,7 +169,7 @@ $resultado = $conexao->query($sql);
                 <h2>Nossos destaques</h2>
                 <p>Encontre produtos para presentear ou se presentear.</p>
             </div>
-           <div class="produtos" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; align-items: center; width: 100%; max-width: 1200px; margin: 0 auto;">
+            <div class="produtos" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; align-items: center; width: 100%; max-width: 1200px; margin: 0 auto;">
 
 
                 <?php while ($produto = $resultado->fetch_assoc()): ?>
@@ -208,6 +208,28 @@ $resultado = $conexao->query($sql);
                                     Qtd: <?php echo $produto['quantidade']; ?>
                                 </span>
                             </div>
+
+
+                            <!-- LÓGICA E EXIBIÇÃO DO PARCELAMENTO 10X E PIX -->
+                            <?php
+                            $preco_base = $produto['preco'];
+
+                            // Cálculo das 10 parcelas
+                            $parcelas = 10;
+                            $valor_parcela = $preco_base / $parcelas;
+
+                            // Cálculo do Pix com 5% de desconto
+                            $desconto_pix = 0.05;
+                            $valor_pix = $preco_base * (1 - $desconto_pix);
+                            ?>
+
+                            <div class="info-pagamento-vitrine">
+                                <p class="parcelas-vitrine">ou 10x de <strong>R$ <?php echo number_format($valor_parcela, 2, ',', '.'); ?></strong> sem juros</p>
+                                <p class="pix-vitrine">❖ R$ <?php echo number_format($valor_pix, 2, ',', '.'); ?> à vista no Pix</p>
+                            </div>
+
+
+
 
                             <button class="btn-comprar btn-add-carrinho" data-nome="<?php echo $produto['nome']; ?>" data-preco="<?php echo $produto['preco']; ?>">
                                 Tenho Interesse
@@ -248,6 +270,8 @@ $resultado = $conexao->query($sql);
                     <p style="color: #666; font-size: 14px; margin-bottom: 30px;">Garanta os perfumes mais desejados com descontos especiais por tempo limitado.</p>
                 </div>
 
+
+
                 <!-- Container que segura os cards perfeitamente alinhados -->
                 <div class="produtos-grid" style="display: flex; flex-wrap: wrap; gap: 25px; justify-content: center; width: 100%; max-width: 1200px; margin: 0 auto;">
                     <?php
@@ -261,6 +285,9 @@ $resultado = $conexao->query($sql);
 
                             <!-- Foto do Perfume Tratada -->
                             <div style="width: 100%; height: 180px; display: flex; align-items: center; justify-content: center; overflow: hidden; margin-bottom: 10px; position: relative; background: #fff;">
+
+
+
                                 <span style="position: absolute; top: 5px; left: 5px; background: #bfa37c; color: white; font-size: 10px; padding: 3px 8px; font-weight: bold; border-radius: 3px; text-transform: uppercase;">PROMOÇÃO</span>
                                 <a href="produto.php?id=<?php echo $produto_promo['id']; ?>">
                                     <img src="IMG-Bellafagundes/<?php echo $produto_promo['imagem']; ?>" alt="<?php echo $produto_promo['nome']; ?>" style="max-width: 100%; max-height: 100%; object-fit: contain;">
@@ -275,11 +302,36 @@ $resultado = $conexao->query($sql);
                                     <p style="font-size: 12px; color: #777; line-height: 1.4; margin: 5px 0; height: 34px; overflow: hidden; text-overflow: ellipsis;"><?php echo $produto_promo['descricao']; ?></p>
                                 </div>
 
-                                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 15px;">
-                                    <strong style="font-size: 18px; color: #333;">R$ <?php echo number_format($produto_promo['preco'], 2, ',', '.'); ?></strong>
-                                    <span style="font-size: 11px; color: #666; background: #f5f5f5; padding: 2px 6px; border-radius: 4px;">Qtd: <?php echo $produto_promo['quantidade']; ?></span>
-                                </div>
-                            </div>
+
+
+                <!-- ESTRUTURA AUTOMÁTICA DE PAGAMENTO (10X E PIX) -->
+                <?php 
+                $preco_dinamico = $produto_promo['preco']; 
+                $parcelas = 10;
+                $valor_parcela = $preco_dinamico / $parcelas;
+                
+                $desconto_pix = 0.05; 
+                $valor_pix = $preco_dinamico * (1 - $desconto_pix);
+                ?>
+
+                <!-- 1º: PREÇO PRINCIPAL SOBE (IGUAL AO CARD DE CIMA) -->
+                <div style="margin-top: 8px;">
+                    <strong class="preco-principal-loja">R$ <?php echo number_format($produto_promo['preco'], 2, ',', '.'); ?></strong>
+                    <span style="font-size: 11px; color: #666; background: #f5f5f5; padding: 2px 6px; border-radius: 4px; margin-left: 5px;">Qtd: <?php echo $produto_promo['quantidade']; ?></span>
+                </div>
+
+
+                
+                                <div class="info-pagamento-vitrine">
+                    <p class="parcelas-vitrine">ou 10x de <strong>R$ <?php echo number_format($valor_parcela, 2, ',', '.'); ?></strong> sem juros</p>
+                    <p class="pix-vitrine">❖ R$ <?php echo number_format($valor_pix, 2, ',', '.'); ?> à vista no Pix</p>
+                </div>
+
+
+
+
+
+
 
                             <!-- Botão do WhatsApp sob medida -->
                             <!-- Botão Dinâmico que manda o produto em oferta direto para a Sacola Rosa -->
