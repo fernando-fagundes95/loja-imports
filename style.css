@@ -1765,7 +1765,7 @@ section#ofertas-promocao .preco-principal-loja,
 .card-produto .parcelas-vitrine,
 p.parcelas-vitrine {
     font-family: 'Segoe UI', Arial, sans-serif !important;
-    font-size: 12px !important; /* Deixa o texto pequeno e limpo */
+    font-size: 15px !important; /* Deixa o texto pequeno e limpo */
     color: #555555 !important;
     font-weight: 300 !important; /* Letra fina estilo perfumaria de luxo */
 }
