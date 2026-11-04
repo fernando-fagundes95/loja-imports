@@ -9,15 +9,15 @@ $busca = isset($_GET['busca']) ? $conexao->real_escape_string($_GET['busca']) : 
 if ($busca != '') {
     // Se o cliente buscou algo, procura por nome, marca ou descrição, mantendo a ordem dos mais novos
 
-    
-         $sql = "SELECT * FROM produtos WHERE 
+
+    $sql = "SELECT * FROM produtos WHERE 
                 (nome LIKE '%$busca%' OR marca LIKE '%$busca%' OR descricao LIKE '%$busca%') 
                 AND categoria != 'Skincare'
                 ORDER BY id DESC";
-       } else {
-        // Se não buscou nada, roda a query original ignorando o Skincare
-        $sql = "SELECT * FROM produtos WHERE promocao = 0 AND categoria != 'Skincare' ORDER BY id DESC";
-    }
+} else {
+    // Se não buscou nada, roda a query original ignorando o Skincare
+    $sql = "SELECT * FROM produtos WHERE promocao = 0 AND categoria != 'Skincare' ORDER BY id DESC";
+}
 
 
 
@@ -363,7 +363,8 @@ $resultado = $conexao->query($sql);
                 <div class="titulo-secao">
                     <span style="font-size: 14px; letter-spacing: 2px;">CUIDADOS COM A PELE E CABELO</span>
                     <h2>Skincare</h2>
-                    <p>Encontre produtos para cuidar de você.</p>
+                    <span style="font-size: 20px; letter-spacing: 2px;">Encontre produtos para cuidar de você.</span>
+
                 </div>
 
                 <div class="produtos-grid">
