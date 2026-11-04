@@ -8,13 +8,18 @@ $busca = isset($_GET['busca']) ? $conexao->real_escape_string($_GET['busca']) : 
 
 if ($busca != '') {
     // Se o cliente buscou algo, procura por nome, marca ou descrição, mantendo a ordem dos mais novos
-    $sql = "SELECT * FROM produtos WHERE 
-            (nome LIKE '%$busca%' OR marca LIKE '%$busca%' OR descricao LIKE '%$busca%') 
-            ORDER BY id DESC";
-} else {
-    // Se não buscou nada, roda a sua query original que você já tinha deixado configurada
-    $sql = "SELECT * FROM produtos WHERE promocao = 0 ORDER BY id DESC";
-}
+
+    
+         $sql = "SELECT * FROM produtos WHERE 
+                (nome LIKE '%$busca%' OR marca LIKE '%$busca%' OR descricao LIKE '%$busca%') 
+                AND categoria != 'Skincare'
+                ORDER BY id DESC";
+       } else {
+        // Se não buscou nada, roda a query original ignorando o Skincare
+        $sql = "SELECT * FROM produtos WHERE promocao = 0 AND categoria != 'Skincare' ORDER BY id DESC";
+    }
+
+
 
 $resultado = $conexao->query($sql);
 ?>
@@ -107,11 +112,10 @@ $resultado = $conexao->query($sql);
 
         <!-- CATEGORIAS -->
         <section class="secao-categorias">
-
             <div class="titulo-secao">
-                <span>ENCONTRE SEUS FAVORITOS</span>
+                <span style="font-size: 14px; letter-spacing: 2px;">ENCONTRE SEUS FAVORITOS</span>
                 <h2>Explore nossas categorias</h2>
-                <p>Beleza e fragrâncias para todos os estilos.</p>
+                <span style="font-size: 20px; letter-spacing: 2px;">Beleza e fragrâncias para todos os estilos.</span>
             </div>
 
             <div class="categorias">
@@ -165,9 +169,10 @@ $resultado = $conexao->query($sql);
             </div>
 
             <div class="titulo-secao">
-                <span>SELEÇÃO ESPECIAL</span>
+                <span style="font-size: 14px; letter-spacing: 2px;">SELEÇÃO ESPECIAL</span>
                 <h2>Nossos destaques</h2>
-                <p>Encontre produtos para presentear ou se presentear.</p>
+                <span style="font-size: 20px; letter-spacing: 2px;">Encontre produtos para presentear ou se presentear.</span>
+
             </div>
             <div class="produtos" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; align-items: center; width: 100%; max-width: 1200px; margin: 0 auto;">
 
@@ -263,13 +268,12 @@ $resultado = $conexao->query($sql);
             <!-- ==========================================
          SEÇÃO DE OFERTAS IMPERDÍVEIS AUTOMÁTICA
          ========================================== -->
-            <section class="secao-produtos-promocao" id="ofertas-promocao" style="background-color: #f9f9f9; padding: 40px 20px; text-align: center; width: 100%; box-sizing: border-box;">
-                <div class="topo-ofertas">
-                    <span class="badge-top" style="color: #bfa37c; font-weight: bold; letter-spacing: 1px; font-size: 12px; display: block; margin-bottom: 5px;">✨ OPORTUNIDADE ÚNICA</span>
-                    <h2 style="color: #333; font-size: 28px; margin-bottom: 5px; font-weight: bold;">Ofertas Imperdíveis</h2>
-                    <p style="color: #666; font-size: 14px; margin-bottom: 30px;">Garanta os perfumes mais desejados com descontos especiais por tempo limitado.</p>
+            <section class="secao-produtos" id="ofertas-promocao">
+                <div class="titulo-secao">
+                    <span style="font-size: 14px; letter-spacing: 2px;">OPORTUNIDADE ÚNICA</span>
+                    <h2>Ofertas Imperdíveis</h2>
+                    <span style="font-size: 20px; letter-spacing: 2px;">Garanta os perfumes mais desejados com descontos especiais por tempo limitado.</span>
                 </div>
-
 
 
                 <!-- Container que segura os cards perfeitamente alinhados -->
@@ -304,28 +308,28 @@ $resultado = $conexao->query($sql);
 
 
 
-                <!-- ESTRUTURA AUTOMÁTICA DE PAGAMENTO (10X E PIX) -->
-                <?php 
-                $preco_dinamico = $produto_promo['preco']; 
-                $parcelas = 10;
-                $valor_parcela = $preco_dinamico / $parcelas;
-                
-                $desconto_pix = 0.05; 
-                $valor_pix = $preco_dinamico * (1 - $desconto_pix);
-                ?>
+                                <!-- ESTRUTURA AUTOMÁTICA DE PAGAMENTO (10X E PIX) -->
+                                <?php
+                                $preco_dinamico = $produto_promo['preco'];
+                                $parcelas = 10;
+                                $valor_parcela = $preco_dinamico / $parcelas;
 
-                <!-- 1º: PREÇO PRINCIPAL SOBE (IGUAL AO CARD DE CIMA) -->
-                <div style="margin-top: 8px;">
-                    <strong class="preco-principal-loja">R$ <?php echo number_format($produto_promo['preco'], 2, ',', '.'); ?></strong>
-                    <span style="font-size: 11px; color: #666; background: #f5f5f5; padding: 2px 6px; border-radius: 4px; margin-left: 5px;">Qtd: <?php echo $produto_promo['quantidade']; ?></span>
-                </div>
+                                $desconto_pix = 0.05;
+                                $valor_pix = $preco_dinamico * (1 - $desconto_pix);
+                                ?>
+
+                                <!-- 1º: PREÇO PRINCIPAL SOBE (IGUAL AO CARD DE CIMA) -->
+                                <div style="margin-top: 8px;">
+                                    <strong class="preco-principal-loja">R$ <?php echo number_format($produto_promo['preco'], 2, ',', '.'); ?></strong>
+                                    <span style="font-size: 11px; color: #666; background: #f5f5f5; padding: 2px 6px; border-radius: 4px; margin-left: 5px;">Qtd: <?php echo $produto_promo['quantidade']; ?></span>
+                                </div>
 
 
-                
+
                                 <div class="info-pagamento-vitrine">
-                    <p class="parcelas-vitrine">ou 10x de <strong>R$ <?php echo number_format($valor_parcela, 2, ',', '.'); ?></strong> sem juros</p>
-                    <p class="pix-vitrine">❖ R$ <?php echo number_format($valor_pix, 2, ',', '.'); ?> à vista no Pix</p>
-                </div>
+                                    <p class="parcelas-vitrine">ou 10x de <strong>R$ <?php echo number_format($valor_parcela, 2, ',', '.'); ?></strong> sem juros</p>
+                                    <p class="pix-vitrine">❖ R$ <?php echo number_format($valor_pix, 2, ',', '.'); ?> à vista no Pix</p>
+                                </div>
 
 
 
@@ -333,11 +337,11 @@ $resultado = $conexao->query($sql);
 
 
 
-                            <!-- Botão do WhatsApp sob medida -->
-                            <!-- Botão Dinâmico que manda o produto em oferta direto para a Sacola Rosa -->
-                            <button onclick="adicionarNaSacola(<?php echo $produto_promo['id']; ?>, '<?php echo addslashes($produto_promo['nome']); ?>', <?php echo $produto_promo['preco']; ?>, 'IMG-Bellafagundes/<?php echo $produto_promo['imagem']; ?>')" class="btn-comprar btn-add-carrinho" data-nome="<?php echo $produto_promo['nome']; ?>" data-preco="<?php echo $produto_promo['preco']; ?>" style="display: block; width: 100%; text-align: center; background: #bfa37c; color: white; padding: 10px 0; margin-top: 15px; border: none; font-weight: bold; border-radius: 4px; font-size: 14px; cursor: pointer;">
-                                Adicionar à Sacola
-                            </button>
+                                <!-- Botão do WhatsApp sob medida -->
+                                <!-- Botão Dinâmico que manda o produto em oferta direto para a Sacola Rosa -->
+                                <button onclick="adicionarNaSacola(<?php echo $produto_promo['id']; ?>, '<?php echo addslashes($produto_promo['nome']); ?>', <?php echo $produto_promo['preco']; ?>, 'IMG-Bellafagundes/<?php echo $produto_promo['imagem']; ?>')" class="btn-comprar btn-add-carrinho" data-nome="<?php echo $produto_promo['nome']; ?>" data-preco="<?php echo $produto_promo['preco']; ?>" style="display: block; width: 100%; text-align: center; background: #bfa37c; color: white; padding: 10px 0; margin-top: 15px; border: none; font-weight: bold; border-radius: 4px; font-size: 14px; cursor: pointer;">
+                                    Adicionar à Sacola
+                                </button>
                         </article>
                     <?php
                     }
@@ -346,28 +350,101 @@ $resultado = $conexao->query($sql);
             </section>
 
 
-            <!-- DIFERENCIAIS -->
-            <section class="diferenciais">
 
-                <div class="diferencial">
-                    <span>🎁</span>
-                    <h3>Presentes especiais</h3>
-                    <p>Encontre opções para momentos inesquecíveis.</p>
+
+
+
+
+            <!-- ===================================================
+     SEÇÃO DE PRODUTOS SKINCARE AUTOMÁTICA
+     =================================================== -->
+
+            <section class="secao-produtos" id="skincare">
+                <div class="titulo-secao">
+                    <span style="font-size: 14px; letter-spacing: 2px;">CUIDADOS COM A PELE E CABELO</span>
+                    <h2>Skincare</h2>
+                    <p>Encontre produtos para cuidar de você.</p>
                 </div>
 
-                <div class="diferencial">
-                    <span>💬</span>
-                    <h3>Atendimento próximo</h3>
-                    <p>Tire suas dúvidas antes de realizar seu pedido.</p>
-                </div>
+                <div class="produtos-grid">
+                    <?php
+                    // Busca os produtos com a categoria exatamente igual a Skincare
+                    $query_skincare = "SELECT * FROM produtos WHERE categoria = 'Skincare' ORDER BY id DESC";
+                    $result_skincare = mysqli_query($conexao, $query_skincare);
 
-                <div class="diferencial">
-                    <span>✨</span>
-                    <h3>Beleza e estilo</h3>
-                    <p>Produtos para diferentes gostos e personalidades.</p>
-                </div>
+                    if (mysqli_num_rows($result_skincare) > 0) {
+                        while ($produto_skin = mysqli_fetch_assoc($result_skincare)) {
+                            // Cálculos automáticos de parcelamento e Pix
+                            $preco_original = $produto_skin['preco'];
+                            $parcela = $preco_original / 10;
+                            $preco_pix = $preco_original * 0.95;
+                    ?>
+                            <article class="card-produto">
+                                <div class="foto-produto">
+                                    <a href="produto.php?id=<?php echo $produto_skin['id']; ?>">
+                                        <img src="IMG-Bellafagundes/<?php echo $produto_skin['imagem']; ?>" alt="<?php echo $produto_skin['nome']; ?>">
+                                    </a>
+                                </div>
 
+                                <div class="info-produto">
+                                    <p class="marca-produto"><?php echo mb_strtoupper($produto_skin['marca']); ?> | SKINCARE</p>
+                                    <h3><?php echo $produto_skin['nome']; ?> (<?php echo $produto_skin['ml']; ?>ml)</h3>
+                                    <p class="descricao-curta-produto"><?php echo $produto_skin['descricao']; ?></p>
+
+                                    <div class="linha-preco-estoque">
+                                        <span class="preco-principal">R$ <?php echo number_format($preco_original, 2, ',', '.'); ?></span>
+                                        <span class="qtd-estoque">Qtd: <?php echo $produto_skin['quantidade']; ?></span>
+                                    </div>
+
+                                    <div class="info-pagamento-vitrine">
+                                        <p class="parcelas-vitrine">ou 10x de <strong>R$ <?php echo number_format($parcela, 2, ',', '.'); ?></strong> sem juros</p>
+                                        <p class="pix-vitrine">❖ R$ <?php echo number_format($preco_pix, 2, ',', '.'); ?> à vista no Pix</p>
+                                    </div>
+
+                                    <button class="btn-comprar btn-add-carrinho" data-nome="<?php echo $produto_skin['nome']; ?>" data-preco="<?php echo $produto_skin['preco']; ?>">Adicionar à Sacola</button>
+                                </div>
+                            </article>
+                    <?php
+                        }
+                    } else {
+                        echo "<p class='sem-produtos' style='color: #888; font-size: 14px; text-align: center; width: 100%; margin-top: 20px;'>Nenhum produto de skincare cadastrado no momento.</p>";
+                    }
+                    ?>
+                </div>
             </section>
+
+
+
+
+            </div>
+        </section>
+
+
+
+
+
+        <!-- DIFERENCIAIS -->
+        <section class="diferenciais">
+
+            <div class="diferencial">
+                <span>🎁</span>
+                <h3>Presentes especiais</h3>
+                <p>Encontre opções para momentos inesquecíveis.</p>
+            </div>
+
+            <div class="diferencial">
+                <span>💬</span>
+                <h3>Atendimento próximo</h3>
+                <p>Tire suas dúvidas antes de realizar seu pedido.</p>
+            </div>
+
+            <div class="diferencial">
+                <span>✨</span>
+                <h3>Beleza e estilo</h3>
+                <p>Produtos para diferentes gostos e personalidades.</p>
+            </div>
+
+        </section>
 
     </main>
 

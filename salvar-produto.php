@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $imagem_nome = $_FILES['imagem']['name'];
     $imagem_tmp = $_FILES['imagem']['tmp_name'];
 
-    // Pasta onde as imagens do seu site ficam guardadas (ajuste se o nome for diferente)
+    // Pasta onde as imagens do seu site ficam guardadas
     $pasta_destino = "IMG-Bellafagundes/" . $imagem_nome;
 
     // Move o arquivo da foto para a pasta do seu site
@@ -29,8 +29,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
          $sql = "INSERT INTO produtos (nome, marca, ml, preco, quantidade, categoria, descricao, imagem, promocao) 
                 VALUES ('$nome', '$marca', '$ml', '$preco', '$quantidade', '$categoria', '$descricao', '$imagem_nome', '$promocao')";
         if (mysqli_query($conexao, $sql)) {
-            // Se deu tudo certo, exibe um aviso e volta para o formulário
-            echo "<script>alert('Perfume cadastrado com sucesso!'); window.location.href='admin.php';</script>";
+            // Se deu tudo certo, exibe um aviso geral de sucesso e volta para o formulário
+            echo "<script>alert('Produto cadastrado com sucesso!'); window.location.href='admin.php';</script>";
         } else {
             echo "Erro ao cadastrar no banco de dados: " . mysqli_error($conexao);
         }
@@ -42,3 +42,4 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     header("Location: admin.php");
     exit;
 }
+?>

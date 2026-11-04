@@ -111,6 +111,9 @@ include("conexao.php");
             <select name="categoria" required>
                 <option value="Masculino">Masculino</option>
                 <option value="Feminino">Feminino</option>
+                <option value="Unissex">Unissex</option>
+                <option value="Skincare">Skincare</option>
+
             </select>
 
 
