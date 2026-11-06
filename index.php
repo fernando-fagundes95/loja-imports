@@ -236,10 +236,12 @@ $resultado = $conexao->query($sql);
 
 
 
-                            <button class="btn-comprar btn-add-carrinho" data-nome="<?php echo $produto['nome']; ?>" data-preco="<?php echo $produto['preco']; ?>">
-                                Tenho Interesse
-                            </button>
+<button onclick="adicionarNaSacola(<?php echo $produto['id']; ?>, '<?php echo addslashes($produto['nome']); ?>', <?php echo $produto['preco']; ?>, 'IMG-Bellafagundes/<?php echo $produto['imagem']; ?>')" class="btn-comprar btn-add-carrinho" data-nome="<?php echo $produto['nome']; ?>" data-preco="<?php echo $produto['preco']; ?>" style="display: block; width: 100%; text-align: center; background: #bfa37c; color: white; padding: 10px 0; margin-top: 15px; border: none; font-weight: bold; border-radius: 4px; font-size: 14px; cursor: pointer;">
+    Adicionar à Sacola
+</button>
 
+
+                            
                         </div>
                     </article>
                 <?php endwhile; ?>

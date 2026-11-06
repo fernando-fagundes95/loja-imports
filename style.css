@@ -1633,8 +1633,8 @@ img.produto-foto {
 .produtos article,
 .produtos .card-produto,
 .card-produto,
-.ofertas article, 
-.secao-ofertas article, 
+.ofertas article,
+.secao-ofertas article,
 .ofertas-imperdiveis article,
 div[class*="oferta"] article {
     width: 350px !important;
@@ -1648,26 +1648,29 @@ div[class*="oferta"] article {
     flex-direction: column !important;
     justify-content: space-between !important;
     box-sizing: border-box !important;
-    background: #f5deda !important; /* SUA COR NOVA AQUI! */
+    background: #f5deda !important;
+    /* SUA COR NOVA AQUI! */
     border-radius: 14px !important;
     border: 1px solid #ebd2ce !important;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05) !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05) !important;
 }
 
 /* Tamanho de imagem calibrado */
 .produtos article img,
 .card-produto img,
 .ofertas article img,
-.secao-ofertas img, 
+.secao-ofertas img,
 div[class*="oferta"] article img {
-    width:280px!important;
+    width: 280px !important;
     height: 280px !important;
     object-fit: cover !important;
     border-radius: 5px !important;
 }
 
 /* Nome do perfume (22px) */
-.card-produto h3, .card-produto h2, .card-produto .nome-produto {
+.card-produto h3,
+.card-produto h2,
+.card-produto .nome-produto {
     font-size: 30px !important;
     font-weight: bold !important;
     margin-top: 12px !important;
@@ -1676,19 +1679,26 @@ div[class*="oferta"] article img {
 }
 
 /* Descrição (15px) */
-.card-produto p, .card-produto .descricao, .card-produto div {
+.card-produto p,
+.card-produto .descricao,
+.card-produto div {
     font-size: 20px !important;
     line-height: 1.45 !important;
     color: #444 !important;
 }
 
 /* Preço (23px) */
-.card-produto .preco, .card-produto div[class*="preco"], .card-produto strong {
-    font-size: 36px !important; /* Mude aqui de 30px para 36px (ou o tamanho que preferir) */
+.card-produto .preco,
+.card-produto div[class*="preco"],
+.card-produto strong {
+    font-size: 36px !important;
+    /* Mude aqui de 30px para 36px (ou o tamanho que preferir) */
     font-weight: bold !important;
     color: #111 !important;
 }
-.card-produto .qtd, .card-produto span[class*="qtd"] {
+
+.card-produto .qtd,
+.card-produto span[class*="qtd"] {
     font-size: 18.5px !important;
     color: #666 !important;
 }
@@ -1696,10 +1706,10 @@ div[class*="oferta"] article img {
 
 
 /* Reduz drasticamente o tamanho do valor das parcelas (Ex: R$ 32,00) */
-.parcelas-vitrine strong, 
+.parcelas-vitrine strong,
 .card-produto strong,
 .info-pagamento-vitrine strong {
-    font-size: 18px !important; 
+    font-size: 18px !important;
     font-weight: 600 !important;
     display: inline !important;
 }
@@ -1714,13 +1724,16 @@ div[class*="oferta"] article img {
 
 
 /* Força o preço principal do produto a ficar maior e destacado */
-.card-produto .preco, 
-.card-produto p[class*="preco"], 
+.card-produto .preco,
+.card-produto p[class*="preco"],
 .card-produto span[class*="preco"],
 .produto-preco {
-    font-size: 22px !important; /* Aumenta o tamanho do preço principal */
-    font-weight: bold !important; /* Deixa ele mais encorpado */
-    color: #111111 !important; /* Deixa a cor bem viva */
+    font-size: 22px !important;
+    /* Aumenta o tamanho do preço principal */
+    font-weight: bold !important;
+    /* Deixa ele mais encorpado */
+    color: #111111 !important;
+    /* Deixa a cor bem viva */
     margin-top: 5px !important;
 }
 
@@ -1746,8 +1759,10 @@ section#ofertas-promocao .preco-principal-loja,
 /* AJUSTE EXCLUSIVO DO PREÇO DA PARCELA NAS OFERTAS */
 .info-pagamento-vitrine .parcelas-vitrine strong,
 .info-pagamento-vitrine p strong {
-    font-size: 13px !important; /* Força o valor numérico a ficar pequeno igual ao de cima */
-    font-weight: 500 !important; /* Tira aquele negrito muito grosso e pesado */
+    font-size: 13px !important;
+    /* Força o valor numérico a ficar pequeno igual ao de cima */
+    font-weight: 500 !important;
+    /* Tira aquele negrito muito grosso e pesado */
     color: #1a1a1a !important;
     display: inline !important;
 }
@@ -1765,17 +1780,21 @@ section#ofertas-promocao .preco-principal-loja,
 .card-produto .parcelas-vitrine,
 p.parcelas-vitrine {
     font-family: 'Segoe UI', Arial, sans-serif !important;
-    font-size: 15px !important; /* Deixa o texto pequeno e limpo */
+    font-size: 15px !important;
+    /* Deixa o texto pequeno e limpo */
     color: #555555 !important;
-    font-weight: 300 !important; /* Letra fina estilo perfumaria de luxo */
+    font-weight: 300 !important;
+    /* Letra fina estilo perfumaria de luxo */
 }
 
 /* AJUSTA EXCLUSIVAMENTE O VALOR EM REAIS DA PARCELA (EX: R$ 35,00) */
 .info-pagamento-vitrine .parcelas-vitrine strong,
 .card-produto .parcelas-vitrine strong,
 p.parcelas-vitrine strong {
-    font-size: 13px !important; /* Encolhe o número grande para o tamanho ideal */
-    font-weight: 500 !important; /* Remove aquele negrito muito grosso e pesado */
+    font-size: 13px !important;
+    /* Encolhe o número grande para o tamanho ideal */
+    font-weight: 500 !important;
+    /* Remove aquele negrito muito grosso e pesado */
     color: #1a1a1a !important;
     display: inline !important;
 }
@@ -1786,7 +1805,8 @@ p.parcelas-vitrine strong {
 p.pix-vitrine {
     font-family: 'Segoe UI', Arial, sans-serif !important;
     font-size: 15px !important;
-    color: #be0979 !important; /* Verde Pix delicado */
+    color: #be0979 !important;
+    /* Verde Pix delicado */
     font-weight: 400 !important;
 }
 
@@ -1795,175 +1815,101 @@ p.pix-vitrine {
 
 
 
-/* Força o card de skincare a ter o fundo branco, bordas arredondadas e sombra sutil */
+/* ===================================================
+   SINTONIA PERFEITA: CARDS DE SKINCARE COMPLETOS
+   =================================================== */
+
+/* 1. Estrutura e proporções do Card */
 .secao-produtos .produtos-grid .card-produto {
     background: #f5deda !important;
     border-radius: 15px !important;
     padding: 20px !important;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05) !important;
     width: 100% !important;
-    max-width: 300px !important; /* Limita o tamanho para não esticar na tela */
+    max-width: 300px !important;
     display: flex !important;
     flex-direction: column !important;
     justify-content: space-between !important;
 }
 
-/* Garante que a imagem dentro do card fique centralizada e proporcional */
+/* 2. Área da foto - Remove fundos e fixa a altura ideal */
+#skincare .produtos-grid .card-produto .foto-produto,
+/* --- 1. AJUSTE DO BLOCO DA FOTO (LINHA 1837) --- */
+/* --- 1. BLOCO CONTAINER DA FOTO --- */
 .secao-produtos .produtos-grid .card-produto .foto-produto {
-    background: #ffffff !important;
-    border-radius: 10px !important;
-    margin-bottom: 15px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
     height: 220px !important;
+    /* Altura padrão idêntica aos perfumes */
     display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
+    overflow: hidden !important;
+    border-radius: 14px 14px 0 0 !important;
+    /* Arredonda só o topo do card */
+    background: #ffffff !important;
+    /* Força o fundo branco idêntico ao dos perfumes */
 }
 
-/* Padroniza o botão "Tenho Interesse" para dourado idêntico aos de cima */
-.secao-produtos .produtos-grid .card-produto .btn-comprar {
+/* --- 2. O LINK INTERNO DA FOTO --- */
+.secao-produtos .produtos-grid .card-produto .foto-produto a {
     display: block !important;
-    background: #bfa37c !important; /* Dourado padrão da sua loja */
+    width: 100% !important;
+    height: 100% !important;
+}
+
+/* --- 3. A IMAGEM PREENCHENDO DE PONTA A PONTA --- */
+#skincare .produtos-grid .card-produto img,
+#skincare .produtos-grid .card-produto .foto-produto img,
+.secao-produtos .produtos-grid .card-produto .foto-produto img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    /* Força o preenchimento total eliminando os vãos nas laterais */
+    object-position: center !important;
+    /* Mantém o produto centralizado */
+}
+
+
+
+
+/* 4. Padronização e Estilo do Botão "Adicionar à Sacola" */
+.secao-produtos .produtos-grid .card-produto .btn-comprar,
+#skincare .card-produto .btn-add-carrinho {
+    display: block !important;
+    width: 100% !important;
+    background: #bfa37c !important;
+    /* Dourado padrão da loja */
     color: #ffffff !important;
     text-align: center !important;
     padding: 12px !important;
     border-radius: 8px !important;
     font-weight: bold !important;
     text-decoration: none !important;
-    margin-top: 15px !important;
+    margin-top: auto !important;
+    /* Empurra o botão sempre para o final do card */
+    border: none !important;
+    cursor: pointer !important;
     transition: background 0.3s ease !important;
 }
 
-/* Efeito de passar o mouse por cima do botão */
-.secao-produtos .produtos-grid .card-produto .btn-comprar:hover {
+.secao-produtos .produtos-grid .card-produto .btn-comprar:hover,
+#skincare .card-produto .btn-add-carrinho:hover {
     background: #a68c67 !important;
 }
 
-
-
-/* Força os produtos de Skincare a ficarem organizados em colunas lado a lado */
-#skincare .produtos-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-}
-
-/* Ajusta o tamanho máximo de cada card para não ficar gigante na tela */
-#skincare .card-produto {
-    max-width: 300px;
-    width: 100%;
-}
-
-/* Garante que a foto do produto se adapte sem cortar ou distorcer */
-#skincare .foto-produto img {
-    width: 100%;
-    height: 250px;
-    object-fit: contain; /* Ou cover, dependendo de como está o resto do site */
-}
-
-
-
-/* --- FORÇAR 3 COLUNAS EM SKINCARE E OFERTAS --- */
-#skincare .produtos-grid,
-.secao-ofertas .produtos-grid,
-#ofertas .produtos-grid {
-    display: grid !important;
-    grid-template-columns: repeat(3, 1fr) !important; /* Cria exatamente 3 colunas iguais */
-    gap: 20px !important;                             /* Espaçamento entre os cards */
-    width: 100% !important;
-    max-width: 1200px !important;                     /* Evita que estique demais em telas gigantes */
-    margin: 0 auto !important;                        /* Centraliza o bloco na tela */
-}
-
-/* --- CALIBRAÇÃO DAS IMAGENS DESSAS SEÇÕES --- */
-#skincare .produtos-grid .card-produto img,
-.secao-ofertas .produtos-grid .card-produto img,
-#ofertas .produtos-grid .card-produto img {
-    width: 100% !important;
-    height: 220px !important;       /* Mesma altura dos perfumes da última imagem */
-    object-fit: contain !important; /* Mostra o produto inteiro sem cortar e sem esticar */
-    background: transparent !important;
-}
-
-
-
-
-/* --- FORÇAR 3 COLUNAS NAS OFERTAS IMPERDÍVEIS --- */
-.ofertas-imperdiveis .produtos-grid,
-#ofertas-promocao .produtos-grid,
-.secao-ofertas .produtos-grid,
-.ofertas .produtos-grid {
-    display: grid !important;
-    grid-template-columns: repeat(3, 1fr) !important; /* Força 3 colunas perfeitas */
-    gap: 20px !important;
-    width: 100% !important;
-    max-width: 1200px !important;
-    margin: 0 auto !important;
-}
-
-/* --- AJUSTAR IMAGENS DAS OFERTAS --- */
-.ofertas-imperdiveis .card-produto img,
-#ofertas-promocao .card-produto img,
-.secao-ofertas .card-produto img,
-.ofertas .card-produto img,
-.ofertas-imperdiveis article img {
-    width: 100% !important;
-    height: 220px !important;       /* Mesma altura dos perfumes debaixo */
-    object-fit: contain !important; /* Encaixa o perfume sem cortar */
-    background: transparent !important;
-}
-
-
-
-/* --- SINTONIA PERFEITA: SKINCARE IGUAL AOS PERFUMES --- */
-
-/* 1. Remove qualquer espaço branco nas laterais e no topo do contêiner da foto */
-#skincare .produtos-grid .card-produto .foto-produto,
-.secao-produtos .produtos-grid .card-produto .foto-produto {
-    background: transparent !important;
-    padding: 0 !important;
-    margin: 0 0 15px 0 !important;
-    width: 100% !important;
-    height: 220px !important; /* Mantém a altura padrão perfeita dos perfumes */
-    display: flex !important;
-    overflow: hidden !important; /* Garante que a imagem não morda os cantos */
-    border-radius: 14px 14px 0 0 !important; /* Arredonda os cantos superiores do card */
-}
-
-/* 2. Força a imagem a cobrir o topo de ponta a ponta, igual ao Lattafa e Diesel */
-#skincare .produtos-grid .card-produto img,
-.secao-produtos .produtos-grid .card-produto .foto-produto img {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: cover !important; /* Faz a imagem preencher tudo e elimina o quadrado branco */
-}
-
-
-
-
-
-
-
-/* --- ALINHAMENTO E PADRONIZAÇÃO DOS TEXTOS DOS CARDS --- */
-
-/* 1. Marca/Categoria (Texto pequeno em cima do nome do produto) */
-#skincare .card-produto span,
-#skincare .card-produto .marca-produto,
-.card-produto .categoria {
+/* 5. Alinhamento dos Textos Internos */
+#skincare .card-produto .marca-produto {
     font-size: 15px !important;
     text-transform: uppercase !important;
-    color: #c48b7d !important; /* Cor marrom claro idêntica à dos perfumes */
+    color: #c48b7d !important;
     letter-spacing: 1px !important;
     margin-bottom: 5px !important;
     display: block !important;
     font-weight: bold !important;
 }
 
-/* 2. Nome do Produto (Título principal) */
-#skincare .card-produto h2,
-#skincare .card-produto h3,
-#skincare .card-produto .nome-produto {
-    font-size: 20px !important; /* Diminui o texto gigante para o tamanho correto dos perfumes */
+#skincare .card-produto h3 {
+    font-size: 20px !important;
     font-weight: 600 !important;
     color: #333333 !important;
     margin-top: 5px !important;
@@ -1971,102 +1917,420 @@ p.pix-vitrine {
     line-height: 1.3 !important;
 }
 
-/* 3. Descrição Curta (Texto abaixo do nome) */
-#skincare .card-produto p,
-#skincare .card-produto .descricao-produto {
+#skincare .card-produto .descricao-curta-produto {
+    display: -webkit-box !important;
+    -webkit-line-clamp: 1 !important;
+    line-clamp: 1 !important;
+    -webkit-box-orient: vertical !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    min-height: 22px !important;
+    margin-bottom: 15px !important;
     font-size: 16px !important;
     color: #666666 !important;
     line-height: 1.4 !important;
-    margin-bottom: 12px !important;
 }
 
 
 
+/* 6. Alinhamento das Linhas de Preço, Estoque e Parcelas */
+.linha-preco-estoque {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    margin-bottom: 5px !important;
+}
 
-/* --- PADRONIZAÇÃO EXATA DOS PREÇOS E PARCELAS (SKINCARE IGUAL OFERTAS) --- */
-
-/* 1. Preço Principal (Ex: R$ 499,00) - Força a ficar preto e destacado */
-#skincare .card-produto h3,
-#skincare .card-produto .preco,
-#skincare .card-produto [class*="preco"] {
+.preco-principal {
     font-size: 20px !important;
     font-weight: 700 !important;
-    color: #111111 !important; /* Preto idêntico ao das Ofertas */
-    margin-top: 10px !important;
-    margin-bottom: 5px !important;
-    display: inline-block !important;
+    color: #111111 !important;
 }
 
-/* 2. Quantidade em estoque (Ex: Qtd: 3) - Deixa cinza sutil ao lado do preço */
-#skincare .card-produto .qtd,
-#skincare .card-produto span[class*="qtd"] {
-    font-size: 12px !important;
+.qtd-estoque {
+    font-size: 8px !important;
     color: #888888 !important;
-    font-weight: normal !important;
+    background: #ffffff !important;
+    /* Deixa o fundo branco limpo para a quantidade */
+    padding: 2px 6px !important;
+    border-radius: 4px !important;
 }
 
-/* 3. Parcelamento (Ex: ou 10x de R$ 49,90 sem juros) - Força a cor cinza escura */
-#skincare .card-produto p,
-#skincare .card-produto .parcelas,
-#skincare .card-produto [class*="parcela"] {
+.parcelas-vitrine {
     font-size: 15px !important;
-    color: #555555 !important; /* Remove o vermelho antigo */
-    margin-top: 5px !important;
+    color: #555555 !important;
     margin-bottom: 4px !important;
 }
 
-/* 4. Preço à vista no Pix (Ex: R$ 474,05 à vista no Pix) - O rosa marcante das Ofertas */
-#skincare .card-produto .pix,
-#skincare .card-produto [class*="pix"] {
+.pix-vitrine {
     font-size: 15px !important;
     font-weight: 600 !important;
-    color: #e04f7f !important; /* Cor rosa/pink idêntica à das suas Ofertas! */
+    color: #e04f7f !important;
+    /* Rosa marcante das ofertas */
     display: block !important;
     margin-bottom: 15px !important;
 }
 
-
-
-
-/* --- FUNDO BRANCO PARA O TEXTO DE QUANTIDADE (QTD) --- */
-#skincare .card-produto span[class*="qtd"],
-#skincare .card-produto .qtd,
-.card-produto span[class*="qtd"],
-.card-produto .qtd {
-    background: #ffffff !important;   /* Força o fundo branco atrás do texto */
-    color: #444444 !important;         /* Deixa o texto cinza escuro bem legível */
-    font-weight: 600 !important;       /* Deixa a letra um pouco mais grossinha */
-    font-size: 11px !important;        /* Tamanho ideal e delicado */
-    padding: 3px 8px !important;       /* Cria o espacinho interno do fundo branco */
-    border-radius: 20px !important;    /* Deixa o fundo branco arredondado em formato de pílula */
-    display: inline-block !important;  /* Garante que o fundo respeite o tamanho do texto */
-    margin-left: 5px !important;       /* Afasta um pouquinho do valor do preço */
-    vertical-align: middle !important; /* Alinha perfeitamente na altura do preço */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05) !important; /* Sombra sutil para dar destaque */
-}
-
-
-
-
-/* --- PADRONIZAR BOTÕES DO SKINCARE (IGUAL AS OFERTAS GRANDES) --- */
-#skincare .produtos-grid .card-produto .btn-comprar,
-#skincare .produtos-grid .card-produto button,
-#skincare .produtos-grid .card-produto a[class*="btn"],
-#skincare .produtos-grid .card-produto [class*="sacola"] {
-    width: 100% !important;         /* Força o botão a ficar grande de ponta a ponta */
-    display: block !important;       /* Garante o comportamento de bloco largo */
-    text-align: center !important;   /* Centraliza o texto dentro dele */
-    padding: 12px 0 !important;      /* Deixa o botão mais gordinho e elegante */
-    box-sizing: border-box !important;
-    margin-top: auto !important;     /* Empurra o botão sempre para o final do card, alinhando todos */
-}
-
-
-
-
-/* Garante que o link da foto ocupe todo o espaço e mantenha o design perfeito */
-.foto-produto a {
-    display: block !important;
+/* 7. Grid de Exibição - 3 colunas perfeitas */
+#skincare .produtos-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 20px !important;
     width: 100% !important;
-    height: 100% !important;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
 }
+
+
+
+/* --- ALINHAMENTO MATEMÁTICO TRAVADO NO CENTRO DA TELA --- */
+#skincare .produtos-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    /* Mantém as 3 colunas perfeitas */
+    gap: 40px !important;
+    /* Mantém o seu espaçamento de 40px */
+    width: 100% !important;
+    max-width: 980px !important;
+    /* Tamanho exato dos 3 cards + gaps */
+
+    /* ZERA QUALQUER EMPURRÃO PARA OS LADOS E TRAVA NO MEIO: */
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+
+    position: relative !important;
+    left: 0 !important;
+    right: 0 !important;
+}
+
+/* Garante que os cards respeitem o espaço centralizado */
+#skincare .card-produto {
+    width: 100% !important;
+    max-width: 300px !important;
+    box-sizing: border-box !important;
+    margin: 0 auto !important;
+}
+
+
+/* --- DIMINUIR O TAMANHO DO BLOCO QTD --- */
+#skincare .card-produto .linha-preco-estoque .qtd-estoque,
+#skincare .card-produto span[class*="qtd"],
+.qtd-estoque {
+    font-size: 11px !important;
+    /* Diminui o tamanho da letra */
+    padding: 2px 6px !important;
+    /* Deixa a caixinha branca bem mais justa e delicada */
+    font-weight: 500 !important;
+    /* Remove o negrito exagerado */
+    height: auto !important;
+    /* Evita que ela fique esticada para cima */
+    line-height: 1 !important;
+}
+
+/* --- FORÇAR O PREÇO E A QTD LADO A LADO --- */
+#skincare .card-produto .linha-preco-estoque {
+    display: flex !important;
+    flex-direction: row !important;
+    /* Garante o alinhamento na mesma linha */
+    justify-content: space-between !important;
+    /* Joga o preço na esquerda e a Qtd na direita */
+    align-items: center !important;
+    /* Alinha os dois subindo e descendo pelo meio */
+    width: 100% !important;
+    margin-bottom: 12px !important;
+    box-sizing: border-box !important;
+}
+
+/* Garante que o preço principal não ocupe 100% da linha */
+#skincare .card-produto .preco-principal {
+    display: inline-block !important;
+    margin: 0 !important;
+    font-size: 20px !important;
+    font-weight: 700 !important;
+}
+
+/* Diminui e ajusta o bloco Qtd ao lado do preço */
+#skincare .card-produto .qtd-estoque {
+    display: inline-block !important;
+    font-size: 11px !important;
+    /* Letra menor e delicada */
+    padding: 3px 7px !important;
+    /* Caixinha compacta */
+    background: #ffffff !important;
+    /* Fundo branco limpo */
+    border-radius: 4px !important;
+    border: 1px solid #e0e0e0 !important;
+    margin: 0 !important;
+}
+
+
+/* --- FORÇAR ALINHAMENTO LADO A LADO DIRETO NAS TAGS --- */
+#skincare .card-produto .preco-principal {
+    display: inline-block !important;
+    float: left !important;
+    /* Empurra o preço para a esquerda */
+    font-size: 20px !important;
+    font-weight: 700 !important;
+    line-height: 24px !important;
+    margin: 0 !important;
+}
+
+#skincare .card-produto .qtd-estoque,
+#skincare .card-produto span[class*="qtd"] {
+    display: inline-block !important;
+    float: right !important;
+    /* Empurra a quantidade para a direita */
+    font-size: 11px !important;
+    /* Tamanho pequeno e delicado */
+    padding: 3px 6px !important;
+    /* Deixa a caixinha bem justa */
+    background: #ffffff !important;
+    /* Fundo branco limpo */
+    border-radius: 4px !important;
+    border: 1px solid #e0e0e0 !important;
+    margin-top: 2px !important;
+    /* Ajuste fino para alinhar com o meio do preço */
+    line-height: 1 !important;
+}
+
+/* Limpa o efeito flutuante para as linhas debaixo (parcelas) não subirem tortas */
+#skincare .card-produto .info-pagamento-vitrine,
+#skincare .card-produto .parcelas-vitrine {
+    clear: both !important;
+    display: block !important;
+    padding-top: 10px !important;
+    /* Dá um espaço para não grudar no preço */
+}
+
+
+/* --- ALINHAMENTO DA VITRINE CENTRALIZADA --- */
+#skincare .produtos-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    /* Mantém as 3 colunas padrão */
+    gap: 40px !important;
+    /* Mantém o espaçamento que você definiu */
+    width: 100% !important;
+    max-width: 1020px !important;
+    /* Limita a largura da linha ao tamanho dos seus cards */
+    margin: 40px auto 0 auto !important;
+    /* Centraliza os 3 cards perfeitamente no meio da tela */
+    padding: 0 !important;
+    /* Remove espaços que jogam para a direita */
+}
+
+
+
+
+/* --- EMPURRÃO MANUAL PARA ALINHAR NO CENTRO DE VEZ --- */
+#skincare .produtos-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 40px !important;
+    width: 100% !important;
+    max-width: 1020px !important;
+    padding: 0 !important;
+
+    /* Puxa todo o bloco de 3 cards para a esquerda de forma forçada: */
+    position: relative !important;
+    /* Para esta aqui (dando mais 20px de empurrão para a esquerda): */
+    left: -60px !important;
+}
+
+/* --- ALINHAMENTO COLADO AO LADO DO PREÇO --- */
+#skincare .card-produto .preco-principal {
+    float: left !important;
+    font-size: 20px !important;
+    font-weight: 700 !important;
+    margin: 0 !important;
+    line-height: 24px !important;
+}
+
+#skincare .card-produto .qtd-estoque,
+#skincare .card-produto span[class*="qtd"] {
+    position: static !important;        /* Reseta os empurrões antigos */
+    float: left !important;             /* Força a quantidade a vir logo após o preço */
+    margin-left: 15px !important;       /* O SEGREDO: Dá um espaço de folga entre o preço e a Qtd */
+    margin-top: 2px !important;         /* Ajusta a caixinha para ficar alinhada no meio da altura do preço */
+    font-size: 11px !important;
+    padding: 3px 6px !important;
+    background: #ffffff !important;
+    border-radius: 4px !important;
+    border: 1px solid #e0e0e0 !important;
+}
+
+/* Garante que a linha do parcelamento fique embaixo e não embolada */
+#skincare .card-produto .info-pagamento-vitrine {
+    clear: both !important;
+    display: block !important;
+    padding-top: 8px !important;
+}
+
+/* --- ALINHAMENTO IGUALZINHO AO DAS OFERTAS IMPERDÍVEIS --- */
+
+/* 1. Junta o preço e a quantidade na mesma linha */
+#skincare .card-produto .linha-preco-estoque {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: flex-start !important; /* Alinha os dois colados na esquerda */
+    align-items: center !important;        /* Centraliza a altura deles */
+    width: 100% !important;
+    margin-bottom: 12px !important;
+}
+
+/* 2. Regra para o preço principal */
+#skincare .card-produto .preco-principal {
+    display: inline-block !important;
+    font-size: 20px !important;
+    font-weight: 700 !important;
+    color: #111111 !important;
+    margin: 0 !important;
+}
+
+/* 3. Puxa a caixinha Qtd para o lado do preço (Igual à foto das Ofertas) */
+#skincare .card-produto .qtd-estoque,
+#skincare .card-produto span[class*="qtd"] {
+    display: inline-block !important;
+    position: relative !important;
+    top: 0 !important;
+    left: 0 !important;
+    float: none !important;
+    
+    /* Espaçamento perfeito para sentar do lado do valor */
+    margin: 0 0 0 10px !important; 
+    
+    /* Ajuste fino do tamanho do bloco */
+    font-size: 11px !important;
+    padding: 2px 5px !important;
+    background: #ffffff !important;
+    border-radius: 4px !important;
+    border: 1px solid #e0e0e0 !important;
+    color: #666666 !important;
+    line-height: 1 !important;
+}
+
+/* 4. Libera o bloco das parcelas para ir para baixo certinho */
+#skincare .card-produto .info-pagamento-vitrine {
+    clear: both !important;
+    display: block !important;
+}
+
+
+
+/* --- FORÇAR 3 COLUNAS NAS OFERTAS IMPERDÍVEIS --- */
+#ofertas-promocao .produtos-grid {
+    display: grid !important;          /* Desativa o flex do HTML e ativa a Grid */
+    grid-template-columns: repeat(3, 1fr) !important; /* Obriga a criar 3 colunas perfeitas */
+    gap: 20px !important;              /* Espaçamento idêntico ao que você colocou no Skincare */
+    width: 100% !important;
+    max-width: 1020px !important;      /* Mesma largura limite do Skincare */
+    padding: 0 !important;
+    
+    /* Aplica exatamente o mesmo empurrão manual que centralizou o Skincare */
+    position: relative !important;
+   left: -5px !important;
+}
+
+/* --- AJUSTAR OS CARDS DESSA SEÇÃO PARA ACOMPANHAR AS COLUNAS --- */
+#ofertas-promocao .produtos-grid .card-produto {
+    width: 100% !important;            /* Destrava os 250px fixos do HTML */
+    max-width: 300px !important;       /* Alarga o card para 300px, igualzinho ao Skincare */
+    flex: none !important;             /* Remove a trava flex do HTML */
+    margin: 0 auto !important;         /* Zera as margens antigas tortas */
+    box-sizing: border-box !important;
+}
+
+/* --- ALINHAMENTO COLADO DE VEZ NO PREÇO --- */
+
+/* 1. Remove o espaço vazio e junta o preço e a Qtd na esquerda */
+.secao-produtos .produtos-grid .card-produto .linha-preco-estoque {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: flex-start !important; /* Gruda os dois no início da linha */
+    align-items: center !important;        /* Alinha a altura pelo meio */
+    width: 100% !important;
+    margin-bottom: 12px !important;
+}
+
+/* 2. Remove as margens e travas antigas da quantidade */
+.secao-produtos .produtos-grid .card-produto .qtd-estoque,
+.secao-produtos .produtos-grid .card-produto span[class*="qtd"] {
+    display: inline-block !important;
+    position: static !important;
+    float: none !important;
+    
+    /* Dá o espacinho perfeito de 10px depois do preço (Igualzinho ao Skincare e Ofertas) */
+    margin: 0 0 0 10px !important; 
+    
+    /* Mantém o visual compacto e limpo */
+    font-size: 11px !important;
+    padding: 2px 5px !important;
+    background: #ffffff !important;
+    border-radius: 4px !important;
+    border: 1px solid #e0e0e0 !important;
+    color: #666666 !important;
+    line-height: 1 !important;
+}
+
+/* 3. Ajusta o preço para aceitar o vizinho do lado */
+.secao-produtos .produtos-grid .card-produto .preco-principal {
+    display: inline-block !important;
+    margin: 0 !important;
+    font-size: 20px !important;
+    font-weight: 700 !important;
+    color: #111111 !important;
+}
+
+
+/* --- EMPURRÃO DE MARGEM EXCLUSIVO PARA A QUANTIDADE --- */
+.qtd-estoque {
+    display: inline-block !important;
+    position: relative !important;
+    
+    /* Zera o empurrão automático que jogava ela para a direita */
+    margin-right: auto !important; 
+    
+    /* O SEGREDO: Uma margem negativa bem grande puxa ela direto para a esquerda */
+    margin-left: -200px !important; 
+    
+    /* Ajustes para manter ela bonita e na mesma altura do preço */
+    top: 0 !important;
+    font-size: 11px !important;
+    padding: 2px 5px !important;
+    background: #ffffff !important;
+    border-radius: 4px !important;
+    border: 1px solid #e0e0e0 !important;
+}
+
+
+/* --- REVERSÃO COMPLETA DA FAIXA BRANCA NO SKINCARE --- */
+#skincare .linha-preco-estoque {
+    background: transparent !important; /* Desativa a faixa branca de fundo */
+    background-color: transparent !important;
+    box-shadow: none !important;        /* Remove qualquer sombra que simule uma faixa */
+    padding: 0 !important;
+    width: 100% !important;
+}
+
+/* Garante que o fundo individual da caixinha Qtd permaneça branquinho e limpo */
+#skincare .qtd-estoque {
+    background: #ffffff !important;
+    border: 1px solid #e0e0e0 !important;
+}
+
+
+
+
+/* --- EFEITO HOVER: ESCURECE O DOURADO AO PASSAR O MOUSE --- */
+.btn-comprar:hover,
+.btn-add-carrinho:hover {
+    background: #a68c67 !important; /* Um tom de dourado mais escuro e elegante */
+    cursor: pointer !important;
+}
+
+
+
