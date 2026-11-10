@@ -1,4 +1,5 @@
 <?php
+require_once 'auth.php';
 include("conexao.php");
 
 // Pega o ID do produto para carregar os dados atuais

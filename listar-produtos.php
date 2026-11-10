@@ -1,4 +1,5 @@
 <?php
+require_once 'auth.php';
 // Inclui a conexão existente sem alterar nada nela
 include("conexao.php");
 

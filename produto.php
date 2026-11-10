@@ -115,7 +115,7 @@ if (isset($_GET['id'])) {
                         "- " + nomeProd + " (Qtd: 1) - R$ " + precoProd + "\n\n" +
                         "*Total do Pedido:* R$ " + precoProd;
 
-                    var linkInstante = "https://wa.me//5543984381586?text=" + encodeURIComponent(mensagem);
+                   var linkInstante = "https://wa.me/5543999701271?text=" + encodeURIComponent(mensagem);
 
                     window.location.href = linkInstante;
                 }

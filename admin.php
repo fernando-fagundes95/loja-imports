@@ -1,4 +1,5 @@
 <?php
+require_once 'auth.php';
 // Inclui a sua conexão com o banco de dados
 include("conexao.php");
 ?>

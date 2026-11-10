@@ -2070,7 +2070,6 @@ p.pix-vitrine {
 
 /* --- FORÇAR ALINHAMENTO LADO A LADO DIRETO NAS TAGS --- */
 #skincare .card-produto .preco-principal {
-    display: inline-block !important;
     float: left !important;
     /* Empurra o preço para a esquerda */
     font-size: 20px !important;
@@ -2081,7 +2080,6 @@ p.pix-vitrine {
 
 #skincare .card-produto .qtd-estoque,
 #skincare .card-produto span[class*="qtd"] {
-    display: inline-block !important;
     float: right !important;
     /* Empurra a quantidade para a direita */
     font-size: 11px !important;
@@ -2334,3 +2332,86 @@ p.pix-vitrine {
 
 
 
+html {
+  scroll-behavior: smooth;
+}
+
+#btnVoltarTopo {
+  display: none; /* Começa escondido no topo da página */
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  z-index: 999; /* Fica acima dos outros elementos */
+  width: 45px;
+  height: 45px;
+  border: none;
+  border-radius: 50%;
+  background-color: #b57e8a; /* Tom rosé combinando com seus botões */
+  color: #ffffff;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+#btnVoltarTopo:hover {
+  background-color: #9c6672;
+  transform: translateY(-3px);
+}
+
+
+
+
+/* Estilos das Páginas de Políticas e Rodapé */
+.container-politicas {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+.container-politicas h1 {
+    margin-bottom: 20px;
+}
+
+.container-politicas ul {
+    margin: 20px 0;
+    padding-left: 20px;
+}
+
+.container-politicas li {
+    margin-bottom: 12px;
+}
+
+.btn-voltar {
+    display: inline-block;
+    margin-top: 20px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.rodape-loja {
+    padding: 40px 20px;
+    margin-top: 50px;
+    text-align: center;
+    border-top: 1px solid #e0e0e0;
+}
+
+.rodape-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0 25px 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.rodape-links a {
+    text-decoration: none;
+}
+
+.rodape-dados p {
+    margin: 5px 0;
+    font-size: 0.9rem;
+}
