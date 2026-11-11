@@ -17,7 +17,8 @@ body {
     font-family: 'Montserrat', sans-serif;
     color: #40343a;
     line-height: 1.6;
-    background-image: url('img-bellafagundes/luxo.jpg');
+    background-image: url('IMG-Bellafagundes/luxo.jpg');
+
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
@@ -2150,10 +2151,14 @@ p.pix-vitrine {
 
 #skincare .card-produto .qtd-estoque,
 #skincare .card-produto span[class*="qtd"] {
-    position: static !important;        /* Reseta os empurrões antigos */
-    float: left !important;             /* Força a quantidade a vir logo após o preço */
-    margin-left: 15px !important;       /* O SEGREDO: Dá um espaço de folga entre o preço e a Qtd */
-    margin-top: 2px !important;         /* Ajusta a caixinha para ficar alinhada no meio da altura do preço */
+    position: static !important;
+    /* Reseta os empurrões antigos */
+    float: left !important;
+    /* Força a quantidade a vir logo após o preço */
+    margin-left: 15px !important;
+    /* O SEGREDO: Dá um espaço de folga entre o preço e a Qtd */
+    margin-top: 2px !important;
+    /* Ajusta a caixinha para ficar alinhada no meio da altura do preço */
     font-size: 11px !important;
     padding: 3px 6px !important;
     background: #ffffff !important;
@@ -2174,8 +2179,10 @@ p.pix-vitrine {
 #skincare .card-produto .linha-preco-estoque {
     display: flex !important;
     flex-direction: row !important;
-    justify-content: flex-start !important; /* Alinha os dois colados na esquerda */
-    align-items: center !important;        /* Centraliza a altura deles */
+    justify-content: flex-start !important;
+    /* Alinha os dois colados na esquerda */
+    align-items: center !important;
+    /* Centraliza a altura deles */
     width: 100% !important;
     margin-bottom: 12px !important;
 }
@@ -2197,10 +2204,10 @@ p.pix-vitrine {
     top: 0 !important;
     left: 0 !important;
     float: none !important;
-    
+
     /* Espaçamento perfeito para sentar do lado do valor */
-    margin: 0 0 0 10px !important; 
-    
+    margin: 0 0 0 10px !important;
+
     /* Ajuste fino do tamanho do bloco */
     font-size: 11px !important;
     padding: 2px 5px !important;
@@ -2221,24 +2228,32 @@ p.pix-vitrine {
 
 /* --- FORÇAR 3 COLUNAS NAS OFERTAS IMPERDÍVEIS --- */
 #ofertas-promocao .produtos-grid {
-    display: grid !important;          /* Desativa o flex do HTML e ativa a Grid */
-    grid-template-columns: repeat(3, 1fr) !important; /* Obriga a criar 3 colunas perfeitas */
-    gap: 20px !important;              /* Espaçamento idêntico ao que você colocou no Skincare */
+    display: grid !important;
+    /* Desativa o flex do HTML e ativa a Grid */
+    grid-template-columns: repeat(3, 1fr) !important;
+    /* Obriga a criar 3 colunas perfeitas */
+    gap: 20px !important;
+    /* Espaçamento idêntico ao que você colocou no Skincare */
     width: 100% !important;
-    max-width: 1020px !important;      /* Mesma largura limite do Skincare */
+    max-width: 1020px !important;
+    /* Mesma largura limite do Skincare */
     padding: 0 !important;
-    
+
     /* Aplica exatamente o mesmo empurrão manual que centralizou o Skincare */
     position: relative !important;
-   left: -5px !important;
+    left: -5px !important;
 }
 
 /* --- AJUSTAR OS CARDS DESSA SEÇÃO PARA ACOMPANHAR AS COLUNAS --- */
 #ofertas-promocao .produtos-grid .card-produto {
-    width: 100% !important;            /* Destrava os 250px fixos do HTML */
-    max-width: 300px !important;       /* Alarga o card para 300px, igualzinho ao Skincare */
-    flex: none !important;             /* Remove a trava flex do HTML */
-    margin: 0 auto !important;         /* Zera as margens antigas tortas */
+    width: 100% !important;
+    /* Destrava os 250px fixos do HTML */
+    max-width: 300px !important;
+    /* Alarga o card para 300px, igualzinho ao Skincare */
+    flex: none !important;
+    /* Remove a trava flex do HTML */
+    margin: 0 auto !important;
+    /* Zera as margens antigas tortas */
     box-sizing: border-box !important;
 }
 
@@ -2248,8 +2263,10 @@ p.pix-vitrine {
 .secao-produtos .produtos-grid .card-produto .linha-preco-estoque {
     display: flex !important;
     flex-direction: row !important;
-    justify-content: flex-start !important; /* Gruda os dois no início da linha */
-    align-items: center !important;        /* Alinha a altura pelo meio */
+    justify-content: flex-start !important;
+    /* Gruda os dois no início da linha */
+    align-items: center !important;
+    /* Alinha a altura pelo meio */
     width: 100% !important;
     margin-bottom: 12px !important;
 }
@@ -2260,10 +2277,10 @@ p.pix-vitrine {
     display: inline-block !important;
     position: static !important;
     float: none !important;
-    
+
     /* Dá o espacinho perfeito de 10px depois do preço (Igualzinho ao Skincare e Ofertas) */
-    margin: 0 0 0 10px !important; 
-    
+    margin: 0 0 0 10px !important;
+
     /* Mantém o visual compacto e limpo */
     font-size: 11px !important;
     padding: 2px 5px !important;
@@ -2288,13 +2305,13 @@ p.pix-vitrine {
 .qtd-estoque {
     display: inline-block !important;
     position: relative !important;
-    
+
     /* Zera o empurrão automático que jogava ela para a direita */
-    margin-right: auto !important; 
-    
+    margin-right: auto !important;
+
     /* O SEGREDO: Uma margem negativa bem grande puxa ela direto para a esquerda */
-    margin-left: -200px !important; 
-    
+    margin-left: -200px !important;
+
     /* Ajustes para manter ela bonita e na mesma altura do preço */
     top: 0 !important;
     font-size: 11px !important;
@@ -2307,9 +2324,11 @@ p.pix-vitrine {
 
 /* --- REVERSÃO COMPLETA DA FAIXA BRANCA NO SKINCARE --- */
 #skincare .linha-preco-estoque {
-    background: transparent !important; /* Desativa a faixa branca de fundo */
+    background: transparent !important;
+    /* Desativa a faixa branca de fundo */
     background-color: transparent !important;
-    box-shadow: none !important;        /* Remove qualquer sombra que simule uma faixa */
+    box-shadow: none !important;
+    /* Remove qualquer sombra que simule uma faixa */
     padding: 0 !important;
     width: 100% !important;
 }
@@ -2326,37 +2345,41 @@ p.pix-vitrine {
 /* --- EFEITO HOVER: ESCURECE O DOURADO AO PASSAR O MOUSE --- */
 .btn-comprar:hover,
 .btn-add-carrinho:hover {
-    background: #a68c67 !important; /* Um tom de dourado mais escuro e elegante */
+    background: #a68c67 !important;
+    /* Um tom de dourado mais escuro e elegante */
     cursor: pointer !important;
 }
 
 
 
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 #btnVoltarTopo {
-  display: none; /* Começa escondido no topo da página */
-  position: fixed;
-  bottom: 25px;
-  right: 25px;
-  z-index: 999; /* Fica acima dos outros elementos */
-  width: 45px;
-  height: 45px;
-  border: none;
-  border-radius: 50%;
-  background-color: #b57e8a; /* Tom rosé combinando com seus botões */
-  color: #ffffff;
-  font-size: 20px;
-  cursor: pointer;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-  transition: background-color 0.3s, transform 0.2s;
+    display: none;
+    /* Começa escondido no topo da página */
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    z-index: 999;
+    /* Fica acima dos outros elementos */
+    width: 45px;
+    height: 45px;
+    border: none;
+    border-radius: 50%;
+    background-color: #b57e8a;
+    /* Tom rosé combinando com seus botões */
+    color: #ffffff;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: background-color 0.3s, transform 0.2s;
 }
 
 #btnVoltarTopo:hover {
-  background-color: #9c6672;
-  transform: translateY(-3px);
+    background-color: #9c6672;
+    transform: translateY(-3px);
 }
 
 
@@ -2415,3 +2438,349 @@ html {
     margin: 5px 0;
     font-size: 0.9rem;
 }
+
+
+
+
+
+/* =================================================
+   CORREÇÕES RESPONSIVAS PARA CELULAR (MOBILE)
+================================================= */
+
+/* 1. Corrige a altura bugada do menu em qualquer tela */
+.menu {
+    height: auto !important;
+}
+
+/* 2. Ajustes exclusivos para telas de celular (até 768px) */
+@media (max-width: 768px) {
+
+    /* Garante que o site ocupe 100% da largura sem faixa branca na direita */
+    html, body {
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow-x: hidden !important;
+        background-attachment: scroll !important; /* Evita bug de fundo no iPhone */
+    }
+
+    /* Barra promocional no topo */
+    .barra-promocional {
+        font-size: 13px !important;
+        padding: 8px 10px !important;
+    }
+
+    /* Cabeçalho organizado em coluna no celular */
+    .cabecalho {
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        padding: 15px 4% !important;
+        gap: 14px !important;
+        width: 100% !important;
+    }
+
+    /* Diminui o círculo da logo para caber bem no celular */
+    .logo-container {
+        width: 95px !important;
+        height: 95px !important;
+        padding: 6px !important;
+    }
+
+    /* Menu de navegação alinhado e legível */
+    .menu {
+        width: 100% !important;
+        gap: 12px !important;
+        font-size: 14px !important;
+        justify-content: center !important;
+    }
+
+    /* Botão "Explorar loja" ajustado */
+    .botao-cabecalho {
+        padding: 10px 22px !important;
+        font-size: 13px !important;
+    }
+
+    /* Banner principal ocupando 100% da largura sem estourar */
+    .banner {
+        flex-direction: column !important;
+        text-align: center !important;
+        min-height: auto !important;
+        padding: 40px 5% !important;
+        gap: 25px !important;
+        width: 100% !important;
+    }
+
+    .banner-conteudo {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    .banner h1 {
+        font-size: 34px !important;
+    }
+
+    .banner-conteudo > p:not(.etiqueta) {
+        max-width: 100% !important;
+        font-size: 13px !important;
+    }
+
+    /* Reduz o selo "BF" no celular para não empurrar a tela */
+    .banner-decoracao {
+        width: 130px !important;
+        height: 130px !important;
+    }
+
+    .banner-decoracao span {
+        font-size: 40px !important;
+    }
+
+    .banner-decoracao p {
+        font-size: 12px !important;
+    }
+
+    /* Categorias em 2 colunas iguais ocupando toda a largura */
+    .secao-categorias {
+        padding: 40px 4% !important;
+        width: 100% !important;
+    }
+
+    .categorias {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 12px !important;
+        width: 100% !important;
+    }
+
+    .categoria {
+        min-height: 145px !important;
+        padding: 18px 10px !important;
+    }
+
+    /* Vitrine de produtos (Destaques, Ofertas, Skincare) em 2 colunas */
+    .secao-produtos {
+        padding: 40px 4% !important;
+        width: 100% !important;
+    }
+
+    .produtos {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 12px !important;
+        width: 100% !important;
+    }
+
+    .imagem-produto {
+        height: 160px !important;
+        padding: 10px !important;
+    }
+}
+
+
+
+/* =========================================
+   CORREÇÃO DA SEÇÃO SKINCARE NO CELULAR
+========================================= */
+@media (max-width: 768px) {
+    #skincare,
+    .secao-skincare,
+    .skincare {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        padding: 40px 4% !important;
+        box-sizing: border-box !important;
+    }
+
+    #skincare .produtos,
+    .secao-skincare .produtos,
+    .skincare .produtos {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        gap: 20px !important;
+    }
+
+    #skincare .card-produto,
+    .secao-skincare .card-produto,
+    .skincare .card-produto {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        left: auto !important;
+        right: auto !important;
+        transform: none !important;
+    }
+}
+/* =========================================================
+   CORREÇÃO CIRÚRGICA DO CARD SKINCARE NO IPHONE
+========================================================= */
+@media (max-width: 768px) {
+    /* 1. Centraliza a seção inteira sem empurrar para os lados */
+    #skincare {
+        position: static !important;
+        display: block !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 auto !important;
+        padding: 35px 16px !important;
+        box-sizing: border-box !important;
+        overflow: hidden !important;
+    }
+
+    /* 2. Reseta a grade de produtos do Skincare */
+    #skincare .produtos-grid {
+        position: static !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 auto !important;
+        padding: 0 !important;
+        left: auto !important;
+        right: auto !important;
+        transform: none !important;
+    }
+
+    /* 3. Trava o card exatamente no centro da tela sem cortar a esquerda */
+    #skincare .card-produto {
+        position: static !important;
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+        max-width: 340px !important;
+        margin: 0 auto 20px auto !important;
+        padding: 15px !important;
+        left: auto !important;
+        right: auto !important;
+        transform: none !important;
+        box-sizing: border-box !important;
+    }
+
+    /* 4. Dá altura suficiente para a foto do produto aparecer inteira */
+    #skincare .foto-produto {
+        position: static !important;
+        width: 100% !important;
+        height: 220px !important;
+        min-height: 220px !important;
+        margin: 0 0 15px 0 !important;
+        padding: 10px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        background-color: #ffffff !important;
+        border-radius: 10px !important;
+    }
+
+    #skincare .foto-produto a {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 100% !important;
+        height: 100% !important;
+    }
+
+    #skincare .foto-produto img {
+        max-width: 100% !important;
+        max-height: 100% !important;
+        width: auto !important;
+        height: auto !important;
+        object-fit: contain !important;
+        margin: 0 auto !important;
+        transform: none !important;
+    }
+
+    /* 5. Garante que os textos internos não fiquem deslocados */
+    #skincare .info-produto {
+        position: static !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        text-align: left !important;
+        left: auto !important;
+        transform: none !important;
+    }
+}
+
+@media (max-width: 768px) {
+    #skincare .card-produto {
+        height: auto !important;
+        min-height: auto !important;
+        max-height: none !important;
+        overflow: visible !important;
+        padding-bottom: 20px !important;
+    }
+
+    #skincare .info-produto {
+        height: auto !important;
+        min-height: auto !important;
+        max-height: none !important;
+        overflow: visible !important;
+    }
+}
+
+
+
+@media (max-width: 768px) {
+    body {
+        background-image: url('IMG-Bellafagundes/luxo.jpg') !important;
+        background-attachment: scroll !important; /* Corrige o bug do iPhone */
+        background-size: cover !important;
+        background-position: center top !important;
+        background-repeat: no-repeat !important;
+    }
+}
+
+
+/* =========================================
+   DEIXA A LOGO DO RODAPÉ REDONDA IGUAL À DO TOPO
+========================================= */
+footer img[src*="logo"],
+.rodape img[src*="logo"] {
+    width: 130px !important;
+    height: 130px !important;
+    border-radius: 50% !important;
+    background-color: #ffffff !important;
+    padding: 12px !important;
+    object-fit: contain !important;
+    object-position: center !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+    margin-bottom: 12px !important;
+}
+
+
+
+/* =========================================================
+   IMAGEM DE FUNDO FIXA COMPATÍVEL COM IPHONE (SAFARI/CHROME)
+========================================================= */
+@media (max-width: 768px) {
+    html, body {
+        background-image: none !important;
+        background-color: transparent !important;
+    }
+
+    /* Cria uma camada fixa por trás de todo o site que funciona no iPhone */
+    body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-image: url('IMG-Bellafagundes/luxo.jpg');
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        z-index: -1;
+        pointer-events: none;
+    }
+
+    /* Deixa as áreas entre os blocos transparentes para o fundo aparecer */
+    main, .secao-categorias {
+        background-color: transparent !important;
+    }
+}
+

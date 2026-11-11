@@ -29,20 +29,18 @@ $resultado = $conexao->query($sql);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Bella Fagundes Imports | Perfumes e Cosméticos</title>
 
-    <meta name="description"
-        content="Descubra perfumes femininos, masculinos, perfumes árabes e cosméticos na Bela Fagundes Imports.">
+    <meta name="description" content="Descubra perfumes femininos, masculinos, perfumes árabes e cosméticos na Bella Fagundes Imports.">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
-        rel="stylesheet">
+    <link href="https://googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=11">
 </head>
+
 
 <body>
 
@@ -58,7 +56,8 @@ $resultado = $conexao->query($sql);
 
         <div class="logo-container">
             <!-- Caminho corrigido apontando direto para a pasta certa que renomeamos -->
-            <img src="img-bellafagundes/logo.jpg" alt="Bella Fagundes Imports" class="img-logo">
+            <img src="IMG-Bellafagundes/logo.jpg" alt="Bella Fagundes Imports" class="img-logo">
+
         </div>
 
         <nav class="menu">
@@ -357,71 +356,71 @@ $resultado = $conexao->query($sql);
 
 
 
-            <!-- ===================================================
+            </div>
+        </section>
+
+
+        <!-- ===================================================
      SEÇÃO DE PRODUTOS SKINCARE AUTOMÁTICA
      =================================================== -->
 
-            <section class="secao-produtos" id="skincare">
-                <div class="titulo-secao">
-                    <span style="font-size: 14px; letter-spacing: 2px;">CUIDADOS COM A PELE E CABELO</span>
-                    <h2>Skincare</h2>
-                    <span style="font-size: 20px; letter-spacing: 2px;">Encontre produtos para cuidar de você.</span>
-
-                </div>
-
-                <div class="produtos-grid">
-                    <?php
-                    // Busca os produtos com a categoria exatamente igual a Skincare
-                    $query_skincare = "SELECT * FROM produtos WHERE categoria = 'Skincare' ORDER BY id DESC";
-                    $result_skincare = mysqli_query($conexao, $query_skincare);
-
-                    if (mysqli_num_rows($result_skincare) > 0) {
-                        while ($produto_skin = mysqli_fetch_assoc($result_skincare)) {
-                            // Cálculos automáticos de parcelamento e Pix
-                            $preco_original = $produto_skin['preco'];
-                            $parcela = $preco_original / 10;
-                            $preco_pix = $preco_original * 0.95;
-                    ?>
-                            <article class="card-produto">
-                                <div class="foto-produto">
-                                    <a href="produto.php?id=<?php echo $produto_skin['id']; ?>">
-                                        <img src="IMG-Bellafagundes/<?php echo $produto_skin['imagem']; ?>" alt="<?php echo $produto_skin['nome']; ?>">
-                                    </a>
-                                </div>
-
-                                <div class="info-produto">
-                                    <p class="marca-produto"><?php echo mb_strtoupper($produto_skin['marca']); ?> | SKINCARE</p>
-                                    <h3><?php echo $produto_skin['nome']; ?> (<?php echo $produto_skin['ml']; ?>ml)</h3>
-                                    <p class="descricao-curta-produto"><?php echo $produto_skin['descricao']; ?></p>
-
-                                    <div class="linha-preco-estoque">
-                                        <span class="preco-principal">R$ <?php echo number_format($preco_original, 2, ',', '.'); ?></span>
-                                        <span class="qtd-estoque">Qtd: <?php echo $produto_skin['quantidade']; ?></span>
-                                    </div>
-
-                                    <div class="info-pagamento-vitrine">
-                                        <p class="parcelas-vitrine">ou 10x de <strong>R$ <?php echo number_format($parcela, 2, ',', '.'); ?></strong> sem juros</p>
-                                        <p class="pix-vitrine">❖ R$ <?php echo number_format($preco_pix, 2, ',', '.'); ?> à vista no Pix</p>
-                                    </div>
-
-                                    <button class="btn-comprar btn-add-carrinho" data-nome="<?php echo $produto_skin['nome']; ?>" data-preco="<?php echo $produto_skin['preco']; ?>">Adicionar à Sacola</button>
-
-                                </div>
-                            </article>
-                    <?php
-                        }
-                    } else {
-                        echo "<p class='sem-produtos' style='color: #888; font-size: 14px; text-align: center; width: 100%; margin-top: 20px;'>Nenhum produto de skincare cadastrado no momento.</p>";
-                    }
-                    ?>
-                </div>
-            </section>
-
-
-
+        <section class="secao-produtos" id="skincare">
+            <div class="titulo-secao">
+                <span style="font-size: 14px; letter-spacing: 2px;">CUIDADOS COM A PELE E CABELO</span>
+                <h2>Skincare</h2>
+                <span style="font-size: 20px; letter-spacing: 2px;">Encontre produtos para cuidar de você.</span>
 
             </div>
+
+            <div class="produtos-grid">
+                <?php
+                // Busca os produtos com a categoria exatamente igual a Skincare
+                $query_skincare = "SELECT * FROM produtos WHERE categoria = 'Skincare' ORDER BY id DESC";
+                $result_skincare = mysqli_query($conexao, $query_skincare);
+
+                if (mysqli_num_rows($result_skincare) > 0) {
+                    while ($produto_skin = mysqli_fetch_assoc($result_skincare)) {
+                        // Cálculos automáticos de parcelamento e Pix
+                        $preco_original = $produto_skin['preco'];
+                        $parcela = $preco_original / 10;
+                        $preco_pix = $preco_original * 0.95;
+                ?>
+                        <article class="card-produto">
+                            <div class="foto-produto">
+                                <a href="produto.php?id=<?php echo $produto_skin['id']; ?>">
+                                    <img src="IMG-Bellafagundes/<?php echo $produto_skin['imagem']; ?>" alt="<?php echo $produto_skin['nome']; ?>">
+                                </a>
+                            </div>
+
+                            <div class="info-produto">
+                                <p class="marca-produto"><?php echo mb_strtoupper($produto_skin['marca']); ?> | SKINCARE</p>
+                                <h3><?php echo $produto_skin['nome']; ?> (<?php echo $produto_skin['ml']; ?>ml)</h3>
+                                <p class="descricao-curta-produto"><?php echo $produto_skin['descricao']; ?></p>
+
+                                <div class="linha-preco-estoque">
+                                    <span class="preco-principal">R$ <?php echo number_format($preco_original, 2, ',', '.'); ?></span>
+                                    <span class="qtd-estoque">Qtd: <?php echo $produto_skin['quantidade']; ?></span>
+                                </div>
+
+                                <div class="info-pagamento-vitrine">
+                                    <p class="parcelas-vitrine">ou 10x de <strong>R$ <?php echo number_format($parcela, 2, ',', '.'); ?></strong> sem juros</p>
+                                    <p class="pix-vitrine">❖ R$ <?php echo number_format($preco_pix, 2, ',', '.'); ?> à vista no Pix</p>
+                                </div>
+
+                                <button class="btn-comprar btn-add-carrinho" data-nome="<?php echo $produto_skin['nome']; ?>" data-preco="<?php echo $produto_skin['preco']; ?>">Adicionar à Sacola</button>
+
+                            </div>
+                        </article>
+                <?php
+                    }
+                } else {
+                    echo "<p class='sem-produtos' style='color: #888; font-size: 14px; text-align: center; width: 100%; margin-top: 20px;'>Nenhum produto de skincare cadastrado no momento.</p>";
+                }
+                ?>
+            </div>
         </section>
+
+
 
 
 
@@ -461,7 +460,8 @@ $resultado = $conexao->query($sql);
 
 
                 <a href="#" class="logo-rodape-link">
-                    <img src="img-bellafagundes/logo.jpg" alt="Bella Fagundes Imports" class="logo-rodape-img" style="max-width: 120px; height: auto; display: block;">
+                    <img src="IMG-Bellafagundes/logo.jpg" alt="Bella Fagundes Imports">
+
                 </a>
 
 
