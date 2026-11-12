@@ -2456,11 +2456,13 @@ html {
 @media (max-width: 768px) {
 
     /* Garante que o site ocupe 100% da largura sem faixa branca na direita */
-    html, body {
+    html,
+    body {
         width: 100% !important;
         max-width: 100% !important;
         overflow-x: hidden !important;
-        background-attachment: scroll !important; /* Evita bug de fundo no iPhone */
+        background-attachment: scroll !important;
+        /* Evita bug de fundo no iPhone */
     }
 
     /* Barra promocional no topo */
@@ -2519,7 +2521,7 @@ html {
         font-size: 34px !important;
     }
 
-    .banner-conteudo > p:not(.etiqueta) {
+    .banner-conteudo>p:not(.etiqueta) {
         max-width: 100% !important;
         font-size: 13px !important;
     }
@@ -2579,6 +2581,7 @@ html {
    CORREÇÃO DA SEÇÃO SKINCARE NO CELULAR
 ========================================= */
 @media (max-width: 768px) {
+
     #skincare,
     .secao-skincare,
     .skincare {
@@ -2613,10 +2616,12 @@ html {
         transform: none !important;
     }
 }
+
 /* =========================================================
    CORREÇÃO CIRÚRGICA DO CARD SKINCARE NO IPHONE
 ========================================================= */
 @media (max-width: 768px) {
+
     /* 1. Centraliza a seção inteira sem empurrar para os lados */
     #skincare {
         position: static !important;
@@ -2727,7 +2732,8 @@ html {
 @media (max-width: 768px) {
     body {
         background-image: url('IMG-Bellafagundes/luxo.jpg') !important;
-        background-attachment: scroll !important; /* Corrige o bug do iPhone */
+        background-attachment: scroll !important;
+        /* Corrige o bug do iPhone */
         background-size: cover !important;
         background-position: center top !important;
         background-repeat: no-repeat !important;
@@ -2753,34 +2759,284 @@ footer img[src*="logo"],
 
 
 
+
 /* =========================================================
-   IMAGEM DE FUNDO FIXA COMPATÍVEL COM IPHONE (SAFARI/CHROME)
+   MOBILE DEFINITIVO: 2 COLUNAS COMPACTAS + RODAPÉ LIMPO
 ========================================================= */
 @media (max-width: 768px) {
-    html, body {
+
+    /* 1. Fundo fixo compatível com iPhone */
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
         background-image: none !important;
-        background-color: transparent !important;
     }
 
-    /* Cria uma camada fixa por trás de todo o site que funciona no iPhone */
     body::before {
         content: "";
         position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        background-image: url('IMG-Bellafagundes/luxo.jpg');
-        background-size: cover;
-        background-position: center center;
-        background-repeat: no-repeat;
+        inset: 0;
+        background: url('IMG-Bellafagundes/luxo.jpg') center/cover no-repeat;
         z-index: -1;
         pointer-events: none;
     }
 
-    /* Deixa as áreas entre os blocos transparentes para o fundo aparecer */
-    main, .secao-categorias {
-        background-color: transparent !important;
+    /* 2. Cabeçalho e banner enxutos */
+    .cabecalho {
+        flex-direction: column;
+        padding: 12px;
+        gap: 8px;
+    }
+
+    .logo-container {
+        width: 75px;
+        height: 75px;
+    }
+
+    .banner {
+        flex-direction: column;
+        text-align: center;
+        padding: 25px 15px;
+        min-height: auto;
+    }
+
+    .banner h1 {
+        font-size: 24px;
+    }
+
+    .banner-decoracao {
+        display: none;
+    }
+
+    /* 3. Vence a regra da linha 1607 e ajusta a largura das vitrines */
+    main section.secao-produtos,
+    main section#produtos,
+    main section#ofertas-promocao,
+    main section#skincare {
+        display: block !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 20px 12px !important;
+        margin: 0 !important;
+        box-sizing: border-box !important;
+    }
+
+    /* 4. Coloca TODOS os produtos (Destaques, Ofertas e Skincare) em 2 COLUNAS */
+    main section.secao-produtos .produtos,
+    main section.secao-produtos .produtos-grid,
+    main section#ofertas-promocao>div:not(.titulo-secao),
+    main section#skincare .produtos-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        align-items: stretch !important;
+        gap: 8px !important;
+        width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    /* 5. Card pequeno, delicado e inteiro na coluna */
+    main section.secao-produtos .card-produto {
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: space-between !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+        height: 100% !important;
+        min-height: auto !important;
+        padding: 8px !important;
+        margin: 0 !important;
+        border-radius: 10px !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Foto compacta */
+    main section.secao-produtos .foto-produto,
+    main section.secao-produtos .imagem-produto {
+        width: 100% !important;
+        height: 100px !important;
+        min-height: 100px !important;
+        padding: 4px !important;
+        margin-bottom: 6px !important;
+    }
+
+    /* Textos internos compactos */
+    main section.secao-produtos .info-produto {
+        display: flex !important;
+        flex-direction: column !important;
+        flex-grow: 1 !important;
+        padding: 0 !important;
+        width: 100% !important;
+        text-align: left !important;
+    }
+
+    main section.secao-produtos .marca-produto {
+        font-size: 8px !important;
+        margin-bottom: 2px !important;
+    }
+
+    main section.secao-produtos .info-produto h3 {
+        font-size: 11.5px !important;
+        line-height: 1.2 !important;
+        margin-bottom: 4px !important;
+        min-height: 28px !important;
+        display: -webkit-box !important;
+        -webkit-line-clamp: 2 !important;
+        -webkit-box-orient: vertical !important;
+        overflow: hidden !important;
+    }
+
+    /* Esconde a descrição longa na grade de 2 colunas para não esticar o card */
+    main section.secao-produtos .descricao-curta-produto {
+        display: none !important;
+    }
+
+    main section.secao-produtos .linha-preco-estoque {
+        margin-top: auto !important;
+        margin-bottom: 2px !important;
+    }
+
+    main section.secao-produtos .preco-principal {
+        font-size: 13.5px !important;
+    }
+
+    main section.secao-produtos .qtd-estoque {
+        font-size: 8px !important;
+    }
+
+    main section.secao-produtos .parcelas-vitrine,
+    main section.secao-produtos .pix-vitrine {
+        font-size: 9px !important;
+        line-height: 1.2 !important;
+    }
+
+    main section.secao-produtos .btn-comprar,
+    main section.secao-produtos .btn-add-carrinho {
+        width: 100% !important;
+        padding: 7px 4px !important;
+        font-size: 10px !important;
+        margin-top: 6px !important;
+        border-radius: 6px !important;
+    }
+
+    /* 6. Arruma o rodapé Institucional e Ajuda (Foto 4) com fundo branco e centralizado */
+    .rodape-loja {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        background-color: #ffffff !important;
+        padding: 25px 15px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    .rodape-loja ul {
+        flex-direction: column !important;
+        gap: 8px !important;
+        align-items: center !important;
+    }
+
+    /* =====================================================
+       CORREÇÃO CIRÚRGICA: CARDS PEQUENOS E SEM CORTES
+    ===================================================== */
+
+
+    /* 1. Centraliza as seções por igual nas duas bordas */
+    main section.secao-produtos,
+    main section#produtos,
+    main section#ofertas-promocao,
+    main section#skincare {
+        padding: 15px 12px !important;
+        margin: 0 auto !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    /* 2. Grade de 2 colunas exatas (50% / 50%) sem vazar para a direita */
+    main section.secao-produtos .produtos,
+    main section.secao-produtos .produtos-grid,
+    main section#ofertas-promocao>div:not(.titulo-secao),
+    main section#skincare .produtos-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 10px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 !important;
+        margin: 0 auto !important;
+        justify-content: center !important;
+        box-sizing: border-box !important;
+    }
+
+    /* 3. Card compacto, menor e na mesma altura */
+    main section.secao-produtos .card-produto,
+    main section#ofertas-promocao .card-produto,
+    main section#skincare .card-produto {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        min-height: auto !important;
+        padding: 6px !important;
+        margin: 0 !important;
+        border-radius: 8px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: space-between !important;
+        overflow: hidden !important;
+        box-sizing: border-box !important;
+    }
+
+    /* 4. Foto bem menor para diminuir a altura do card */
+    main section.secao-produtos .card-produto .foto-produto,
+    main section.secao-produtos .card-produto img,
+    main section#ofertas-promocao .card-produto img,
+    main section#skincare .card-produto img {
+        width: 100% !important;
+        height: 95px !important;
+        object-fit: cover !important;
+        margin-bottom: 5px !important;
+        border-radius: 6px !important;
+    }
+
+    /* 5. Textos e preços enxutos */
+    main section.secao-produtos .card-produto h3 {
+        font-size: 12px !important;
+        margin: 2px 0 !important;
+        line-height: 1.2 !important;
+    }
+
+    main section.secao-produtos .card-produto p {
+        font-size: 11px !important;
+        margin: 2px 0 !important;
+        line-height: 1.2 !important;
+    }
+
+    main section.secao-produtos .preco-principal {
+        font-size: 12px !important;
+        margin: 2px 0 !important;
+    }
+
+    main section.secao-produtos .parcelas-vitrine,
+    main section.secao-produtos .pix-vitrine {
+        font-size: 8px !important;
+        line-height: 1.15 !important;
+        margin: 1px 0 !important;
+    }
+
+    /* 6. Botões finos para não esticar o card */
+    main section.secao-produtos .btn-comprar,
+    main section.secao-produtos .btn-add-carrinho,
+    main section.secao-produtos .card-produto button,
+    main section.secao-produtos .card-produto a {
+        padding: 4px 4px !important;
+        font-size: 10px !important;
+        margin-top: 3px !important;
     }
 }
 
+/* <-- Esta chave fecha o @media (max-width: 768px) lá da linha 2760 */

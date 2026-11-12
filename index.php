@@ -38,7 +38,7 @@ $resultado = $conexao->query($sql);
 
     <link href="https://googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="style.css?v=11">
+    <link rel="stylesheet" href="style.css?v=35">
 </head>
 
 
@@ -180,11 +180,12 @@ $resultado = $conexao->query($sql);
 
                 <?php while ($produto = $resultado->fetch_assoc()): ?>
 
-                    <article class="card-produto" style="width: 250px !important; max-width: 250px !important; flex: 0 0 250px !important; margin: 10px !important;">
+                    <article class="card-produto">
                         <div class="produto-imagem-wrapper">
                             <!-- CLIQUE NA FOTO: Abre os detalhes do produto de cima -->
                             <a href="produto.php?id=<?php echo $produto['id']; ?>">
                                 <img src="IMG-Bellafagundes/<?php echo $produto['imagem']; ?>" alt="<?php echo $produto['nome']; ?>">
+
                             </a>
                         </div>
 
@@ -277,87 +278,80 @@ $resultado = $conexao->query($sql);
 
 
 
-
-            <!-- ==========================================
+        </section>
+        <!-- ==========================================
      SEÇÃO DE OFERTAS IMPERDÍVEIS AUTOMÁTICA
      ========================================== -->
-            <section class="secao-produtos" id="ofertas-promocao">
-                <div class="titulo-secao" style="text-align: center; margin-top: 60px;">
-                    <span style="font-size: 14px; letter-spacing: 2px;">OPORTUNIDADE ÚNICA</span>
-                    <h2 style="color: #49343d;">Ofertas Imperdíveis</h2>
-                    <span style="font-size: 20px; letter-spacing: 2px;">Garanta os perfumes mais desejados com discounts especiais por tempo limitado.</span>
-                </div>
+        <section class="secao-produtos" id="ofertas-promocao">
+            <div class="titulo-secao" style="text-align: center; margin-top: 60px;">
+                <span style="font-size: 14px; letter-spacing: 2px;">OPORTUNIDADE ÚNICA</span>
+                <h2 style="color: #49343d;">Ofertas Imperdíveis</h2>
+                <span style="font-size: 20px; letter-spacing: 2px;">Garanta os perfumes mais desejados com desconto especiais por tempo limitado.</span>
+            </div>
 
-                <!-- Container que segura os cards perfeitamente alinhados -->
-                <div class="produtos-grid" style="display: flex; flex-wrap: wrap; gap: 25px; justify-content: center; width: 100%; max-width: 1200px; margin: 0 auto;">
-                    <?php
-                    // Busca os produtos com promocao igual a 1
-                    $query_ofertas = "SELECT * FROM produtos WHERE promocao = 1 ORDER BY id DESC";
-                    $result_ofertas = mysqli_query($conexao, $query_ofertas);
+            <!-- Container que segura os cards perfeitamente alinhados -->
+            <div class="produtos-grid" style="display: flex; flex-wrap: wrap; gap: 25px; justify-content: center; width: 100%; max-width: 1200px; margin: 0 auto;">
+                <?php
+                // Busca os produtos com promocao igual a 1
+                $query_ofertas = "SELECT * FROM produtos WHERE promocao = 1 ORDER BY id DESC";
+                $result_ofertas = mysqli_query($conexao, $query_ofertas);
 
-                    while ($produto_promo = mysqli_fetch_assoc($result_ofertas)) {
-                    ?>
-                        <article class="card-produto" style="width: 250px !important; max-width: 250px !important; flex: 0 0 250px !important; background: white; padding: 15px; border-radius: 8px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 4px 6px rgba(0,0,0,0.05); min-height: 470px; text-align: left; box-sizing: border-box; margin: 10px !important;">
+                while ($produto_promo = mysqli_fetch_assoc($result_ofertas)) {
+                ?>
+                    <article class="card-produto">
 
-                            <!-- Foto do Perfume Tratada Ocupando Todo o Espaço -->
-                            <div style="width: 100%; height: 250px; position: relative; background: #fff; border-radius: 8px 8px 0 0; overflow: hidden;">
-                                <span style="position: absolute; top: 5px; left: 5px; background: #bfa37c; color: white; font-size: 10px; padding: 3px 8px; font-weight: bold; border-radius: 3px; text-transform: uppercase; z-index: 10;">PROMOÇÃO</span>
-                                <a href="produto.php?id=<?php echo $produto_promo['id']; ?>" style="display: block; width: 100%; height: 100%;">
-                                    <img src="IMG-Bellafagundes/<?php echo $produto_promo['imagem']; ?>" alt="<?php echo $produto_promo['nome']; ?>" style="width: 100% !important; height: 100% !important; object-fit: cover !important;">
-                                </a>
+                        <!-- Foto do Perfume Tratada Ocupando Todo o Espaço -->
+                        <div style="width: 100%; height: 250px; position: relative; background: #fff; border-radius: 8px 8px 0 0; overflow: hidden;">
+                            <span style="position: absolute; top: 5px; left: 5px; background: #bfa37c; color: white; font-size: 10px; padding: 3px 8px; font-weight: bold; border-radius: 3px; text-transform: uppercase; z-index: 10;">PROMOÇÃO</span>
+                            <a href="produto.php?id=<?php echo $produto_promo['id']; ?>" style="display: block; width: 100%; height: 100%;">
+                                <img src="IMG-Bellafagundes/<?php echo $produto_promo['imagem']; ?>" alt="<?php echo $produto_promo['nome']; ?>" style="width: 100% !important; height: 100% !important; object-fit: cover !important;">
+                            </a>
+                        </div>
+
+
+
+                        <!-- Dados do Perfume -->
+                        <div style="flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; margin-top: 10px;">
+                            <div>
+                                <span style="font-size: 11px; color: #bfa37c; font-weight: bold; text-transform: uppercase;"><?php echo $produto_promo['marca']; ?></span>
+                                <h4 style="margin: 5px 0; font-size: 16px; color: #333; font-weight: bold;"><?php echo $produto_promo['nome']; ?> (<?php echo $produto_promo['ml']; ?>ml)</h4>
+                                <p style="font-size: 12px; color: #777; line-height: 1.4; margin: 5px 0; height: 34px; overflow: hidden; text-overflow: ellipsis;"><?php echo $produto_promo['descricao']; ?></p>
                             </div>
 
+                            <!-- ESTRUTURA AUTOMÁTICA DE PAGAMENTO (10X E PIX) -->
+                            <?php
+                            $preco_dinamico = $produto_promo['preco'];
+                            $parcelas = 10;
+                            $valor_parcela = $preco_dinamico / $parcelas;
 
+                            $desconto_pix = 0.05;
+                            $valor_pix = $preco_dinamico * (1 - $desconto_pix);
+                            ?>
 
-                            <!-- Dados do Perfume -->
-                            <div style="flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; margin-top: 10px;">
-                                <div>
-                                    <span style="font-size: 11px; color: #bfa37c; font-weight: bold; text-transform: uppercase;"><?php echo $produto_promo['marca']; ?></span>
-                                    <h4 style="margin: 5px 0; font-size: 16px; color: #333; font-weight: bold;"><?php echo $produto_promo['nome']; ?> (<?php echo $produto_promo['ml']; ?>ml)</h4>
-                                    <p style="font-size: 12px; color: #777; line-height: 1.4; margin: 5px 0; height: 34px; overflow: hidden; text-overflow: ellipsis;"><?php echo $produto_promo['descricao']; ?></p>
-                                </div>
-
-                                <!-- ESTRUTURA AUTOMÁTICA DE PAGAMENTO (10X E PIX) -->
-                                <?php
-                                $preco_dinamico = $produto_promo['preco'];
-                                $parcelas = 10;
-                                $valor_parcela = $preco_dinamico / $parcelas;
-
-                                $desconto_pix = 0.05;
-                                $valor_pix = $preco_dinamico * (1 - $desconto_pix);
-                                ?>
-
-                                <!-- PREÇO PRINCIPAL ALINHADO -->
-                                <div style="margin-top: 8px;">
-                                    <strong class="preco-principal-loja" style="font-size: 20px; color: #333; font-weight: bold;">R$ <?php echo number_format($produto_promo['preco'], 2, ',', '.'); ?></strong>
-                                    <span style="font-size: 11px; color: #666; background: #f5f5f5; padding: 2px 6px; border-radius: 4px; margin-left: 5px;">Qtd: <?php echo $produto_promo['quantidade']; ?></span>
-                                </div>
-
-                                <div class="info-pagamento-vitrine" style="margin-top: 5px;">
-                                    <p class="parcelas-vitrine" style="margin: 2px 0; font-size: 13px;">ou 10x de <strong>R$ <?php echo number_format($valor_parcela, 2, ',', '.'); ?></strong> sem juros</p>
-                                    <p class="pix-vitrine" style="margin: 2px 0; font-size: 13px; color: #bfa37c;">❖ R$ <?php echo number_format($valor_pix, 2, ',', '.'); ?> à vista no Pix</p>
-                                </div>
-
-                                <!-- Botão Dinâmico da Sacola Rosa -->
-                                <button onclick="adicionarNaSacola(<?php echo $produto_promo['id']; ?>, '<?php echo addslashes($produto_promo['nome']); ?>', <?php echo $produto_promo['preco']; ?>, 'IMG-Bellafagundes/<?php echo $produto_promo['imagem']; ?>')" class="btn-comprar btn-add-carrinho" data-nome="<?php echo $produto_promo['nome']; ?>" data-preco="<?php echo $produto_promo['preco']; ?>" style="display: block; width: 100%; text-align: center; background: #bfa37c; color: white; padding: 10px 0; margin-top: 15px; border: none; font-weight: bold; border-radius: 4px; font-size: 14px; cursor: pointer;">
-                                    Adicionar à Sacola
-                                </button>
+                            <!-- PREÇO PRINCIPAL ALINHADO -->
+                            <div style="margin-top: 8px;">
+                                <strong class="preco-principal-loja" style="font-size: 20px; color: #333; font-weight: bold;">R$ <?php echo number_format($produto_promo['preco'], 2, ',', '.'); ?></strong>
+                                <span style="font-size: 11px; color: #666; background: #f5f5f5; padding: 2px 6px; border-radius: 4px; margin-left: 5px;">Qtd: <?php echo $produto_promo['quantidade']; ?></span>
                             </div>
-                        </article>
-                    <?php
-                    }
-                    ?>
-                </div>
-            </section>
 
+                            <div class="info-pagamento-vitrine" style="margin-top: 5px;">
+                                <p class="parcelas-vitrine" style="margin: 2px 0; font-size: 13px;">ou 10x de <strong>R$ <?php echo number_format($valor_parcela, 2, ',', '.'); ?></strong> sem juros</p>
+                                <p class="pix-vitrine" style="margin: 2px 0; font-size: 13px; color: #bfa37c;">❖ R$ <?php echo number_format($valor_pix, 2, ',', '.'); ?> à vista no Pix</p>
+                            </div>
 
-
-
-
-
-
+                            <!-- Botão Dinâmico da Sacola Rosa -->
+                            <button onclick="adicionarNaSacola(<?php echo $produto_promo['id']; ?>, '<?php echo addslashes($produto_promo['nome']); ?>', <?php echo $produto_promo['preco']; ?>, 'IMG-Bellafagundes/<?php echo $produto_promo['imagem']; ?>')" class="btn-comprar btn-add-carrinho" data-nome="<?php echo $produto_promo['nome']; ?>" data-preco="<?php echo $produto_promo['preco']; ?>" style="display: block; width: 100%; text-align: center; background: #bfa37c; color: white; padding: 10px 0; margin-top: 15px; border: none; font-weight: bold; border-radius: 4px; font-size: 14px; cursor: pointer;">
+                                Adicionar à Sacola
+                            </button>
+                        </div>
+                    </article>
+                <?php
+                }
+                ?>
             </div>
         </section>
+
+
 
 
         <!-- ===================================================
